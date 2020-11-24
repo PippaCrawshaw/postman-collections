@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite id="7a119e49-9621-432d-90b4-3f75b8bc4d69" name="CyrasToSalesforce-UnmergePerson" xmlns:con="http://eviware.com/soapui/config">
+    <con:settings><con:setting id="IncludeOverview">true</con:setting><con:setting id="IncludeResults">true</con:setting><con:setting id="FlowLayout">false</con:setting><con:setting id="ErrorDetails">true</con:setting><con:setting id="IncludeCoverage">true</con:setting><con:setting id="7a119e49-9621-432d-90b4-3f75b8bc4d69fileName">CyrasToSalesforce-UnmergePerson</con:setting></con:settings>
+    <con:savedRecentRuns>1</con:savedRecentRuns>
+    <con:runType>SEQUENTIAL</con:runType>
+    
+    <con:properties/>
+    <con:reportParameters/>
+  </con:testSuite>

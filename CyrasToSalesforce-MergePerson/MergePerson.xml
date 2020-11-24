@@ -1,0 +1,815 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="bf3ac284-e896-4d56-8b20-0d99758bc724" discardOkResults="true" failOnError="false" failTestCaseOnErrors="false" keepSession="false" name="MergePerson" searchProperties="true" timeout="40000" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" zephyrTestName="" zephyrTestId="" maxResults="3" xmlns:con="http://eviware.com/soapui/config">
+      <con:settings><con:setting id="bf3ac284-e896-4d56-8b20-0d99758bc724fileName">MergePerson</con:setting></con:settings>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="datagen" name="RandomforeignID" id="368d7fe1-7aa1-452a-9115-3b01c029faf9">
+        <con:settings/>
+        <con:config xsi:type="con:DataGeneratorStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:property type="Number">
+            <con:configuration><start>100000</start><end>900000</end><step/><pattern/><random>true</random><persist>true</persist><current>196715.00000000000000000000000000000000000000000000000000000</current></con:configuration>
+            <con:name>foreignIDRandom</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="datagen" name="cyrasId" id="b51181f0-0555-4c3b-8782-6fe1f0bb465f">
+        <con:settings/>
+        <con:config xsi:type="con:DataGeneratorStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:property type="Number">
+            <con:configuration><start>100000</start><end>9000000</end><step/><pattern/><random>true</random><persist>true</persist><current>620012.00000000000000000000000000000000000000000000000000000</current></con:configuration>
+            <con:name>cyrasId</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+          <con:property type="Number">
+            <con:configuration><start>100000</start><end>9000000</end><step/><pattern/><random>true</random><persist>true</persist><current>1415694.000000000000000000000000000000000000000000000000000</current></con:configuration>
+            <con:name>cyaddressId</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+          <con:property type="Number">
+            <con:configuration><start>100000</start><end>90000000</end><step/><pattern/><random>true</random><persist>true</persist><current>16125238.0000000000000000000000000000000000000000000000000000</current></con:configuration>
+            <con:name>cylegalNameId</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+          <con:property type="Number">
+            <con:configuration><start>100000</start><end>9000000</end><step/><pattern/><random>true</random><persist>true</persist><current>8065010.0000000000000000000000000000000000000000000000000000</current></con:configuration>
+            <con:name>cynameId</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+          <con:property type="Number">
+            <con:configuration><start>100000</start><end>9000000</end><step/><pattern/><random>true</random><persist>true</persist><current>100561.000000000000000000000000000000000000000000000000</current></con:configuration>
+            <con:name>cyethnicityId</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+          <con:property type="Number">
+            <con:configuration><start>100000</start><end>9000000</end><step/><pattern/><random>true</random><persist>true</persist><current>4560944.000000000000000000000000000000000000000000000000</current></con:configuration>
+            <con:name>cyalertId</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+          <con:property type="Number">
+            <con:configuration><start>100000</start><end>9000000</end><step/><pattern/><random>true</random><persist>true</persist><current>2127154.0000000000000000000000000000000000000000000000000000</current></con:configuration>
+            <con:name>cycommunicationId</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+          <con:property type="Number">
+            <con:configuration><start>100000</start><end>9000000</end><step/><pattern/><random>true</random><persist>true</persist><current>2698010.00000000000000000000000000000000000000000000000000000</current></con:configuration>
+            <con:name>cycommunication2Id</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="datagen" name="sfId" id="c4083cf0-787f-4247-be26-0cab340e9579">
+        <con:settings/>
+        <con:config xsi:type="con:DataGeneratorStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:property type="Number">
+            <con:configuration><start>100000</start><end>9000000</end><step/><pattern/><random>true</random><persist>true</persist><current>990002.000000000000000000000000000000000000000000000000000</current></con:configuration>
+            <con:name>sfId</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+          <con:property type="Number">
+            <con:configuration><start>100000</start><end>9000000</end><step/><pattern/><random>true</random><persist>true</persist><current>4530923.00000000000000000000000000000000000000000000000000000</current></con:configuration>
+            <con:name>sfaddressId</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+          <con:property type="Number">
+            <con:configuration><start>100000</start><end>90000000</end><step/><pattern/><random>true</random><persist>true</persist><current>25595487.00000000000000000000000000000000000000000000000</current></con:configuration>
+            <con:name>sflegalNameId</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+          <con:property type="Number">
+            <con:configuration><start>100000</start><end>9000000</end><step/><pattern/><random>true</random><persist>true</persist><current>3801316.0000000000000000000000000000000000000000000000000000</current></con:configuration>
+            <con:name>sfnameId</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+          <con:property type="Number">
+            <con:configuration><start>100000</start><end>9000000</end><step/><pattern/><random>true</random><persist>true</persist><current>7324755.00000000000000000000000000000000000000000000000000000</current></con:configuration>
+            <con:name>sfethnicityId</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+          <con:property type="Number">
+            <con:configuration><start>100000</start><end>9000000</end><step/><pattern/><random>true</random><persist>true</persist><current>1749443.0000000000000000000000000000000000000000000000000000</current></con:configuration>
+            <con:name>sfalertId</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+          <con:property type="Number">
+            <con:configuration><start>100000</start><end>9000000</end><step/><pattern/><random>true</random><persist>true</persist><current>8313811.000000000000000000000000000000000000000000000000000</current></con:configuration>
+            <con:name>sfcommunicationId</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+          <con:property type="Number">
+            <con:configuration><start>100000</start><end>9000000</end><step/><pattern/><random>true</random><persist>true</persist><current>4476556.00000000000000000000000000000000000000000000000000</current></con:configuration>
+            <con:name>sfcommunication2Id</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="datagen" name="DataGenRandom_Alpha" id="de41e949-6475-4ca2-9cfd-db236848d7cd">
+        <con:settings/>
+        <con:config xsi:type="con:DataGeneratorStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:property type="Script">
+            <con:configuration>
+              <script>import org.apache.commons.lang.RandomStringUtils
+
+String charset = (('A'..'Z') + ('0'..'9')).join()
+Integer length = 9
+String randomString = RandomStringUtils.random(length, charset.toCharArray())</script>
+            </con:configuration>
+            <con:name>randomString</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="datagen" name="systemDate" id="40779e4b-8bc6-42cc-9282-d4f06f64e231">
+        <con:settings/>
+        <con:config xsi:type="con:DataGeneratorStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:property type="Script">
+            <con:configuration>
+              <script>import java.time.*
+
+ZonedDateTime.now(ZoneId.of("UTC")).format("yyyy-MM-dd'T'HH:mm:ss.SSSX")
+
+String systemDate =new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'").format(new Date())</script>
+            </con:configuration>
+            <con:name>systemDate</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="REST Request-SalesForce Response Create" id="90010dec-2298-4c0d-afaf-0c1087128483">
+        <con:settings/>
+        <con:config service="Prepare-CreatePerson-SFTOC-CYRASResponse" resourcePath="/test-harness/prepare" methodName="Prepare" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="REST Request-SalesForce Response Create" id="e20810ad-1b90-4995-b930-10c3545e63d0" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="Accept" value="application/json"/>&#13;
+  &lt;con:entry key="Content-Type" value="application/json"/>&#13;
+&lt;/xml-fragment></con:setting>
+            </con:settings>
+            <con:endpoint>${#Project#stEndpoint}</con:endpoint>
+            <con:request><![CDATA[{
+    "forSystem": "Salesforce",
+    "responses": [
+        {
+            "objectID": "6d54b357-1ff4-4fad-9cad-e99e0a0f71f4",
+            "path": "/services/apexrest/merge/v1",
+            "responseCode": 200,
+            "contentType": "application/json",
+            "payload": {
+                "compositeResponse": [
+                    {
+                        "body": {
+                            "attributes": {
+                                "type": "Contact"
+                            },
+                            "Id": "123AAA",
+                            "LastName": "Existence",
+                            "FirstName": "Co"
+                        },
+                        "httpHeaders": {
+                            "Last-Modified": "Thu, 2 Jul 2020 03:24:32 GMT"
+                        },
+                        "httpStatusCode": 200,
+                        "referenceId": "person"
+                    }
+                ]
+            }
+        },
+        {
+            "objectId": "${sfId#sfId}",
+            "path": "/services/apexrest/merge/v1",
+            "responseCode": 200,
+            "contentType": "application/json",
+            "payload": {
+                "status": "Success",
+                "relatedAddress": [
+                    {
+                        "attributes": {
+                            "type": "CG_Related_Address__c",
+                            "url": "/services/data/v49.0/sobjects/CG_Related_Address__c/${sfId#sfaddressId}"
+                        },
+                        "CG_Address__c": "${sfId#sfaddressId}",
+                        "CG_Contact__c": "<CG_Contact__c>",
+                        "SYNCH_GUID__c": "$.newContact.CG_Related_Address__c[0].SYNCH_GUID__c",
+                        "CG_Type__c": "Physical",
+                        "CG_Start_Date__c": "1990-01-01",
+                        "CG_End_Date__c": null,
+                        "CG_Current_Address__c": true,
+                        "Id": "${sfId#sfaddressId}"
+                    }
+                ],
+                "phoneNames": [
+                    {
+                        "attributes": {
+                            "type": "CYRAS_Communication__c",
+                            "url": "/services/data/v49.0/sobjects/CYRAS_Communication__c/${sfId#sfcommunicationId}"
+                        },
+                        "Contact__c": "<Contact__c>",
+                        "SYNCH_GUID__c": "$.newContact.CYRAS_Communication__c[0].SYNCH_GUID__c",
+                        "Phone_Email__c": "test@test.com",
+                        "Type__c": "typewhatever",
+                        "Id": "${sfId#sfcommunicationId}"
+                    }
+                ],
+                "personNames": [
+                    {
+                        "attributes": {
+                            "type": "Person_Name__c",
+                            "url": "/services/data/v49.0/sobjects/Person_Name__c/${sfId#sflegalNameId}"
+                        },
+                        "CG_Contact__c": "<CG_Contact__c>",
+                        "SYNCH_GUID__c": "$.newContact.Person_Name__c[0].SYNCH_GUID__c",
+                        "CG_First_Name__c": "testFirst1",
+                        "CG_Last_Name__c": "testLast1",
+                        "CG_Name_Type__c": "Legal",
+                        "CG_Salutation__c": "Mr",
+                        "CG_Start_Date__c": "1990-01-01",
+                        "Id": "${sfId#sflegalNameId}"
+                    },
+					{
+                        "attributes": {
+                            "type": "Person_Name__c",
+                            "url": "/services/data/v49.0/sobjects/Person_Name__c/${sfId#sflegalNameId}"
+                        },
+                        "CG_Contact__c": "<CG_Contact__c>",
+                        "SYNCH_GUID__c": "$.newContact.Person_Name__c[1].SYNCH_GUID__c",
+                        "CG_First_Name__c": "testFirst2",
+                        "CG_Last_Name__c": "testLast2",
+                        "CG_Name_Type__c": "Legal",
+                        "CG_Salutation__c": "Mr",
+                        "CG_Start_Date__c": "1990-01-01",
+                        "Id": "${sfId#sflegalNameId}"
+                    }
+                ],
+                "newContact": {
+                    "attributes": {
+                        "type": "Contact",
+                        "url": "/services/data/v49.0/sobjects/Contact/${sfId#sfId}"
+                    },
+                    "RecordTypeId": "<RecordTypeId>",
+                    "CG_AutoCreated__c": true,
+                    "AccountId": "<AccountId>",
+                    "Active_CGIS_Contact__c": true,
+                    "SYNCH_GUID__c": "$.newContact.Contact.SYNCH_GUID__c",
+                    "LastName": "testLastName1",
+                    "FirstName": "testFirstName1",
+                    "Salutation": "Mr",
+                    "Birthdate": "1990-01-01",
+                    "CG_Preferred_Name__c": "testPreName1",
+                    "vlocity_ps__Gender__c": "Male",
+                    "Phone": "+12341234",
+                    "MobilePhone": "123456789",
+                    "Email": "test1@test.com",
+                    "CG_CYRAS_ID__c": "<CG_CYRAS_ID__c>",
+                    "Id": "${sfId#sfId}"
+                },
+                "message": "",
+                "ethnicityNames": [
+                    {
+                        "attributes": {
+                            "type": "CG_Ethnicity__c",
+                            "url": "/services/data/v49.0/sobjects/CG_Ethnicity__c/${sfId#sfethnicityId}"
+                        },
+                        "CG_Contact__c": "<CG_Contact__c>",
+                        "SYNCH_GUID__c": "$.newContact.CG_Ethnicity__c[0].SYNCH_GUID__c",
+                        "CG_Ethnicity__c": "African",
+                        "CG_Hidden_Ethnicity__c": "testhiddenEth",
+                        "CG_Island__c": "",
+                        "CG_Hidden_Island__c": "testhiddenIsland",
+                        "CG_Iwi__c": "",
+                        "CG_Hidden_Iwi__c": "testHiddenIwi",
+                        "CG_Other_Ethnicity__c": "testotherEthnicity",
+                        "Id": "${sfId#sfethnicityId}"
+                    }
+                ]
+            }
+        }
+    ]
+}]]></con:request>
+            <con:originalUri>http://internal-alb-syndev-test-harness-399698269.ap-southeast-2.elb.amazonaws.com/test-harness/prepare</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="235c6fd0-9c46-4a1b-8b5c-219f91aeaeeb" name="Valid HTTP Status Codes">
+              <con:settings/>
+              <con:configuration>
+                <codes>201</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath RegEx Match" id="ddad5316-2ae6-4667-8478-9e0d34fec916" name="Match content of [forSystem] using RegEx" disabled="true">
+              <con:configuration>
+                <path>$['responses'][0]['info']['forSystem']</path>
+                <content>true</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+                <regEx>CYRAS</regEx>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath RegEx Match" id="f4210e24-424b-40c4-9688-573a18aeb5e3" name="Match content of [ownerType] using RegEx" disabled="true">
+              <con:configuration>
+                <path>$['responses'][0]['payload']['synchMetaData']['ownerType']</path>
+                <content>true</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+                <regEx>PERSON</regEx>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="REST Request-CYRAS Event Create" id="a76333ed-b9c9-4711-850c-21e9da98e22a">
+        <con:settings/>
+        <con:config service="SalesforceEventCreateContact" resourcePath="/test-harness/prepare" methodName="" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="REST Request-CYRAS Event Create" id="e8ca1257-f90c-4aae-83fe-e1eaca238ff2" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="Accept" value="application/json"/>&#13;
+  &lt;con:entry key="Content-Type" value="application/json"/>&#13;
+&lt;/xml-fragment></con:setting>
+            </con:settings>
+            <con:endpoint>${#Project#stEndpoint}</con:endpoint>
+            <con:request>{
+    "forSystem": "CYRAS",
+    "events": [
+        {
+            "eventId": "TestPuneet2020080309:11",
+            "eventDateTime": "2020-07-27T02:54:43.035Z",
+            "objectType": "MERGE",
+            "objectID": ${cyrasId#cyrasId}
+        }
+    ],
+    "responses": [
+        {
+            "objectID": "${cyrasId#cyrasId}",
+            "path": "/v1/synch/person/merge/${cyrasId#cyrasId}",
+            "responseCode": 200,
+            "contentType": "application/json",
+            "payload": {
+                "header": {
+                    "sequence": "1"
+                },
+                "synchMetaData": {
+                    "ownerId": ${cyrasId#cyrasId},
+                    "ownerType": "MERGE",
+                    "ownerVersion": 1
+                },
+                "primaryPerson": {
+                    "ownerId": ${#[CyrasToSalesforce-MergePerson#CreatePerson1#cyrasId]#cyrasId},
+                    "ownerType": "PERSON",
+                    "ownerVersion": 4
+                },
+                "secondaryPerson": {
+                    "ownerId": ${#[CyrasToSalesforce-MergePerson#CreatePerson2#cyrasId]#cyrasId},
+                    "ownerType": "PERSON",
+                    "ownerVersion": 7
+                },
+                "mergedPerson": {
+                    "objectID": ${cyrasId#cyrasId},
+                    "lastModifiedBy": 92,
+                    "legalName": {
+                        "objectID": ${cyrasId#cylegalNameId},
+                        "givenNames": "${sfId#sfId}",
+                        "surname": "person.legalName.surname1",
+                        "preferredName": "person.legalName.preferredName1",
+                        "titleType": "11",
+                        "titleDescription": "Professor",
+                        "startDate": "2020-01-31",
+                        "endDate": "2020-12-31"
+                    },
+                    "deceased": false,
+					"dob": "1980-05-25",
+                    "homeEmail": "person.homeEmail@homeEmail.com",
+                    "workEmail": "person.workEmail@workEmail.com",
+                    "homePhone": "(07) 54266788",
+                    "mobilePhone": "021 123 4567",
+                    "genderDescription": "Male",
+                    "addresses": [
+                        {
+                            "objectID": ${cyrasId#cyaddressId},
+                            "isPrimary": "Y",
+                            "addressType": "HOME",
+                            "addressLine1": "24A John Downs Drive",
+                            "addressLine2": "Browns Bay",
+                            "city": "Auckland",
+                            "region": "GREATER AUCKLAND",
+                            "countryType": "NZ"
+                        }
+                    ],
+                    "phoneNumbers": [
+                        {
+                            "objectID": ${cyrasId#cycommunicationId},
+                            "description": "Work phone",
+                            "phoneNumber": "(07) 54266799",
+                            "modifiedDateTime": "2013-03-19T10:03:25.000Z"
+                        }
+                    ],
+                    "ethnicities": [
+                        {
+                            "objectID": ${cyrasId#cyethnicityId},
+                            "ethnicityCode": "211",
+                            "affiliationCode": "4444",
+                            "isPrimary": true
+                        }
+                    ],
+                    "carerAlerts": [
+                        {
+                            "objectID": ${cyrasId#cyalertId},
+                            "description": "this is the short description",
+                            "longDescription": "this is the long description",
+                            "startDatetime": "2020-01-01T12:01:02.000Z",
+                            "endDatetime": "",
+                            "criticalInformationType": "WSA",
+                            "alertType": "ASSOCIAT"
+                        }
+                    ],
+                    "otherNames": [
+                        {
+                            "objectID": ${cyrasId#cynameId},
+                            "givenNames": "person.otherNames.givenNames2",
+                            "surname": "person.otherNames.surname2",
+                            "preferredName": "person.otherNames.preferredName2",
+                            "startDate": "2020-01-26T12:01:02.000Z",
+                            "endDate": "2020-08-15T12:01:02.000Z",
+                            "titleType": "17",
+                            "titleDescription": "Senior Sergeant"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "objectID": "${sfId#sfId}",
+            "path": "/v1/synch/metadata/${cyrasId#cyrasId}",
+            "responseCode": 200,
+            "contentType": "application/json",
+            "payload": {
+                "header": {
+                    "sequence": "1"
+                },
+                "synchMetaData": {
+                    "foreignID": "123456",
+                    "foreignVersion": "234",
+                    "ownerType": "PERSON",
+                    "ownerId": ${cyrasId#cyrasId}
+                },
+                "person": {
+                    "objectID": ${cyrasId#cyrasId},
+                    "legalName": {
+                        "objectID": ${cyrasId#cylegalNameId},
+                        "givenNames": "${sfId#sfId}",
+                        "surname": "person.legalName.surname1",
+                        "preferredName": "person.legalName.preferredName1",
+                        "titleType": "11",
+                        "titleDescription": "Professor",
+                        "startDate": "2020-01-31",
+                        "endDate": "2020-12-31"
+                    },
+                    "deceased": false,
+					"dob": "1980-05-25",
+                    "homeEmail": "person.homeEmail@homeEmail.com",
+                    "workEmail": "person.workEmail@workEmail.com",
+                    "homePhone": "(07) 54266788",
+                    "mobilePhone": "021 123 4567",
+                    "genderDescription": "Male",
+                    "lastModifiedBy": 92,
+                    "addresses": [
+                        {
+                            "objectID": ${cyrasId#cyaddressId},
+                            "isPrimary": "Y",
+                            "addressType": "HOME",
+                            "addressLine1": "24A John Downs Drive",
+                            "addressLine2": "Browns Bay",
+                            "city": "Auckland",
+                            "region": "Auckland",
+                            "countryType": "NZ"
+                        }
+                    ],
+                    "phoneNumbers": [],
+                    "ethnicities": [],
+                    "carerAlerts": [
+                        {
+                            "objectID": ${cyrasId#cyalertId},
+                            "description": "this is the short description",
+                            "longDescription": "this is the long description",
+                            "startDatetime": "2020-01-01T12:01:02.000Z",
+                            "endDatetime": "",
+                            "criticalInformationType": "WSA",
+                            "alertType": "ASSOCIAT"
+                        }
+                    ],
+                    "otherNames": [
+                        {
+                            "objectID": ${cyrasId#cynameId},
+                            "givenNames": "person.otherNames.givenNames1",
+                            "surname": "person.otherNames.surname1",
+                            "preferredName": "person.otherNames.preferredName1",
+                            "startDate": "2020-09-07T12:01:02.000Z",
+                            "endDate": "2020-09-09T12:01:02.000Z",
+                            "titleType": "07",
+                            "titleDescription": "Mr"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}</con:request>
+            <con:originalUri>http://internal-alb-syndev-test-harness-399698269.ap-southeast-2.elb.amazonaws.com/test-harness/prepare</con:originalUri>
+            <con:assertion type="JsonPath RegEx Match" id="8033cd43-6026-4979-bbc2-122562c41fae" name="Match content of [forSystem] using RegEx" disabled="true">
+              <con:configuration>
+                <path>$['events'][0]['info']['forSystem']</path>
+                <content>true</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+                <regEx>Salesforce</regEx>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Valid HTTP Status Codes" id="67c4e5ab-2e74-4541-9532-06583994eb4c" name="Valid HTTP Status Codes">
+              <con:settings/>
+              <con:configuration>
+                <codes>201</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      
+      <con:testStep type="delay" name="Delay" id="cfd8a75f-ed99-49f2-926e-d18599954032"><con:settings/><con:config><delay>200</delay></con:config></con:testStep>
+      <con:testStep type="restrequest" name="GetSyncRequest" id="09f3c0ff-faea-4c5f-bd96-403ea945f7d0">
+        <con:settings/>
+        <con:config service="GetSyncRequest" resourcePath="/test-harness/sync-data/request/" methodName="SyncRequest" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="GetSyncRequest" id="b8778e6a-dbb8-48c3-829a-d1dac24a03c7" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="Accept" value="application/json"/>&#13;
+  &lt;con:entry key="Content-Type" value="application/json"/>&#13;
+&lt;/xml-fragment></con:setting>
+            </con:settings>
+            <con:endpoint>${#Project#stEndpoint}</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://internal-alb-syndev-test-harness-399698269.ap-southeast-2.elb.amazonaws.com/test-harness/system-entity/</con:originalUri>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <con:assertion type="JsonPath Existence Match" id="ce34b3b3-e5ab-45ce-84b4-a16eeafb4b30" name="Check for existence of [_id]"><con:configuration><path>$[0]['_id']</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="ab5aa5d1-77e7-4c6f-88a1-cb0e615ffc70" name="Match content of [status]"><con:configuration><path>$[0]['info']['status']</path><content>"Completed"</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Existence Match" id="086c11ee-c3b2-4697-aa1f-8db2090c646d" name="Check for existence of [entityMapId]"><con:configuration><path>$[0]['info']['entityMapId']</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Existence Match" id="4b99028a-7f25-451c-9ef7-cf88cd61c7e8" name="Check for existence of [sequenceNo]"><con:configuration><path>$[0]['info']['sequenceNo']</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Existence Match" id="bd1fcf6d-7a33-4d24-a604-251ec6383fa4" name="Check for existence of [trigger]"><con:configuration><path>$[0]['trigger']</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Existence Match" id="f8425103-3ea9-418b-ac55-3c4d114d302e" name="Check for existence of [events]"><con:configuration><path>$[0]['trigger']['events']</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Existence Match" id="8cb0dfb6-34fb-4f5d-9203-ddcba0374f34" name="Check for existence of [data]"><con:configuration><path>$[0]['data']</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Existence Match" id="4e889d3e-72a2-4278-b576-a6efc2def23d" name="Check for existence of [source]"><con:configuration><path>$[0]['data']['source']</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Existence Match" id="907e4e89-91e0-46df-ba3c-99505a70a984" name="Check for existence of [target]"><con:configuration><path>$[0]['data']['target']</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="8b846495-77c4-47ce-ad09-2a0f210c71cc" name="Match content of [LastName]"><con:configuration><path>$[0]['data']['target'][0]['value'][0]['body']['LastName']</path><content>${REST Request-CYRAS Event Create#RawRequest#$['responses'][0]['payload']['person']['legalName']['surname']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="dce282db-8a8a-4d19-9fbc-6ec05ff4431a" name="Match content of [Salutation]"><con:configuration><path>$[0]['data']['target'][0]['value'][0]['body']['Salutation']</path><content>${REST Request-CYRAS Event Create#RawRequest#$['responses'][0]['payload']['person']['legalName']['titleDescription']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="3d62c779-41a6-4a1d-8549-3daf97409965" name="Match content of [CG_Preferred_Name__c]"><con:configuration><path>$[0]['data']['target'][0]['value'][0]['body']['CG_Preferred_Name__c']</path><content>${REST Request-CYRAS Event Create#RawRequest#$['responses'][0]['payload']['person']['legalName']['preferredName']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="1c893124-a4ac-4eff-98dd-a1ab20678c2e" name="Match content of [vlocity_ps__Gender__c]"><con:configuration><path>$[0]['data']['target'][0]['value'][0]['body']['vlocity_ps__Gender__c']</path><content>${REST Request-CYRAS Event Create#RawRequest#$['responses'][0]['payload']['person']['genderDescription']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="5ba485f2-838d-464e-bbcf-910ea18d9b67" name="Match content of [MobilePhone]"><con:configuration><path>$[0]['data']['target'][0]['value'][0]['body']['MobilePhone']</path><content>${REST Request-CYRAS Event Create#RawRequest#$['responses'][0]['payload']['person']['mobilePhone']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="47f31fe1-7870-4263-9731-2ed3971d42e4" name="Match content of [Email]"><con:configuration><path>$[0]['data']['target'][0]['value'][0]['body']['Email']</path><content>${REST Request-CYRAS Event Create#RawRequest#$['responses'][0]['payload']['person']['homeEmail']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="8f05dfb3-110b-429c-82cf-bac36e24c4d7" name="Match content of [Title__c]"><con:configuration><path>$[0]['data']['target'][0]['value'][1]['body']['Title__c']</path><content>${REST Request-CYRAS Event Create#RawRequest#$['responses'][0]['payload']['person']['carerAlerts'][0]['description']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="cc22c0af-5d5f-43b5-bf0b-3f580d375f68" name="Match content of [Description__c]"><con:configuration><path>$[0]['data']['target'][0]['value'][1]['body']['Description__c']</path><content>${REST Request-CYRAS Event Create#RawRequest#$['responses'][0]['payload']['person']['carerAlerts'][0]['longDescription']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="7aaa04df-ff21-4a30-9470-be0c59af61a0" name="Match content of [CG_Last_Name__c]"><con:configuration><path>$[0]['data']['target'][0]['value'][2]['body']['CG_Last_Name__c']</path><content>${REST Request-CYRAS Event Create#RawRequest#$['responses'][0]['payload']['person']['legalName']['surname']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="a046d441-26ce-44e5-898e-ecb66aff197b" name="Match content of [CG_Salutation__c]"><con:configuration><path>$[0]['data']['target'][0]['value'][3]['body']['CG_Salutation__c']</path><content>${REST Request-CYRAS Event Create#RawRequest#$['responses'][0]['payload']['person']['otherNames'][0]['titleDescription']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="97f470af-2150-439e-8f6f-2d49be855c83" name="Match content of [CG_First_Name__c]"><con:configuration><path>$[0]['data']['target'][0]['value'][3]['body']['CG_First_Name__c']</path><content>${REST Request-CYRAS Event Create#RawRequest#$['responses'][0]['payload']['person']['otherNames'][0]['givenNames']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="032e698d-4b36-4cc9-bbfa-7eefeb80861c" name="Match content of [CG_Last_Name__c]"><con:configuration><path>$[0]['data']['target'][0]['value'][3]['body']['CG_Last_Name__c']</path><content>${REST Request-CYRAS Event Create#RawRequest#$['responses'][0]['payload']['person']['otherNames'][0]['surname']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="9b597915-8299-48d4-9e54-781ae241cacf" name="Match content of [statusChangedBy]"><con:configuration><path>$[0]['info']['statusChangedBy']</path><content>"pipeline-cyras-to-salesforce-person-merge"</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="7016f1a5-dec6-4b66-9d84-8dab3054af27" name="Match content of [Deceased__c]"><con:configuration><path>$[0]['data']['target'][0]['value']['newContact']['Contact']['Deceased__c']</path><content>${REST Request-CYRAS Event Create#RawRequest#$['responses'][0]['payload']['mergedPerson']['deceased']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="1697793f-f246-4c03-8f17-ef5a8648d1ff" name="Match content of [Deceased__c]"><con:configuration><path>$[0]['data']['target'][0]['value']['newContact']['Contact']['Deceased__c']</path><content>${REST Request-CYRAS Event Create#RawRequest#$['responses'][0]['payload']['mergedPerson']['deceased']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters><con:entry key="since" value="${REST Request-CYRAS Event Create#Response#$['events'][0]['info']['statusChangedAt']}"/></con:parameters>
+            <con:parameterOrder><con:entry>since</con:entry></con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="goto" name="Conditional Goto-Check Create Status" id="00548b83-03db-4a78-b6cd-d5b54b439590"><con:settings/><con:config xsi:type="con:GotoStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:condition><con:name>CheckStatus</con:name><con:type>XPATH</con:type><con:expression>//Response[1]/e[1]/info[1]/status[1]!="Completed"</con:expression><con:targetStep>Delay</con:targetStep></con:condition><con:condition><con:name>StatusExists</con:name><con:type>XPATH</con:type><con:expression>count(//Response[1]/e[1]/info[1]/status[1]) = 0</con:expression><con:targetStep>Delay</con:targetStep></con:condition></con:config></con:testStep>
+      <con:testStep type="transfer" name="Property Transfer" id="f6d45ec5-dbd6-497e-9e8d-cae96f9fb0e2">
+        <con:settings/>
+        <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="true" entitize="false" transferChildNodes="false">
+            <con:name>personGuid</con:name>
+            <con:sourceType>Response</con:sourceType>
+            <con:sourceStep>GetSyncRequest</con:sourceStep>
+            <con:sourcePath>$[0]['entityMappingOnCompletion']['PERSON'][0]['_id']</con:sourcePath>
+            <con:targetType>personGuid</con:targetType>
+            <con:targetStep>Properties</con:targetStep>
+            <con:targetPath/>
+            <con:type>JSONPATH</con:type>
+            <con:targetTransferType>JSONPATH</con:targetTransferType>
+            <con:upgraded>true</con:upgraded>
+          </con:transfers>
+          <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+            <con:name>PERSON_NAME-guid-1</con:name>
+            <con:sourceType>Response</con:sourceType>
+            <con:sourceStep>GetSyncRequest</con:sourceStep>
+            <con:sourcePath>$[0]['entityMappingOnCompletion']['PERSON_NAME'][1]['_id']</con:sourcePath>
+            <con:targetType>PERSON_NAME-guid-1</con:targetType>
+            <con:targetStep>Properties</con:targetStep>
+            <con:type>JSONPATH</con:type>
+            <con:targetTransferType>JSONPATH</con:targetTransferType>
+            <con:upgraded>true</con:upgraded>
+          </con:transfers>
+          <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" disabled="false" entitize="false" ignoreEmpty="false" transferChildNodes="false" transferToAll="false" useXQuery="false">
+            <con:name>PERSON_NAME-guid-0</con:name>
+            <con:sourceType>Response</con:sourceType>
+            <con:sourceStep>GetSyncRequest</con:sourceStep>
+            <con:sourcePath>$[0]['entityMappingOnCompletion']['PERSON_NAME'][0]['_id']</con:sourcePath>
+            <con:targetType>PERSON_NAME-guid-0</con:targetType>
+            <con:targetStep>Properties</con:targetStep>
+            <con:targetPath xsi:nil="true"/>
+            <con:type>JSONPATH</con:type>
+            <con:targetTransferType>JSONPATH</con:targetTransferType>
+            <con:upgraded>true</con:upgraded>
+          </con:transfers>
+          <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+            <con:name>ADDRESS-guid-0</con:name>
+            <con:sourceType>Response</con:sourceType>
+            <con:sourceStep>GetSyncRequest</con:sourceStep>
+            <con:sourcePath>$[0]['entityMappingOnCompletion']['ADDRESS'][0]['_id']</con:sourcePath>
+            <con:targetType>ADDRESS-guid-0</con:targetType>
+            <con:targetStep>Properties</con:targetStep>
+            <con:type>JSONPATH</con:type>
+            <con:targetTransferType>JSONPATH</con:targetTransferType>
+            <con:upgraded>true</con:upgraded>
+          </con:transfers>
+          <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+            <con:name>CRITICAL_INFORMATION-guid-0</con:name>
+            <con:sourceType>Response</con:sourceType>
+            <con:sourceStep>GetSyncRequest</con:sourceStep>
+            <con:sourcePath>$[0]['entityMappingOnCompletion']['CRITICAL_INFORMATION'][0]['_id']</con:sourcePath>
+            <con:targetType>CRITICAL_INFORMATION-guid-0</con:targetType>
+            <con:targetStep>Properties</con:targetStep>
+            <con:type>JSONPATH</con:type>
+            <con:targetTransferType>JSONPATH</con:targetTransferType>
+            <con:upgraded>true</con:upgraded>
+          </con:transfers>
+          <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+            <con:name>COMMUNICATION-guid-0</con:name>
+            <con:sourceType>Response</con:sourceType>
+            <con:sourceStep>GetSyncRequest</con:sourceStep>
+            <con:sourcePath>$[0]['entityMappingOnCompletion']['COMMUNICATION'][0]['_id']</con:sourcePath>
+            <con:targetType>COMMUNICATION-guid-0</con:targetType>
+            <con:targetStep>Properties</con:targetStep>
+            <con:type>JSONPATH</con:type>
+            <con:targetTransferType>JSONPATH</con:targetTransferType>
+            <con:upgraded>true</con:upgraded>
+          </con:transfers>
+          <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+            <con:name>ETHNICITY-guid-0</con:name>
+            <con:sourceType>Response</con:sourceType>
+            <con:sourceStep>GetSyncRequest</con:sourceStep>
+            <con:sourcePath>$[0]['entityMappingOnCompletion']['ETHNICITY'][0]['_id']</con:sourcePath>
+            <con:targetType>ETHNICITY-guid-0</con:targetType>
+            <con:targetStep>Properties</con:targetStep>
+            <con:type>JSONPATH</con:type>
+            <con:targetTransferType>JSONPATH</con:targetTransferType>
+            <con:upgraded>true</con:upgraded>
+          </con:transfers>
+        </con:config>
+      </con:testStep>
+      
+      
+      
+      
+      <con:testStep type="properties" name="Properties" id="da67eca7-e99a-42d3-ae00-311a6ecf01f6">
+        <con:settings/>
+        <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:properties>
+            <con:property>
+              <con:name>personGuid</con:name>
+              <con:value>3e244b88-9526-400a-8b93-20b14fab8b34</con:value>
+            </con:property>
+            <con:property>
+              <con:name>PERSON_NAME-guid-1</con:name>
+              <con:value>290a3b95-693b-4084-a7d7-a613e71a0d25</con:value>
+            </con:property>
+            <con:property>
+              <con:name>PERSON_NAME-guid-0</con:name>
+              <con:value>63c2291b-1b6b-4f8a-b9f5-d6bcbfab75dd</con:value>
+            </con:property>
+            <con:property>
+              <con:name>ADDRESS-guid-0</con:name>
+              <con:value>6d566b68-51bc-44c5-9ce2-4907e61b8dec</con:value>
+            </con:property>
+            <con:property>
+              <con:name>CRITICAL_INFORMATION-guid-0</con:name>
+              <con:value xsi:nil="true"/>
+            </con:property>
+            <con:property>
+              <con:name>COMMUNICATION-guid-0</con:name>
+              <con:value>66c56561-7612-4477-bf56-7b1f9eecf544</con:value>
+            </con:property>
+            <con:property>
+              <con:name>ETHNICITY-guid-0</con:name>
+              <con:value>88c9d264-82f6-4148-86af-c5dc6a4b0ef3</con:value>
+            </con:property>
+          </con:properties>
+        </con:config>
+      </con:testStep><con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>e551f9e1-8d15-476b-bb8d-d2bd0e8bdfc5</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>61c22223-68d0-44f9-91f4-7fd551923ef7</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>611183b9-eb19-49b4-8985-4d2c56fb597a</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>11b8fb4b-707f-4783-9bd7-5bf823ed18fb</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>d3ae848b-7d03-49f3-92e3-eb8db769854d</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>0401ba52-7a89-48fe-86a7-cb7d1a054875</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>1357452b-3270-4012-9ef1-064cb48523b5</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>b9f3bbb3-abdc-49c1-aece-3ead3ad841ef</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>e4b06591-ce4b-4fa5-8044-f5d91faeaca9</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>1cfe2873-dcd3-40c4-9a66-16fbaf608aa2</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>8681c769-910f-45c3-93b4-1fa07b2dda1c</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>403010ed-2c7b-4ff8-9b42-9b550b67e18d</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>fd12cf1c-b861-4727-98ff-ee5864a83665</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    <con:breakPoints><con:testStepId>06c45605-a7a8-4ed2-bf5c-90029c897114</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>ba6a0adf-11e9-4647-8dba-017ca1267012</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>acd3d750-699e-46ba-a0f6-df0c7c662c8e</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>76324efa-5053-42ce-8bed-6b6203e4830b</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>6815a0b1-5e57-4cc5-85c2-1d7b8fd0a2af</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>0ea9dfcf-166f-47a7-9969-76d0ae565c5d</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>0c8fc02d-b78b-44b9-b251-fb0cd5ee2f6b</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>919f44df-e9f1-4d55-89f0-adf82367dbf2</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>bc326218-5900-4aea-bbb3-b52efbd14300</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>6ae4717c-0d83-40fc-a2e5-9ca4f51bb49e</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>d9ab770f-2def-41d1-8fb0-f4c7b8bbd711</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>2e14ab9e-f300-413c-b5ff-38068084225c</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>7f80c83b-74e3-41c5-8804-e9b51fc253d8</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>85817e98-841b-4613-a49c-be0c5ed54fae</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>cfd8a75f-ed99-49f2-926e-d18599954032</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints></con:testCase>

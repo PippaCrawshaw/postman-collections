@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="" path="/test-harness/prepare" id="daec2982-b77a-40ca-b975-9dcf6f873125" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="daec2982-b77a-40ca-b975-9dcf6f873125fileName">%2Ftest-harness%2Fprepare</con:setting></con:settings><con:parameters/><con:method name="" id="dfacf01f-8f08-48b8-aa17-dc31f1f88502" method="POST"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>201</con:status><con:params/><con:element xmlns:prep="http://internal-alb-syndev-test-harness-399698269.ap-southeast-2.elb.amazonaws.com/test-harness/prepare">prep:Response</con:element></con:representation><con:representation type="FAULT"><con:mediaType>text/html; charset=utf-8</con:mediaType><con:status>400</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="FAULT"><con:mediaType>text/html</con:mediaType><con:status>503</con:status><con:params/><con:element>html</con:element></con:representation><con:request name="Request 1" id="e8ca1257-f90c-4aae-83fe-e1eaca238ff2" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="Accept" value="application/json"/>&#13;
+  &lt;con:entry key="Content-Type" value="application/json"/>&#13;
+&lt;/xml-fragment></con:setting></con:settings><con:endpoint>http://internal-alb-syndev-test-harness-399698269.ap-southeast-2.elb.amazonaws.com</con:endpoint><con:request><![CDATA[{
+    "forSystem": "Salesforce",
+    "events": [
+        {
+            "data": {
+                "schema": "7cBPcbWRGAqoVPAYeCcC2w",
+                "payload": {
+                    "CreatedDate": "2017-04-14T13:35:23Z",
+                    "CreatedById": "005B00000031mqb",
+                    "eventid": "004F00034524slt",
+                    "objectType": "Person",
+                    "objectId": "SFOIDTestPippa2108Fri1588",
+                    "objectExternalGUID": "",
+                    "sfVersion": "2017-04-14T13: 35: 23Z"
+                },
+                "event": {
+                    "replayId": 1
+                }
+            },
+            "channel": "/event/SyncEvent_e"
+        }
+    ],
+    "responses": [
+        {
+            "objectId": "SFOIDTestPippa2108Fri1588",
+            "path": "/services/data/v48.0/composite",
+            "responseCode": 200,
+            "contentType": "application/json",
+            "payload": {
+                "compositeResponse": [
+                    {
+                        "body": {
+                            "attributes": {
+                                "type": "Contact",
+                                "url": "/services/data/v48.0/sobjects/Contact/SFOIDTestPippa2108Fri1588"
+                            },
+                            "Id": "SFOIDTestPippa2108Fri1588",
+                            "IsDeleted": false,
+                            "MasterRecordId": null,
+                            "AccountId": "0015P000004uivnQAA",
+                            "LastName": "Existence",
+                            "FirstName": "Co",
+                            "Salutation": "Mr",
+                            "Name": "Co Existence",
+                            "RecordTypeId": "01210000000ondbAAA",
+                            "OtherStreet": null,
+                            "OtherCity": null,
+                            "OtherState": null,
+                            "OtherPostalCode": null,
+                            "OtherCountry": null,
+                            "OtherLatitude": null,
+                            "OtherLongitude": null,
+                            "OtherGeocodeAccuracy": null,
+                            "OtherAddress": null,
+                            "MailingStreet": null,
+                            "MailingCity": null,
+                            "MailingState": null,
+                            "MailingPostalCode": null,
+                            "MailingCountry": null,
+                            "MailingLatitude": null,
+                            "MailingLongitude": null,
+                            "MailingGeocodeAccuracy": null,
+                            "MailingAddress": null,
+                            "Phone": "041234567",
+                            "Fax": null,
+                            "MobilePhone": "0211234567",
+                            "HomePhone": null,
+                            "OtherPhone": null,
+                            "AssistantPhone": null,
+                            "ReportsToId": null,
+                            "Email": "co.existence@gmail.com",
+                            "Title": null,
+                            "Department": null,
+                            "AssistantName": null,
+                            "LeadSource": null,
+                            "Birthdate": "1985-07-01",
+                            "Description": null,
+                            "OwnerId": "0055P000000haCPQAY",
+                            "HasOptedOutOfEmail": false,
+                            "HasOptedOutOfFax": false,
+                            "DoNotCall": false,
+                            "CreatedDate": "2020-07-02T00:12:30.000+0000",
+                            "CreatedById": "0055P000000haCPQAY",
+                            "LastModifiedDate": "2020-07-02T00:43:31.000+0000",
+                            "LastModifiedById": "0055P000000haCPQAY",
+                            "SystemModstamp": "2020-07-02T03:24:32.000+0000",
+                            "LastActivityDate": "2020-07-02",
+                            "LastCURequestDate": null,
+                            "LastCUUpdateDate": null,
+                            "LastViewedDate": "2020-07-28T05:10:35.000+0000",
+                            "LastReferencedDate": "2020-07-28T05:10:35.000+0000",
+                            "EmailBouncedReason": null,
+                            "EmailBouncedDate": null,
+                            "IsEmailBounced": false,
+                            "PhotoUrl": "/services/images/photo/0035P000004NgzpQAC",
+                            "Jigsaw": null,
+                            "JigsawContactId": null,
+                            "IndividualId": null,
+                            "CG_User_Account__c": null,
+                            "CG_Legal__c": null,
+                            "CG_AutoCreated__c": true,
+                            "CG_CYRAS_ID__c": null,
+                            "CG_Salutation__c": "Mr",
+                            "CG_Confidential__c": false,
+                            "Salutation_Copy__c": "Mr",
+                            "CG_Hidden_Gender_Type__c": "141017",
+                            "CG_Hidden_Salutation__c": "304394",
+                            "CG_CYRAS_Confidentiality_Text__c": null,
+                            "CG_Preferred_Name__c": "Co",
+                            "CG_Caregiver_Dashboard_Reference__c": null,
+                            "vlocity_ps__AccountType__c": null,
+                            "vlocity_ps__Account__c": null,
+                            "vlocity_ps__Age__c": 35,
+                            "vlocity_ps__AnnualIncome__c": null,
+                            "vlocity_ps__ContactName__c": null,
+                            "vlocity_ps__CurrentApplicationId__c": null,
+                            "vlocity_ps__CustomerSentiment__c": null,
+                            "vlocity_ps__DaysSinceLastContact__c": 0,
+                            "vlocity_ps__DriversLicenseNumber__c": null,
+                            "vlocity_ps__EmploymentStatus__c": null,
+                            "vlocity_ps__Gender__c": "Male",
+                            "vlocity_ps__Image__c": null,
+                            "vlocity_ps__IsActive__c": false,
+                            "vlocity_ps__IsEmployee__c": false,
+                            "vlocity_ps__IsPartner__c": false,
+                            "vlocity_ps__IsPersonAccount__c": false,
+                            "vlocity_ps__LastContactbyRecordOwner__c": null,
+                            "vlocity_ps__Location__c": null,
+                            "vlocity_ps__MiddleName__c": null,
+                            "vlocity_ps__NetWorth__c": null,
+                            "vlocity_ps__Occupation__c": null,
+                            "vlocity_ps__PartyId__c": "a2m5P000003eVIUQA2",
+                            "vlocity_ps__PrimaryEmployerId__c": null,
+                            "vlocity_ps__SocialSecurityNumber__c": null,
+                            "vlocity_ps__StateOfIssuance__c": null,
+                            "vlocity_ps__Status__c": null,
+                            "vlocity_ps__TaxId__c": null,
+                            "vlocity_ps__Type__c": null,
+                            "vlocity_ps__USCitizen__c": false,
+                            "vlocity_ps__UserEmployeeNumber__c": null,
+                            "vlocity_ps__UserId__c": null,
+                            "vlocity_ps__WebSite__c": null,
+                            "CG_Current_Address__c": "56 THE TERRACE, Wellington Central, WELLINGTON, New Zealand, 6011",
+                            "CG_Active_Portal_User__c": true,
+                            "CMS_Created_At__c": null,
+                            "CMS_Created_By__c": null,
+                            "CMS_External_ID__c": null,
+                            "CMS_ID__c": null,
+                            "CMS_Organisation__c": null,
+                            "CMS_Updated_At__c": null,
+                            "CMS_Updated_By__c": null,
+                            "CG_Communication_Channel__c": "Phone",
+                            "CMS_Contact_ID__c": null,
+                            "CG_Person_Name_Count__c": 0,
+                            "CG_Best_Contact_Time__c": "Best contact time field",
+                            "CG_IsAdult__c": false,
+                            "CYRAS_LINK_ID__c": null,
+                            "SYNCH_GUID__c": null,
+                            "CG_CYRAS_Owner__c": null,
+                            "CG_CYRAS_Creator__c": null
+                        },
+                        "httpHeaders": {
+                            "Last-Modified": "Thu, 2 Jul 2020 03:24:32 GMT"
+                        },
+                        "httpStatusCode": 200,
+                        "referenceId": "person"
+                    },
+                    {
+                        "body": {
+                            "totalSize": 2,
+                            "done": true,
+                            "records": [
+                                {
+                                    "attributes": {
+                                        "type": "CG_Ethnicity__c",
+                                        "url": "/services/data/v48.0/sobjects/CG_Ethnicity__c/a045P000000yDx4QAE"
+                                    },
+                                    "Id": "a045P000000yDx4QAE",
+                                    "IsDeleted": false,
+                                    "Name": "E-005027",
+                                    "CreatedDate": "2020-07-02T00:13:12.000+0000",
+                                    "CreatedById": "0055P000000haCPQAY",
+                                    "LastModifiedDate": "2020-07-02T00:13:12.000+0000",
+                                    "LastModifiedById": "0055P000000haCPQAY",
+                                    "SystemModstamp": "2020-07-02T00:13:12.000+0000",
+                                    "LastActivityDate": null,
+                                    "LastViewedDate": "2020-07-03T02:17:54.000+0000",
+                                    "LastReferencedDate": "2020-07-03T02:17:54.000+0000",
+                                    "CG_Contact__c": "0035P000004NgzpQAC",
+                                    "CG_Ethnicity__c": "Maori",
+                                    "CG_Hidden_Ethnicity__c": "159552",
+                                    "CG_Hidden_Island__c": null,
+                                    "CG_Hidden_Iwi__c": null,
+                                    "CG_Island__c": null,
+                                    "CG_Iwi__c": "Don't Know",
+                                    "CG_Other_Ethnicity__c": null,
+                                    "CG_Caregiver_Dashboard_Reference__c": null,
+                                    "SYNCH_GUID__c": null
+                                },
+                                {
+                                    "attributes": {
+                                        "type": "CG_Ethnicity__c",
+                                        "url": "/services/data/v48.0/sobjects/CG_Ethnicity__c/a045P000000yDy7QAE"
+                                    },
+                                    "Id": "a045P000000yDy7QAE",
+                                    "IsDeleted": false,
+                                    "Name": "E-005028",
+                                    "CreatedDate": "2020-07-02T00:42:33.000+0000",
+                                    "CreatedById": "0055P000000haCPQAY",
+                                    "LastModifiedDate": "2020-07-02T00:42:33.000+0000",
+                                    "LastModifiedById": "0055P000000haCPQAY",
+                                    "SystemModstamp": "2020-07-02T00:42:33.000+0000",
+                                    "LastActivityDate": null,
+                                    "LastViewedDate": "2020-07-03T02:17:13.000+0000",
+                                    "LastReferencedDate": "2020-07-03T02:17:13.000+0000",
+                                    "CG_Contact__c": "0035P000004NgzpQAC",
+                                    "CG_Ethnicity__c": "Maori",
+                                    "CG_Hidden_Ethnicity__c": "159552",
+                                    "CG_Hidden_Island__c": null,
+                                    "CG_Hidden_Iwi__c": null,
+                                    "CG_Island__c": null,
+                                    "CG_Iwi__c": "Ngati Porou",
+                                    "CG_Other_Ethnicity__c": null,
+                                    "CG_Caregiver_Dashboard_Reference__c": null,
+                                    "SYNCH_GUID__c": null
+                                }
+                            ]
+                        },
+                        "httpHeaders": {},
+                        "httpStatusCode": 200,
+                        "referenceId": "ethnicities"
+                    },
+                    {
+                        "body": {
+                            "totalSize": 2,
+                            "done": true,
+                            "records": [
+                                {
+                                    "attributes": {
+                                        "type": "Person_Name__c",
+                                        "url": "/services/data/v48.0/sobjects/Person_Name__c/a095P000000Kxq4QAC"
+                                    },
+                                    "Id": "a095P000000Kxq4QAC",
+                                    "IsDeleted": false,
+                                    "Name": "PN-029289",
+                                    "RecordTypeId": "01210000000ooqhAAA",
+                                    "CreatedDate": "2020-07-02T00:12:30.000+0000",
+                                    "CreatedById": "0055P000000haCPQAY",
+                                    "LastModifiedDate": "2020-07-02T00:12:30.000+0000",
+                                    "LastModifiedById": "0055P000000haCPQAY",
+                                    "SystemModstamp": "2020-07-02T00:12:30.000+0000",
+                                    "LastActivityDate": null,
+                                    "LastViewedDate": "2020-07-03T02:06:37.000+0000",
+                                    "LastReferencedDate": "2020-07-03T02:06:37.000+0000",
+                                    "CG_Contact__c": "0035P000004NgzpQAC",
+                                    "CG_Auto_Created__c": true,
+                                    "CG_Bypass_End_Date_VR__c": false,
+                                    "CG_Comments__c": null,
+                                    "CG_End_Date__c": null,
+                                    "CG_First_Name__c": "Co",
+                                    "CG_Most_Recent__c": true,
+                                    "CG_Last_Name__c": "Existence",
+                                    "CG_Name_Type__c": "Legal",
+                                    "CG_Salutation__c": "Mr",
+                                    "CG_Start_Date__c": "2020-07-02",
+                                    "CG_Hidden_Name_Type__c": "140915",
+                                    "CG_Hidden_Salutation__c": "304394",
+                                    "CG_Legal__c": "Legal",
+                                    "SYNCH_GUID__c": null
+                                },
+                                {
+                                    "attributes": {
+                                        "type": "Person_Name__c",
+                                        "url": "/services/data/v48.0/sobjects/Person_Name__c/a095P000000Kxq9QAC"
+                                    },
+                                    "Id": "a095P000000Kxq9QAC",
+                                    "IsDeleted": false,
+                                    "Name": "PN-029290",
+                                    "RecordTypeId": "01210000000ooqhAAA",
+                                    "CreatedDate": "2020-07-02T00:42:27.000+0000",
+                                    "CreatedById": "0055P000000haCPQAY",
+                                    "LastModifiedDate": "2020-07-02T00:42:27.000+0000",
+                                    "LastModifiedById": "0055P000000haCPQAY",
+                                    "SystemModstamp": "2020-07-02T00:42:27.000+0000",
+                                    "LastActivityDate": null,
+                                    "LastViewedDate": "2020-07-03T02:07:26.000+0000",
+                                    "LastReferencedDate": "2020-07-03T02:07:26.000+0000",
+                                    "CG_Contact__c": "0035P000004NgzpQAC",
+                                    "CG_Auto_Created__c": true,
+                                    "CG_Bypass_End_Date_VR__c": false,
+                                    "CG_Comments__c": null,
+                                    "CG_End_Date__c": "2020-07-02",
+                                    "CG_First_Name__c": "Colin",
+                                    "CG_Most_Recent__c": false,
+                                    "CG_Last_Name__c": "Existence",
+                                    "CG_Name_Type__c": "Legal",
+                                    "CG_Salutation__c": "Mr",
+                                    "CG_Start_Date__c": "2020-07-02",
+                                    "CG_Hidden_Name_Type__c": "140915",
+                                    "CG_Hidden_Salutation__c": "304394",
+                                    "CG_Legal__c": null,
+                                    "SYNCH_GUID__c": null
+                                }
+                            ]
+                        },
+                        "httpHeaders": {},
+                        "httpStatusCode": 200,
+                        "referenceId": "names"
+                    },
+                    {
+                        "body": {
+                            "totalSize": 3,
+                            "done": true,
+                            "records": [
+                                {
+                                    "attributes": {
+                                        "type": "CG_Related_Address__c",
+                                        "url": "/services/data/v48.0/sobjects/CG_Related_Address__c/a055P000000HTakQAG"
+                                    },
+                                    "Id": "a055P000000HTakQAG",
+                                    "CG_Current_Address__c": false,
+                                    "CG_Type__c": null,
+                                    "CG_Start_Date__c": "2020-07-02",
+                                    "CG_End_Date__c": null,
+                                    "CG_Address__c": "a035P000000vVTaQAM",
+                                    "CG_Address__r": {
+                                        "attributes": {
+                                            "type": "CG_Address__c",
+                                            "url": "/services/data/v48.0/sobjects/CG_Address__c/a035P000000vVTaQAM"
+                                        },
+                                        "CG_Corelogic_Address_ID__c": "A1003097332",
+                                        "CG_Street_Address__c": "7 LINCOLN TAI TAPU ROAD",
+                                        "CG_Additional_Address__c": null,
+                                        "CG_Suburb__c": "Tai Tapu",
+                                        "CG_City__c": "TAITAPU",
+                                        "CG_Postcode__c": "7672",
+                                        "CG_Country__c": "New Zealand"
+                                    }
+                                },
+                                {
+                                    "attributes": {
+                                        "type": "CG_Related_Address__c",
+                                        "url": "/services/data/v48.0/sobjects/CG_Related_Address__c/a055P000000HTalQAG"
+                                    },
+                                    "Id": "a055P000000HTalQAG",
+                                    "CG_Current_Address__c": true,
+                                    "CG_Type__c": "Home",
+                                    "CG_Start_Date__c": "2020-07-02",
+                                    "CG_End_Date__c": null,
+                                    "CG_Address__c": "a035P0000010zvcQAA",
+                                    "CG_Address__r": {
+                                        "attributes": {
+                                            "type": "CG_Address__c",
+                                            "url": "/services/data/v48.0/sobjects/CG_Address__c/a035P0000010zvcQAA"
+                                        },
+                                        "CG_Corelogic_Address_ID__c": "A1002097012",
+                                        "CG_Street_Address__c": "56 THE TERRACE",
+                                        "CG_Additional_Address__c": null,
+                                        "CG_Suburb__c": "Wellington Central",
+                                        "CG_City__c": "WELLINGTON",
+                                        "CG_Postcode__c": "6011",
+                                        "CG_Country__c": "New Zealand"
+                                    }
+                                },
+                                {
+                                    "attributes": {
+                                        "type": "CG_Related_Address__c",
+                                        "url": "/services/data/v48.0/sobjects/CG_Related_Address__c/a055P000000HTamQAG"
+                                    },
+                                    "Id": "a055P000000HTamQAG",
+                                    "CG_Current_Address__c": false,
+                                    "CG_Type__c": null,
+                                    "CG_Start_Date__c": "2013-07-01",
+                                    "CG_End_Date__c": "2020-07-01",
+                                    "CG_Address__c": "a035P0000010zvdQAA",
+                                    "CG_Address__r": {
+                                        "attributes": {
+                                            "type": "CG_Address__c",
+                                            "url": "/services/data/v48.0/sobjects/CG_Address__c/a035P0000010zvdQAA"
+                                        },
+                                        "CG_Corelogic_Address_ID__c": "A1001942983",
+                                        "CG_Street_Address__c": "175 THE TERRACE",
+                                        "CG_Additional_Address__c": null,
+                                        "CG_Suburb__c": "Wellington Central",
+                                        "CG_City__c": "WELLINGTON",
+                                        "CG_Postcode__c": "6011",
+                                        "CG_Country__c": "New Zealand"
+                                    }
+                                }
+                            ]
+                        },
+                        "httpHeaders": {},
+                        "httpStatusCode": 200,
+                        "referenceId": "relatedAddresses"
+                    },
+                    {
+                        "body": {
+                            "totalSize": 1,
+                            "done": true,
+                            "records": [
+                                {
+                                    "attributes": {
+                                        "type": "Alert__c",
+                                        "url": "/services/data/v48.0/sobjects/Alert__c/a5l5P0000000cawQAA"
+                                    },
+                                    "Id": "a5l5P0000000cawQAA",
+                                    "OwnerId": "0055P000000q3ltQAA",
+                                    "IsDeleted": false,
+                                    "Name": "A-00026",
+                                    "CreatedDate": "2020-07-28T05:11:27.000+0000",
+                                    "CreatedById": "0055P000000q3ltQAA",
+                                    "LastModifiedDate": "2020-07-28T05:11:27.000+0000",
+                                    "LastModifiedById": "0055P000000q3ltQAA",
+                                    "SystemModstamp": "2020-07-28T05:11:27.000+0000",
+                                    "LastViewedDate": "2020-07-28T05:11:29.000+0000",
+                                    "LastReferencedDate": "2020-07-28T05:11:29.000+0000",
+                                    "Contact__c": "0035P000004NgzpQAC",
+                                    "Description__c": "Alerts sample",
+                                    "End_Date__c": null,
+                                    "Household__c": null,
+                                    "Record__c": "5005P000001aJIHQA2",
+                                    "Sub_Type__c": "Associations pose risks",
+                                    "Type__c": "Person",
+                                    "SYNCH_GUID__c": "con-al-guid1"
+                                }
+                            ]
+                        },
+                        "httpHeaders": {},
+                        "httpStatusCode": 200,
+                        "referenceId": "alerts"
+                    }
+                ]
+            }
+        },
+        {
+            "objectId": "SFOIDTestPippa2108Fri1588",
+            "path": "/services/data/v48.0/composite",
+            "responseCode": 200,
+            "contentType": "application/json",
+            "payload": {
+                "compositeResponse": [
+                    {
+                        "body": {
+                            "id": "SFOIDTestPippa2108Fri1588",
+                            "success": true,
+                            "errors": []
+                        },
+                        "httpHeaders": {
+                            "Location": "/services/data/v48.0/sobjects/Contact/SFOIDTestPippa2108Fri1588"
+                        },
+                        "httpStatusCode": 201,
+                        "referenceId": "person"
+                    },
+                    {
+                        "body": {
+                            "id": "",
+                            "success": true,
+                            "errors": []
+                        },
+                        "httpHeaders": {
+                            "Location": "/services/data/v48.0/sobjects/CG_Ethnicity__c/<SFOBJECTID for Ethnicity>"
+                        },
+                        "httpStatusCode": 201,
+                        "referenceId": "ethnicity"
+                    },
+                    {
+                        "body": {
+                            "id": "<SFOBJECTID for person name>",
+                            "success": true,
+                            "errors": []
+                        },
+                        "httpHeaders": {
+                            "Location": "/services/data/v48.0/sobjects/Person_Name__c/<SFOBJECTID for person name>"
+                        },
+                        "httpStatusCode": 201,
+                        "referenceId": "personName"
+                    },
+                    {
+                        "body": {
+                            "id": "<SFOBJECTID for address>",
+                            "success": true,
+                            "errors": []
+                        },
+                        "httpHeaders": {
+                            "Location": "/services/data/v48.0/sobjects/CG_Address__c/<SFOBJECTID for address>"
+                        },
+                        "httpStatusCode": 201,
+                        "referenceId": "address"
+                    },
+                    {
+                        "body": {
+                            "id": "",
+                            "success": true,
+                            "errors": []
+                        },
+                        "httpHeaders": {
+                            "Location": "/services/data/v48.0/sobjects/CG_Related_Address__c/<SFOBJECTID for related address>"
+                        },
+                        "httpStatusCode": 201,
+                        "referenceId": "relatedAddresses"
+                    },
+                    {
+                        "body": {
+                            "id": "",
+                            "success": true,
+                            "errors": []
+                        },
+                        "httpHeaders": {
+                            "Location": "/services/data/v48.0/sobjects/Alert__c/<SFOBJECTID for alerts>"
+                        },
+                        "httpStatusCode": 201,
+                        "referenceId": "alerts"
+                    }
+                ]
+            }
+        }
+    ]
+}]]></con:request><con:originalUri>http://internal-alb-syndev-test-harness-399698269.ap-southeast-2.elb.amazonaws.com/test-harness/prepare</con:originalUri><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:parameters/></con:request></con:method></con:resource>

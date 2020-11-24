@@ -1,0 +1,969 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="580b5166-59f7-4754-9f6c-46e6617f6942" discardOkResults="true" failOnError="false" failTestCaseOnErrors="false" keepSession="false" name="SFtoCYCreateUpdatePerson" searchProperties="true" timeout="60000" maxResults="3" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" zephyrTestName="" zephyrTestId="" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="580b5166-59f7-4754-9f6c-46e6617f6942fileName">SFtoCYCreateUpdatePerson</con:setting></con:settings><con:savedRecentRuns>1</con:savedRecentRuns><con:testStep type="groovy" name="Groovy to generate SFId" id="ebf1ac8b-37f6-4448-807a-0f51ffb08247"><con:settings/><con:config><script>import org.apache.commons.lang.RandomStringUtils
+
+String charset = (('A'..'Z') + ('0'..'9')).join()
+Integer length = 9
+String randomString = RandomStringUtils.random(length, charset.toCharArray())
+</script></con:config></con:testStep><con:testStep type="groovy" name="Groovy to generate CYId" id="a1f39df0-f047-4265-a324-4808e08c14dc"><con:settings/><con:config><script>import org.apache.commons.lang.RandomStringUtils
+
+String charset = ( ('0'..'9')).join()
+Integer length = 5
+String randomString = RandomStringUtils.random(length, charset.toCharArray())
+</script></con:config></con:testStep><con:testStep type="restrequest" name="CYRAS Response Create" id="33c5316a-01be-4059-978c-fc0b1e00b4e1"><con:settings/><con:config service="Prepare-CreatePerson-SFTOC-CYRASResponse" resourcePath="/test-harness/prepare" methodName="Prepare" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="CYRAS Response Create" id="e20810ad-1b90-4995-b930-10c3545e63d0" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="Accept" value="application/json"/>&#13;
+  &lt;con:entry key="Content-Type" value="application/json"/>&#13;
+&lt;/xml-fragment></con:setting></con:settings><con:endpoint>${#Project#stEndpoint}</con:endpoint><con:request>{
+    "forSystem": "CYRAS",
+    "responses": [
+        {
+            "objectId": "SFId${Groovy to generate SFId#result}",
+            "path": "/v1/synch/person",
+            "responseCode": 200,
+            "contentType": "application/json",
+            "payload": {
+                "header": {
+                    "sequence": "1",
+                    "timestamp": "2020-07-27T02:54:43.035Z"
+                },
+                "synchMetaData": {
+                    "ownerId": ${Groovy to generate CYId#result},
+                    "ownerType": "PERSON",
+                    "ownerVersion": 1,
+                    "foreignId": "SFId${Groovy to generate SFId#result}"
+                },
+                "references": [
+                    {
+                        "objectID": 1${Groovy to generate CYId#result},
+                        "externalGuid": "$.person.ethnicities[0].externalGuid",
+                        "objectType": "ETHNICITY"
+                    },
+                    {
+                        "objectID": 4${Groovy to generate CYId#result},
+                        "externalGuid": "$.person.carerAlerts[0].externalGuid",
+                        "objectType": "CRITICAL_INFORMATION"
+                    },
+                    {
+                        "objectID": ${Groovy to generate CYId#result},
+                        "externalGuid": "$.person.externalGuid",
+                        "objectType": "PERSON"
+                    },
+                    {
+                        "objectID": 2${Groovy to generate CYId#result},
+                        "externalGuid": "$.person.legalName.externalGuid",
+                        "objectType": "PERSON_NAME"
+                    },
+                    {
+                        "objectID": 3${Groovy to generate CYId#result},
+                        "externalGuid": "$.person.addresses[0].externalGuid",
+                        "objectType": "ADDRESS"
+                    }
+                ],
+                "deletedObjects": []
+            }
+        }
+    ]
+}</con:request><con:originalUri>http://internal-alb-syndev-test-harness-399698269.ap-southeast-2.elb.amazonaws.com/test-harness/prepare</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="235c6fd0-9c46-4a1b-8b5c-219f91aeaeeb" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>201</codes></con:configuration></con:assertion><con:assertion type="JsonPath RegEx Match" id="ddad5316-2ae6-4667-8478-9e0d34fec916" name="Match content of [forSystem] using RegEx"><con:configuration><path>$['responses'][0]['info']['forSystem']</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments><regEx>CYRAS</regEx></con:configuration></con:assertion><con:assertion type="JsonPath RegEx Match" id="f4210e24-424b-40c4-9688-573a18aeb5e3" name="Match content of [ownerType] using RegEx"><con:configuration><path>$['responses'][0]['payload']['synchMetaData']['ownerType']</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments><regEx>PERSON</regEx></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Salesforce Event Create" id="01c6e814-ca0f-4b91-a454-46f1aed3654d"><con:settings/><con:config service="SalesforceEventCreateContact" resourcePath="/test-harness/prepare" methodName="" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Salesforce Event Create" id="e8ca1257-f90c-4aae-83fe-e1eaca238ff2" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="Accept" value="application/json"/>&#13;
+  &lt;con:entry key="Content-Type" value="application/json"/>&#13;
+&lt;/xml-fragment></con:setting></con:settings><con:endpoint>${#Project#stEndpoint}</con:endpoint><con:request><![CDATA[{
+	"forSystem": "Salesforce",
+	"events": [
+		{
+			"schema": "7cBPcbWRGAqoVPAYeCcC2w",
+			"payload": {
+				"CreatedDate": "${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ").format(new Date())}",
+				"CreatedById": "005B00000031mqb",
+				"eventid": "004F00034524slt",
+				"ObjectType__c": "Person",
+				"ObjectId__c": "SFId${Groovy to generate SFId#result}",
+				"ObjectExternalGUID__c": "",
+				"SFVersion__c": "2017-04-14T13: 35: 23Z"
+			},
+			"event": {
+				"replayId": 1
+			}
+		}
+	],
+	"responses": [
+		{
+			"objectId": "SFId${Groovy to generate SFId#result}",
+			"path": "/services/data/v48.0/composite",
+			"responseCode": 200,
+			"contentType": "application/json",
+			"payload": {
+				"compositeResponse": [
+					{
+						"body": {
+							"attributes": {
+								"type": "Contact",
+								"url": "/services/data/v48.0/sobjects/Contact/SFId${Groovy to generate SFId#result}"
+							},
+							"Id": "SFId${Groovy to generate SFId#result}",
+							"IsDeleted": false,
+							"MasterRecordId": null,
+							"AccountId": "0015P000004uivnQAA",
+							"LastName": "SFLastNameSFId${Groovy to generate SFId#result}",
+							"FirstName": "SFFirstnameSFId${Groovy to generate SFId#result}",
+							"Deceased__c": null,
+							"Salutation": "Mr",
+							"Name": "SFName",
+							"RecordTypeId": "01210000000ondbAAA",
+							"OtherStreet": null,
+							"OtherCity": null,
+							"OtherState": null,
+							"OtherPostalCode": null,
+							"OtherCountry": null,
+							"OtherLatitude": null,
+							"OtherLongitude": null,
+							"OtherGeocodeAccuracy": null,
+							"OtherAddress": null,
+							"MailingStreet": null,
+							"MailingCity": null,
+							"MailingState": null,
+							"MailingPostalCode": null,
+							"MailingCountry": null,
+							"MailingLatitude": null,
+							"MailingLongitude": null,
+							"MailingGeocodeAccuracy": null,
+							"MailingAddress": null,
+							"Phone": "041234444",
+							"Fax": null,
+							"MobilePhone": "0211234444",
+							"HomePhone": null,
+							"OtherPhone": null,
+							"AssistantPhone": null,
+							"ReportsToId": null,
+							"Email": "co.existence@gmail.com",
+							"Title": null,
+							"Department": null,
+							"AssistantName": null,
+							"LeadSource": null,
+							"Birthdate": "1985-09-09",
+							"Description": null,
+							"OwnerId": "0055P000000haCPQAY",
+							"HasOptedOutOfEmail": false,
+							"HasOptedOutOfFax": false,
+							"DoNotCall": false,
+							"CreatedDate": "2020-08-27T00:12:30.000+0000",
+							"CreatedById": "0055P000000haCPQAY",
+							"LastModifiedDate": "2020-08-27T00:43:31.000+0000",
+							"LastModifiedById": "0055P000000haCPQAY",
+							"SystemModstamp": "2020-08-27T03:24:32.000+0000",
+							"LastActivityDate": "2020-08-27",
+							"LastCURequestDate": null,
+							"LastCUUpdateDate": null,
+							"LastViewedDate": "2020-07-28T05:10:35.000+0000",
+							"LastReferencedDate": "2020-07-28T05:10:35.000+0000",
+							"EmailBouncedReason": null,
+							"EmailBouncedDate": null,
+							"IsEmailBounced": false,
+							"PhotoUrl": "/services/images/photo/0035P000004NgzpQAC",
+							"Jigsaw": null,
+							"JigsawContactId": null,
+							"IndividualId": null,
+							"CG_User_Account__c": null,
+							"CG_Legal__c": null,
+							"CG_AutoCreated__c": true,
+							"CG_CYRAS_ID__c": null,
+							"CG_Salutation__c": "Mr",
+							"CG_Confidential__c": false,
+							"Salutation_Copy__c": "Mr",
+							"CG_Hidden_Gender_Type__c": "141017",
+							"CG_Hidden_Salutation__c": "304394",
+							"CG_CYRAS_Confidentiality_Text__c": null,
+							"CG_Preferred_Name__c": "SFPreferredNameSFId${Groovy to generate SFId#result}",
+							"CG_Caregiver_Dashboard_Reference__c": null,
+							"vlocity_ps__AccountType__c": null,
+							"vlocity_ps__Account__c": null,
+							"vlocity_ps__Age__c": 35,
+							"vlocity_ps__AnnualIncome__c": null,
+							"vlocity_ps__ContactName__c": null,
+							"vlocity_ps__CurrentApplicationId__c": null,
+							"vlocity_ps__CustomerSentiment__c": null,
+							"vlocity_ps__DaysSinceLastContact__c": 0,
+							"vlocity_ps__DriversLicenseNumber__c": null,
+							"vlocity_ps__EmploymentStatus__c": null,
+							"vlocity_ps__Gender__c": "Male",
+							"vlocity_ps__Image__c": null,
+							"vlocity_ps__IsActive__c": false,
+							"vlocity_ps__IsEmployee__c": false,
+							"vlocity_ps__IsPartner__c": false,
+							"vlocity_ps__IsPersonAccount__c": false,
+							"vlocity_ps__LastContactbyRecordOwner__c": null,
+							"vlocity_ps__Location__c": null,
+							"vlocity_ps__MiddleName__c": null,
+							"vlocity_ps__NetWorth__c": null,
+							"vlocity_ps__Occupation__c": null,
+							"vlocity_ps__PartyId__c": "a2m5P000003eVIUQA2",
+							"vlocity_ps__PrimaryEmployerId__c": null,
+							"vlocity_ps__SocialSecurityNumber__c": null,
+							"vlocity_ps__StateOfIssuance__c": null,
+							"vlocity_ps__Status__c": null,
+							"vlocity_ps__TaxId__c": null,
+							"vlocity_ps__Type__c": null,
+							"vlocity_ps__USCitizen__c": false,
+							"vlocity_ps__UserEmployeeNumber__c": null,
+							"vlocity_ps__UserId__c": null,
+							"vlocity_ps__WebSite__c": null,
+							"CG_Current_Address__c": "56 THE TERRACE, Wellington Central, WELLINGTON, New Zealand, 6011",
+							"CG_Active_Portal_User__c": true,
+							"CMS_Created_At__c": null,
+							"CMS_Created_By__c": null,
+							"CMS_External_ID__c": null,
+							"CMS_ID__c": null,
+							"CMS_Organisation__c": null,
+							"CMS_Updated_At__c": null,
+							"CMS_Updated_By__c": null,
+							"CG_Communication_Channel__c": "0273138818",
+							"CMS_Contact_ID__c": null,
+							"CG_Person_Name_Count__c": 0,
+							"CG_Best_Contact_Time__c": "Best contact time field",
+							"CG_IsAdult__c": false,
+							"CYRAS_LINK_ID__c": null,
+							"SYNCH_GUID__c": null,
+							"CG_CYRAS_Owner__c": null,
+							"CG_CYRAS_Creator__c": null
+						},
+						"httpHeaders": {
+							"Last-Modified": "Thu, 2 Jul 2020 03:24:32 GMT"
+						},
+						"httpStatusCode": 200,
+						"referenceId": "person"
+					},
+					{
+						"body": {
+							"totalSize": 2,
+							"done": true,
+							"records": [
+								{
+									"attributes": {
+										"type": "CG_Ethnicity__c",
+										"url": "/services/data/v48.0/sobjects/CG_Ethnicity__c/Ethnicity_SFId${Groovy to generate SFId#result}"
+									},
+									"Id": "Ethnicity_SFId${Groovy to generate SFId#result}",
+									"IsDeleted": false,
+									"Name": "E-005027",
+									"CreatedDate": "2020-08-27T00:13:12.000+0000",
+									"CreatedById": "0055P000000haCPQAY",
+									"LastModifiedDate": "2020-08-27T00:13:12.000+0000",
+									"LastModifiedById": "0055P000000haCPQAY",
+									"SystemModstamp": "2020-08-27T00:13:12.000+0000",
+									"LastActivityDate": null,
+									"LastViewedDate": "2020-07-03T02:17:54.000+0000",
+									"LastReferencedDate": "2020-07-03T02:17:54.000+0000",
+									"CG_Contact__c": "0035P000004NgzpQAC",
+									"CG_Ethnicity__c": "Maori",
+									"CG_Hidden_Ethnicity__c": "311",
+									"CG_Hidden_Island__c": null,
+									"CG_Hidden_Iwi__c": "1005",
+									"CG_Island__c": null,
+									"CG_Iwi__c": "Don't Know",
+									"CG_Other_Ethnicity__c": null,
+									"CG_Caregiver_Dashboard_Reference__c": null,
+									"SYNCH_GUID__c": null
+								}
+							]
+						},
+						"httpHeaders": {},
+						"httpStatusCode": 200,
+						"referenceId": "ethnicities"
+					},
+					{
+						"body": {
+							"totalSize": 2,
+							"done": true,
+							"records": [
+								{
+									"attributes": {
+										"type": "Person_Name__c",
+										"url": "/services/data/v48.0/sobjects/Person_Name__c/PersonName1_SFId${Groovy to generate SFId#result}"
+									},
+									"Id": "PersonName1_SFId${Groovy to generate SFId#result}",
+									"IsDeleted": false,
+									"Name": "PN-029289",
+									"RecordTypeId": "01210000000ooqhAAA",
+									"CreatedDate": "2020-08-27T00:12:30.000+0000",
+									"CreatedById": "0055P000000haCPQAY",
+									"LastModifiedDate": "2020-08-27T00:12:30.000+0000",
+									"LastModifiedById": "0055P000000haCPQAY",
+									"SystemModstamp": "2020-08-27T00:12:30.000+0000",
+									"LastActivityDate": null,
+									"LastViewedDate": "2020-07-03T02:06:37.000+0000",
+									"LastReferencedDate": "2020-07-03T02:06:37.000+0000",
+									"CG_Contact__c": "0035P000004NgzpQAC",
+									"CG_Auto_Created__c": true,
+									"CG_Bypass_End_Date_VR__c": false,
+									"CG_Comments__c": null,
+									"CG_End_Date__c": null,
+									"CG_First_Name__c": "CG_FirstNameSFId${Groovy to generate SFId#result}",
+									"CG_Most_Recent__c": "true",
+									"CG_Last_Name__c": "CG_LastNameSFId${Groovy to generate SFId#result}",
+									"CG_Name_Type__c": "Legal",
+									"CG_Salutation__c": "Mr",
+									"CG_Start_Date__c": "2020-08-27",
+									"CG_Hidden_Name_Type__c": "140915",
+									"CG_Hidden_Salutation__c": "304394",
+									"CG_Legal__c": "Legal",
+									"SYNCH_GUID__c": null
+								},
+								{
+									"attributes": {
+										"type": "Person_Name__c",
+										"url": "/services/data/v48.0/sobjects/Person_Name__c/PersonName2_SFId${Groovy to generate SFId#result}"
+									},
+									"Id": "PersonName2_SFId${Groovy to generate SFId#result}",
+									"IsDeleted": false,
+									"Name": "PN-029290",
+									"RecordTypeId": "01210000000ooqhAAA",
+									"CreatedDate": "2020-08-27T00:42:27.000+0000",
+									"CreatedById": "0055P000000haCPQAY",
+									"LastModifiedDate": "2020-08-27T00:42:27.000+0000",
+									"LastModifiedById": "0055P000000haCPQAY",
+									"SystemModstamp": "2020-08-27T00:42:27.000+0000",
+									"LastActivityDate": null,
+									"LastViewedDate": "2020-07-03T02:07:26.000+0000",
+									"LastReferencedDate": "2020-07-03T02:07:26.000+0000",
+									"CG_Contact__c": "0035P000004NgzpQAC",
+									"CG_Auto_Created__c": true,
+									"CG_Bypass_End_Date_VR__c": false,
+									"CG_Comments__c": null,
+									"CG_End_Date__c": "2020-08-27",
+									"CG_First_Name__c": "Colin",
+									"CG_Most_Recent__c": false,
+									"CG_Last_Name__c": "ExistenceSFId${Groovy to generate SFId#result}",
+									"CG_Name_Type__c": "LegalSFId${Groovy to generate SFId#result}",
+									"CG_Salutation__c": "Mr",
+									"CG_Start_Date__c": "2020-08-27",
+									"CG_Hidden_Name_Type__c": "140915",
+									"CG_Hidden_Salutation__c": "304394",
+									"CG_Legal__c": null,
+									"SYNCH_GUID__c": null
+								}
+							]
+						},
+						"httpHeaders": {},
+						"httpStatusCode": 200,
+						"referenceId": "names"
+					},
+					{
+						"body": {
+							"totalSize": 1,
+							"done": true,
+							"records": [
+								{
+									"attributes": {
+										"type": "CG_Related_Address__c",
+										"url": "/services/data/v48.0/sobjects/CG_Related_Address__c/Address1_SFId${Groovy to generate SFId#result}"
+									},
+									"Id": "Address1_SFId${Groovy to generate SFId#result}",
+									"CG_Current_Address__c": true,
+									"CG_Type__c": null,
+									"CG_Start_Date__c": "2020-01-26",
+									"CG_End_Date__c": null,
+									"CG_Address__c": "a035P000000vVTaQAM",
+									"CG_Hidden_Address_Type__c": "RURAL",
+									"CG_Address__r": {
+										"attributes": {
+											"type": "CG_Address__c",
+											"url": "/services/data/v48.0/sobjects/CG_Address__c/a035P000000vVTaQAM"
+										},
+										"CG_Corelogic_Address_ID__c": "A1003097332",
+										"CG_Street_Address__c": "24 Village Park Drive",
+										"CG_Additional_Address__c": null,
+										"CG_Suburb__c": "Welcome Bay",
+										"CG_City__c": "Tauranga",
+										"CG_Postcode__c": "3112", 
+                                        "CG_Hidden_Country__c": null,                                                                       
+										"Hidden_Region__c": "10",
+										"CG_Corelogic_Verified__c": true,
+										"Hidden_Country__c": null
+									}
+								},
+								
+								{
+									"attributes": {
+										"type": "CG_Related_Address__c",
+										"url": "/services/data/v48.0/sobjects/CG_Related_Address__c/Address2_SFId${Groovy to generate SFId#result}"
+									},
+									"Id": "Address2_SFId${Groovy to generate SFId#result}",
+									"CG_Current_Address__c": false,
+									"CG_Type__c": null,
+									"CG_Start_Date__c": "2020-01-26",
+									"CG_End_Date__c": "2022-08-15",
+									"CG_Address__c": "a035P000000vVTaQAM",
+									"CG_Hidden_Address_Type__c": "RURAL",
+									"CG_Address__r": {
+										"attributes": {
+											"type": "CG_Address__c",
+											"url": "/services/data/v48.0/sobjects/CG_Address__c/a035P000000vVTaQAM"
+										},
+										"CG_Corelogic_Address_ID__c": "A1003097333",
+										"CG_Street_Address__c": "26 Village Park Drive",
+										"CG_Additional_Address__c": null,
+										"CG_Suburb__c": "Welcome Bay",
+										"CG_City__c": "Tauranga",
+										"CG_Postcode__c": "3112", 
+                                        "CG_Hidden_Country__c": null,                                                                       
+										"Hidden_Region__c": "20",
+										"CG_Corelogic_Verified__c": false,
+										"Hidden_Country__c": null										
+									}
+								},
+								
+								{
+									"attributes": {
+										"type": "CG_Related_Address__c",
+										"url": "/services/data/v48.0/sobjects/CG_Related_Address__c/Address3_SFId${Groovy to generate SFId#result}"
+									},
+									"Id": "Address3_SFId${Groovy to generate SFId#result}",
+									"CG_Current_Address__c": false,
+									"CG_Type__c": null,
+									"CG_Start_Date__c": "2020-01-26",
+									"CG_End_Date__c": "2022-08-15",
+									"CG_Address__c": null,
+									"CG_Hidden_Address_Type__c": "URBAN",
+									"CG_Address__r": {
+										"attributes": {
+											"type": "CG_Address__c",
+											"url": "/services/data/v48.0/sobjects/CG_Address__c/a035P000000vVTaQAM"
+										},
+										"CG_Corelogic_Address_ID__c": null,
+										"CG_Street_Address__c": "24A John Downs Drive",
+										"CG_Additional_Address__c": null,
+										"CG_Suburb__c": "Browns Bay",
+										"CG_City__c": "Auckland",
+										"CG_Postcode__c": "0630", 
+                                        "CG_Hidden_Country__c": null,                                                                       
+										"Hidden_Region__c": null,
+										"CG_Corelogic_Verified__c": false,
+										"Hidden_Country__c": "NZ"
+									}
+								}
+							]
+						},
+						"httpHeaders": {},
+						"httpStatusCode": 200,
+						"referenceId": "relatedAddresses"
+					}
+				]
+			}
+		},
+		{
+			"objectId": "SFId${Groovy to generate SFId#result}",
+			"path": "/services/data/v48.0/composite",
+			"responseCode": 200,
+			"contentType": "application/json",
+			"payload": {
+				"compositeResponse": [
+					{
+						"body": {
+							"id": "SFId${Groovy to generate SFId#result}",
+							"success": true,
+							"errors": []
+						},
+						"httpHeaders": {
+							"Location": "/services/data/v48.0/sobjects/Contact/SFId${Groovy to generate SFId#result}"
+						},
+						"httpStatusCode": 201,
+						"referenceId": "person"
+					},
+					{
+						"body": {
+							"id": "",
+							"success": true,
+							"errors": []
+						},
+						"httpHeaders": {
+							"Location": "/services/data/v48.0/sobjects/CG_Ethnicity__c/<SFOBJECTID for Ethnicity>"
+						},
+						"httpStatusCode": 201,
+						"referenceId": "ethnicity"
+					},
+					{
+						"body": {
+							"id": "<SFOBJECTID for person name>",
+							"success": true,
+							"errors": []
+						},
+						"httpHeaders": {
+							"Location": "/services/data/v48.0/sobjects/Person_Name__c/<SFOBJECTID for person name>"
+						},
+						"httpStatusCode": 201,
+						"referenceId": "personName"
+					},
+					{
+						"body": {
+							"id": "<SFOBJECTID for address>",
+							"success": true,
+							"errors": []
+						},
+						"httpHeaders": {
+							"Location": "/services/data/v48.0/sobjects/CG_Address__c/<SFOBJECTID for address>"
+						},
+						"httpStatusCode": 201,
+						"referenceId": "address"
+					},
+					{
+						"body": {
+							"id": "",
+							"success": true,
+							"errors": []
+						},
+						"httpHeaders": {
+							"Location": "/services/data/v48.0/sobjects/CG_Related_Address__c/<SFOBJECTID for related address>"
+						},
+						"httpStatusCode": 201,
+						"referenceId": "relatedAddresses"
+					}
+				]
+			}
+		}
+	]
+}]]></con:request><con:originalUri>http://internal-alb-syndev-test-harness-399698269.ap-southeast-2.elb.amazonaws.com/test-harness/prepare</con:originalUri><con:assertion type="JsonPath RegEx Match" id="8033cd43-6026-4979-bbc2-122562c41fae" name="Match content of [forSystem] using RegEx"><con:configuration><path>$['events'][0]['info']['forSystem']</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments><regEx>Salesforce</regEx></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="delay" name="Delay1" id="db5bcd34-dd95-45ec-99bb-7b7d76a18398"><con:settings/><con:config><delay>200</delay></con:config></con:testStep><con:testStep type="restrequest" name="GetSyncRequestForCreate" id="5b3a74b6-8223-40b1-9a69-b398e6e059cb"><con:settings/><con:config service="GetSyncRequest" resourcePath="/test-harness/sync-data/request/" methodName="SyncRequest" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="GetSyncRequestForCreate" id="b8778e6a-dbb8-48c3-829a-d1dac24a03c7" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="Accept" value="application/json"/>&#13;
+  &lt;con:entry key="Content-Type" value="application/json"/>&#13;
+&lt;/xml-fragment></con:setting></con:settings><con:endpoint>${#Project#stEndpoint}</con:endpoint><con:request/><con:originalUri>http://internal-alb-syndev-test-harness-399698269.ap-southeast-2.elb.amazonaws.com/test-harness/system-entity/</con:originalUri><con:assertion type="JsonPath Existence Match" id="214c8c92-b58b-4d0e-9577-57a204d39b49" name="Check for existence of [_id]"><con:configuration><path>$[0]['_id']</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="33badd5d-e324-431f-b9e4-0f4885c6520b" name="Match content of [status]"><con:configuration><path>$[0]['info']['status']</path><content>"Completed"</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="40fb4db9-4a61-4325-9cb5-8413cebe1f99" name="Match content of [statusChangedBy]"><con:configuration><path>$[0]['info']['statusChangedBy']</path><content>"pipeline-salesforce-to-cyras-person"</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Existence Match" id="ed656fee-58a3-4d94-acc5-1610d69f565e" name="Check for existence of [entityMapId]"><con:configuration><path>$[0]['info']['entityMapId']</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="74bae06d-0b56-4585-815d-f9936476d7df" name="Match content of [sourceObjectId]"><con:configuration><path>$[0]['trigger']['sourceObjectId']</path><content>"SFId${Groovy to generate SFId#result}"</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="4a6f1a3b-22ec-4ea7-88a4-d18be62e4fbe" name="Match content of [type]"><con:configuration><path>$[0]['trigger']['type']</path><content>"Person"</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="fb9c9456-b45d-48aa-9148-4a7707b12422" name="Match content of [source]"><con:configuration><path>$[0]['trigger']['source']</path><content>"CGIS"</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Existence Match" id="97a275fb-5d84-42ac-a152-57c3786d9284" name="Check for existence of [source]"><con:configuration><path>$[0]['data']['source']</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Existence Match" id="4d17e4a9-824a-4dba-bdae-e857306bde2d" name="Check for existence of [target]"><con:configuration><path>$[0]['data']['target']</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="5a34a2d5-6f07-4814-bc6f-72275d49560e" name="Match content of [dob]"><con:configuration><path>$[0]['data']['target'][0]['value']['dob']</path><content>${Salesforce Event Create#RawRequest#$['responses'][0]['payload']['compositeResponse'][0]['body']['Birthdate']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="4476ce38-5103-4772-911e-56b944c3c573" name="Match content of [genderDescription]"><con:configuration><path>$[0]['data']['target'][0]['value']['genderDescription']</path><content>${Salesforce Event Create#RawRequest#$['responses'][0]['payload']['compositeResponse'][0]['body']['vlocity_ps__Gender__c']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="cbb94cc2-e4db-4fa3-91a2-768a903218e1" name="Match content of [homeEmail]"><con:configuration><path>$[0]['data']['target'][0]['value']['homeEmail']</path><content>${Salesforce Event Create#RawRequest#$['responses'][0]['payload']['compositeResponse'][0]['body']['Email']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="009b1f61-2f11-4111-84af-f778bbf4cef1" name="Match content of [homePhone]"><con:configuration><path>$[0]['data']['target'][0]['value']['homePhone']</path><content>${Salesforce Event Create#RawRequest#$['responses'][0]['payload']['compositeResponse'][0]['body']['Phone']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="7ba1a714-436e-4c2b-b06c-6866f9eead10" name="Match content of [mobilePhone]"><con:configuration><path>$[0]['data']['target'][0]['value']['mobilePhone']</path><content>${Salesforce Event Create#RawRequest#$['responses'][0]['payload']['compositeResponse'][0]['body']['MobilePhone']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="07a8caf1-3275-434a-a51c-20bb3142110c" name="Match content of [givenNames]"><con:configuration><path>$[0]['data']['target'][0]['value']['legalName']['givenNames']</path><content>${Salesforce Event Create#RawRequest#$['responses'][0]['payload']['compositeResponse'][2]['body']['records'][0]['CG_First_Name__c']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="bb56f6ab-a913-49af-950b-897851a4534d" name="Match content of [surname]"><con:configuration><path>$[0]['data']['target'][0]['value']['legalName']['surname']</path><content>${Salesforce Event Create#RawRequest#$['responses'][0]['payload']['compositeResponse'][2]['body']['records'][0]['CG_Last_Name__c']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="33566483-2ef3-4cf8-84c1-66ab07ceb848" name="Match content of [titleDescription]"><con:configuration><path>$[0]['data']['target'][0]['value']['legalName']['titleDescription']</path><content>${Salesforce Event Create#RawRequest#$['responses'][0]['payload']['compositeResponse'][2]['body']['records'][0]['CG_Salutation__c']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="83adcda1-1f92-43a8-968f-9f86b85d28a5" name="Match content of [preferredName]"><con:configuration><path>$[0]['data']['target'][0]['value']['legalName']['preferredName']</path><content>${Salesforce Event Create#RawRequest#$['responses'][0]['payload']['compositeResponse'][0]['body']['CG_Preferred_Name__c']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="16fe25ea-0d4c-4bde-bacd-954502a16dcf" name="Match content of [startDate]"><con:configuration><path>$[0]['data']['target'][0]['value']['legalName']['startDate']</path><content>"2020-08-26T12:00:00.000Z"</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="7638c5bd-5542-4ce0-bc79-c6dea4fac427" name="Match content of [givenNames]"><con:configuration><path>$[0]['data']['target'][0]['value']['otherNames'][0]['givenNames']</path><content>${Salesforce Event Create#RawRequest#$['responses'][0]['payload']['compositeResponse'][2]['body']['records'][1]['CG_First_Name__c']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="2e52fd42-f0f7-4e55-8361-fc358e3ed522" name="Match content of [surname]"><con:configuration><path>$[0]['data']['target'][0]['value']['otherNames'][0]['surname']</path><content>${Salesforce Event Create#RawRequest#$['responses'][0]['payload']['compositeResponse'][2]['body']['records'][1]['CG_Last_Name__c']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="b9082897-aa5a-47d7-8809-787eab340598" name="Match content of [titleDescription]"><con:configuration><path>$[0]['data']['target'][0]['value']['otherNames'][0]['titleDescription']</path><content>${Salesforce Event Create#RawRequest#$['responses'][0]['payload']['compositeResponse'][2]['body']['records'][1]['CG_Salutation__c']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="d9c3118c-c262-46ff-b01f-eea1f773f9c2" name="Match content of [ethnicityCode]"><con:configuration><path>$[0]['data']['target'][0]['value']['ethnicities'][0]['ethnicityCode']</path><content>${Salesforce Event Create#RawRequest#$['responses'][0]['payload']['compositeResponse'][1]['body']['records'][0]['CG_Hidden_Ethnicity__c']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="0b827739-737a-419f-ba59-ef7f62e80274" name="Match content of [affiliationCode]"><con:configuration><path>$[0]['data']['target'][0]['value']['ethnicities'][0]['affiliationCode']</path><content>${Salesforce Event Create#RawRequest#$['responses'][0]['payload']['compositeResponse'][1]['body']['records'][0]['CG_Hidden_Iwi__c']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="5c502d05-4b44-4a3d-ac98-85cb571c0b52" name="Match content of [isPrimary]"><con:configuration><path>$[0]['data']['target'][0]['value']['addresses'][0]['isPrimary']</path><content>${Salesforce Event Create#RawRequest#$['responses'][0]['payload']['compositeResponse'][3]['body']['records'][0]['CG_Current_Address__c']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="227d2195-6eba-4911-b6bc-02f17d360a68" name="Match content of [isPrimary]"><con:configuration><path>$[0]['data']['target'][0]['value']['addresses'][1]['isPrimary']</path><content>${Salesforce Event Create#RawRequest#$['responses'][0]['payload']['compositeResponse'][3]['body']['records'][1]['CG_Current_Address__c']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="c7ca4b2d-168f-4902-bfa8-1e50c9b084f7" name="Match content of [isPrimary]"><con:configuration><path>$[0]['data']['target'][0]['value']['addresses'][2]['isPrimary']</path><content/><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="26cad1e8-cc2c-4898-8e38-fe67ea295b3d" name="Match content of [addressType]"><con:configuration><path>$[0]['data']['target'][0]['value']['addresses'][0]['addressType']</path><content>${Salesforce Event Create#RawRequest#$['responses'][0]['payload']['compositeResponse'][3]['body']['records'][0]['CG_Hidden_Address_Type__c']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="e64fd13d-25b3-437b-8185-d590142458e6" name="Match content of [addressType]"><con:configuration><path>$[0]['data']['target'][0]['value']['addresses'][1]['addressType']</path><content>${Salesforce Event Create#RawRequest#$['responses'][0]['payload']['compositeResponse'][3]['body']['records'][1]['CG_Hidden_Address_Type__c']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="80b00922-2a76-4618-9db4-ad770f74e04f" name="Match content of [addressType]"><con:configuration><path>$[0]['data']['target'][0]['value']['addresses'][2]['addressType']</path><content/><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="36d5a7ce-f7f1-4dfe-832e-93ceca8bd8d4" name="Match content of [addressLine1]"><con:configuration><path>$[0]['data']['target'][0]['value']['addresses'][0]['addressLine1']</path><content>${Salesforce Event Create#RawRequest#$['responses'][0]['payload']['compositeResponse'][3]['body']['records'][0]['CG_Address__r']['CG_Street_Address__c']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="92a87fbe-1854-4fc5-b042-96dbebc7fa43" name="Match content of [addressLine1]"><con:configuration><path>$[0]['data']['target'][0]['value']['addresses'][1]['addressLine1']</path><content>${Salesforce Event Create#RawRequest#$['responses'][0]['payload']['compositeResponse'][3]['body']['records'][1]['CG_Address__r']['CG_Street_Address__c']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="92549f19-892a-42f4-a58a-bfa7f7189acb" name="Match content of [addressLine1]"><con:configuration><path>$[0]['data']['target'][0]['value']['addresses'][2]['addressLine1']</path><content/><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="846390cc-0eca-428a-9a32-ffc156d9206f" name="Match content of [addressLine2]"><con:configuration><path>$[0]['data']['target'][0]['value']['addresses'][0]['addressLine2']</path><content>${Salesforce Event Create#RawRequest#$['responses'][0]['payload']['compositeResponse'][3]['body']['records'][0]['CG_Address__r']['CG_Suburb__c']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="004e6a90-7372-4575-9b6f-128bbb131659" name="Match content of [addressLine2]"><con:configuration><path>$[0]['data']['target'][0]['value']['addresses'][1]['addressLine2']</path><content>${Salesforce Event Create#RawRequest#$['responses'][0]['payload']['compositeResponse'][3]['body']['records'][1]['CG_Address__r']['CG_Suburb__c']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="bf76ac22-a7a6-49bf-9942-05f98f41612b" name="Match content of [addressLine2]"><con:configuration><path>$[0]['data']['target'][0]['value']['addresses'][2]['addressLine2']</path><content/><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="5a13a639-1138-4c9b-96f7-3963e1345e39" name="Match content of [city]"><con:configuration><path>$[0]['data']['target'][0]['value']['addresses'][0]['city']</path><content>${Salesforce Event Create#RawRequest#$['responses'][0]['payload']['compositeResponse'][3]['body']['records'][0]['CG_Address__r']['CG_City__c']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="bf48fd2f-387c-4e6b-b680-f0177cb7c11e" name="Match content of [city]"><con:configuration><path>$[0]['data']['target'][0]['value']['addresses'][1]['city']</path><content>${Salesforce Event Create#RawRequest#$['responses'][0]['payload']['compositeResponse'][3]['body']['records'][1]['CG_Address__r']['CG_City__c']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="de986776-bd44-4fd2-94d6-4b5e1716380d" name="Match content of [city]"><con:configuration><path>$[0]['data']['target'][0]['value']['addresses'][2]['city']</path><content/><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="d847b44e-388a-41aa-9883-9ed535e13618" name="Match content of [postCode]"><con:configuration><path>$[0]['data']['target'][0]['value']['addresses'][0]['postCode']</path><content>${Salesforce Event Create#RawRequest#$['responses'][0]['payload']['compositeResponse'][3]['body']['records'][0]['CG_Address__r']['CG_Postcode__c']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="13b5f259-ac32-4054-96b0-75e91e2f5090" name="Match content of [postCode]"><con:configuration><path>$[0]['data']['target'][0]['value']['addresses'][1]['postCode']</path><content>${Salesforce Event Create#RawRequest#$['responses'][0]['payload']['compositeResponse'][3]['body']['records'][1]['CG_Address__r']['CG_Postcode__c']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="a12a3a5e-f9b9-44d6-995d-3e05a674ca84" name="Match content of [postCode]"><con:configuration><path>$[0]['data']['target'][0]['value']['addresses'][2]['postCode']</path><content/><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="f193d77b-2987-431d-920c-e8d011f73a4f" name="Match content of [countryType]"><con:configuration><path>$[0]['data']['target'][0]['value']['addresses'][2]['countryType']</path><content/><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="9fa239e6-26bd-4cf7-bb7b-8e4245f2d815" name="Match content of [region]"><con:configuration><path>$[0]['data']['target'][0]['value']['addresses'][0]['region']</path><content>${Salesforce Event Create#RawRequest#$['responses'][0]['payload']['compositeResponse'][3]['body']['records'][0]['CG_Address__r']['Hidden_Region__c']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="856f9342-4484-4584-9edc-a561c7ad4d97" name="Match content of [region]"><con:configuration><path>$[0]['data']['target'][0]['value']['addresses'][1]['region']</path><content>${Salesforce Event Create#RawRequest#$['responses'][0]['payload']['compositeResponse'][3]['body']['records'][1]['CG_Address__r']['Hidden_Region__c']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="71ec39dd-855e-4a36-b588-3586d6eea2ca" name="Match content of [region]"><con:configuration><path>$[0]['data']['target'][0]['value']['addresses'][2]['region']</path><content/><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Existence Match" id="49c3be39-fd50-430f-bc2d-84b67e45739f" name="Check for existence of [history]"><con:configuration><path>$[0]['history']</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="6f7c7b8e-4768-4d26-bebb-d6f3997d81ec" name="Match content of [status]"><con:configuration><path>$[0]['history'][0]['status']</path><content>"New"</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="96f6da75-ae57-486a-88f6-42c176e32042" name="Match content of [status]"><con:configuration><path>$[0]['history'][1]['status']</path><content>"New"</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="8e0adfd9-3302-4721-bf14-15c5f1ec2be4" name="Match content of [status]"><con:configuration><path>$[0]['history'][2]['status']</path><content>"Routed"</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="a06c2c59-f158-419d-96ac-c93fa98cf81f" name="Match content of [status]"><con:configuration><path>$[0]['history'][3]['status']</path><content>"Mapping"</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="ed898482-b29e-4318-b538-bc771fef4f0d" name="Match content of [status]"><con:configuration><path>$[0]['history'][4]['status']</path><content>"Mapped"</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="90c0c7b0-3c5a-44e0-ac5d-f168a530fa87" name="Match content of [status]"><con:configuration><path>$[0]['history'][5]['status']</path><content>"Mapped"</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="5c9eb9b7-c501-40e3-afc6-be519b33bb75" name="Match content of [status]"><con:configuration><path>$[0]['history'][6]['status']</path><content>"Pushing"</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="50776f77-f370-4ecf-bd13-b934eaf482b8" name="Match content of [status]"><con:configuration><path>$[0]['history'][7]['status']</path><content>"Pushing"</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="0191cf56-eb68-47e3-b976-fb5423d083c7" name="Match content of [status]"><con:configuration><path>$[0]['history'][8]['status']</path><content>"Completed"</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Existence Match" id="607f2dcf-d6fc-4cfe-adb3-9220df35688d" name="Check for existence of [entityMappingOnStart]"><con:configuration><path>$[0]['entityMappingOnStart']</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Existence Match" id="0135cc5c-2634-4e94-b622-44083d77f56c" name="Check for existence of [Contact]"><con:configuration><path>$[0]['entityMappingOnStart']['Contact']</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Existence Match" id="93e47ca0-9ba9-403d-897e-847cdfe822d4" name="Check for existence of [CG_Ethnicity__c]"><con:configuration><path>$[0]['entityMappingOnStart']['CG_Ethnicity__c']</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Existence Match" id="25977580-907a-4ccf-aaf5-6cf472b9d853" name="Check for existence of [Person_Name__c]"><con:configuration><path>$[0]['entityMappingOnStart']['Person_Name__c']</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Existence Match" id="04d7e7f4-9a0d-4e94-91a1-46d6221ea551" name="Check for existence of [CG_Related_Address__c]"><con:configuration><path>$[0]['entityMappingOnStart']['CG_Related_Address__c']</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Existence Match" id="bf949c0b-9414-4d1a-b0b3-4f3a681e6d84" name="Check for existence of [entityMappingOnCompletion]"><con:configuration><path>$[0]['entityMappingOnCompletion']</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Existence Match" id="8256edd6-f01a-4727-b274-83fe0c3a4557" name="Check for existence of [Contact]"><con:configuration><path>$[0]['entityMappingOnCompletion']['Contact']</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Existence Match" id="e5a50069-5aad-48aa-886f-a331ceb8c732" name="Check for existence of [CG_Ethnicity__c]"><con:configuration><path>$[0]['entityMappingOnCompletion']['CG_Ethnicity__c']</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Existence Match" id="c0cc77d9-9235-4f94-ade0-7c2f2f5dd746" name="Check for existence of [Person_Name__c]"><con:configuration><path>$[0]['entityMappingOnCompletion']['Person_Name__c']</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Existence Match" id="eb80d95f-d84c-4727-8da3-2c2ef5f72d32" name="Check for existence of [CG_Related_Address__c]"><con:configuration><path>$[0]['entityMappingOnCompletion']['CG_Related_Address__c']</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="cb5f04e1-2b44-4f79-9455-43916d00c248" name="Match content of [deceased]"><con:configuration><path>$[0]['data']['target'][0]['value']['deceased']</path><content>${Salesforce Event Create#RawRequest#$['responses'][0]['payload']['compositeResponse'][0]['body']['Deceased__c']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><con:entry key="since" value="${Salesforce Event Create#Response#$['events'][0]['info']['statusChangedAt']}"/></con:parameters><con:parameterOrder><con:entry>since</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="goto" name="Conditional Goto-Check Create Status" id="3411152d-279e-4e33-8c93-b9c357741e00"><con:settings/><con:config xsi:type="con:GotoStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:condition><con:name>CheckStatus</con:name><con:type>XPATH</con:type><con:expression>//Response[1]/e[1]/info[1]/status[1]!="Completed"</con:expression><con:targetStep>Delay1</con:targetStep></con:condition><con:condition><con:name>StatusExists</con:name><con:type>XPATH</con:type><con:expression>count(//Response[1]/e[1]/info[1]/status[1]) = 0</con:expression><con:targetStep>Delay1</con:targetStep></con:condition></con:config></con:testStep><con:testStep type="transfer" name="PropertyTransfer-entityMapID" id="97ae1b2c-1835-4234-8001-dbef772bf2dd"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false"><con:name>entityMapID</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>GetSyncRequestForCreate</con:sourceStep><con:sourcePath>$[0]['info']['entityMapId']</con:sourcePath><con:targetType>entityMapID</con:targetType><con:targetStep>Properties</con:targetStep><con:targetPath/><con:type>JSONPATH</con:type><con:upgraded>true</con:upgraded></con:transfers></con:config></con:testStep><con:testStep type="transfer" name="PropertyTransfer-Person1Id" id="5ce6eb9c-065b-4e06-9510-1b61c68ca7ec"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" entitize="false" ignoreEmpty="false" transferToAll="false" transferChildNodes="false"><con:name>Person_id</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>GetSyncRequestForCreate</con:sourceStep><con:sourcePath>$[0]['entityMappingOnCompletion']['Person_Name__c'][0]['_id']</con:sourcePath><con:targetType>Person_id</con:targetType><con:targetStep>Properties</con:targetStep><con:targetPath/><con:type>JSONPATH</con:type><con:upgraded>true</con:upgraded></con:transfers></con:config></con:testStep><con:testStep type="transfer" name="PropertyTransfer-Person2Id" id="d509d3ea-edb7-41e9-8780-96d1f1f92441"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false"><con:name>Person2_id</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>GetSyncRequestForCreate</con:sourceStep><con:sourcePath>$[0]['entityMappingOnCompletion']['Person_Name__c'][1]['_id']</con:sourcePath><con:targetType>Person2_id</con:targetType><con:targetStep>Properties</con:targetStep><con:targetPath/><con:type>JSONPATH</con:type><con:upgraded>true</con:upgraded></con:transfers></con:config></con:testStep><con:testStep type="transfer" name="PropertyTransfer-EthnicityId" id="6e5ed39e-3141-4637-b06d-55d6953cce07"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false"><con:name>Ethnicity_id</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>GetSyncRequestForCreate</con:sourceStep><con:sourcePath>$[0]['entityMappingOnCompletion']['CG_Ethnicity__c'][0]['_id']</con:sourcePath><con:targetType>Ethnicity_id</con:targetType><con:targetStep>Properties</con:targetStep><con:targetPath/><con:type>JSONPATH</con:type><con:upgraded>true</con:upgraded></con:transfers></con:config></con:testStep><con:testStep type="transfer" name="PropertyTransfer-AddressId" id="57b62e15-4c45-4f6f-a075-c4f46004b70a"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false"><con:name>Address_id</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>GetSyncRequestForCreate</con:sourceStep><con:sourcePath>$[0]['entityMappingOnCompletion']['CG_Related_Address__c'][0]['_id']</con:sourcePath><con:targetType>Address_id</con:targetType><con:targetStep>Properties</con:targetStep><con:targetPath/><con:type>JSONPATH</con:type><con:upgraded>true</con:upgraded></con:transfers></con:config></con:testStep><con:testStep type="properties" name="Properties" id="ccd2b903-44ea-44a9-984c-95f2c6fce98f"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>Person_id</con:name><con:value>0b0ddab2-a44c-4e69-948d-6514f546d9f8</con:value></con:property><con:property><con:name>Person2_id</con:name><con:value>b4de137c-f274-496c-8324-35d8b378c58b</con:value></con:property><con:property><con:name>Ethnicity_id</con:name><con:value>f7f91630-a64d-40a9-8d16-13ddc329cc2d</con:value></con:property><con:property><con:name>Address_id</con:name><con:value>5d7f7930-e2bb-4e56-9603-d3bddc0f3227</con:value></con:property><con:property><con:name>entityMapID</con:name><con:value>c1380d7f-ff96-4be4-be81-e9b3d11a60cb</con:value></con:property><con:property><con:name>SyncReqStatus</con:name><con:value xsi:nil="true"/></con:property></con:properties></con:config></con:testStep><con:testStep type="restrequest" name="CYRAS Response Update" id="3ec69e23-0896-4004-9ad8-e0d34ec8661b"><con:settings/><con:config service="Prepare-CreatePerson-SFTOC-CYRASResponse" resourcePath="/test-harness/prepare" methodName="Prepare" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="CYRAS Response Update" id="e20810ad-1b90-4995-b930-10c3545e63d0" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>${#Project#stEndpoint}</con:endpoint><con:request>{
+    "forSystem": "CYRAS",
+    "responses": [
+        {
+            "objectId": "SFId${Groovy to generate SFId#result}",
+            "path": "/v1/synch/person/${Groovy to generate CYId#result}",
+            "responseCode": 200,
+            "contentType": "application/json",
+            "payload": {
+                "header": {
+                    "sequence": "1",
+                    "timestamp": "2020-08-27T04:26:09.156Z"
+                },
+                "synchMetaData": {
+                    "ownerId": ${Groovy to generate CYId#result},
+                    "ownerType": "PERSON",
+                    "ownerVersion": 1,
+                    "foreignId": "SFId${Groovy to generate SFId#result}"
+                },
+                "references": [
+                    {
+                        "objectID": 1${Groovy to generate CYId#result},
+                        "externalGuid": "$.person.ethnicities[0].externalGuid",
+                        "objectType": "ETHNICITY"
+                    },
+                    {
+                        "objectID": ${Groovy to generate CYId#result},
+                        "externalGuid": "$.person.externalGuid",
+                        "objectType": "PERSON"
+                    },
+                    {
+                        "objectID": 2${Groovy to generate CYId#result},
+                        "externalGuid": "$.person.legalName.externalGuid",
+                        "objectType": "PERSON_NAME"
+                    },
+                    {
+                        "objectID": 3${Groovy to generate CYId#result},
+                        "externalGuid": "$.person.addresses[0].externalGuid",
+                        "objectType": "ADDRESS"
+                    }
+                ],
+                "deletedObjects": []                
+            }
+        }
+    ]
+}</con:request><con:originalUri>http://internal-alb-syndev-test-harness-399698269.ap-southeast-2.elb.amazonaws.com/test-harness/prepare</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="e7d83c96-c2ba-4f5d-ab41-472f76012b2e" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200, 201</codes></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Salesforce Event Update" id="0c58ec0a-2072-49f2-a894-6f3c2c03fc50"><con:settings/><con:config service="Prepare-CreatePerson-SFTOC-CYRASResponse" resourcePath="/test-harness/prepare" methodName="Prepare" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Salesforce Event Update" id="e20810ad-1b90-4995-b930-10c3545e63d0" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>${#Project#stEndpoint}</con:endpoint><con:request><![CDATA[{
+	"forSystem": "Salesforce",
+	"events": [
+		{
+			"schema": "7cBPcbWRGAqoVPAYeCcC2w",
+			"payload": {
+				"CreatedDate": "${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ").format(new Date())}",
+				"CreatedById": "005B00000031mqb",
+				"eventid": "004F00034524slt",
+				"ObjectType__c": "Person",
+				"ObjectId__c": "SFId${Groovy to generate SFId#result}",
+				"ObjectExternalGUID__c": "${Properties#entityMapID}",
+				"SFVersion__c": "2017-04-14T13: 35: 23Z"
+			},
+			"event": {
+				"replayId": 1
+			}
+		}
+	],
+	"responses": [
+		{
+			"objectId": "SFId${Groovy to generate SFId#result}",
+			"path": "/services/data/v48.0/composite",
+			"responseCode": 200,
+			"contentType": "application/json",
+			"payload": {
+				"compositeResponse": [
+					{
+						"body": {
+							"attributes": {
+								"type": "Contact",
+								"url": "/services/data/v48.0/sobjects/Contact/SFId${Groovy to generate SFId#result}"
+							},
+							"Id": "SFId${Groovy to generate SFId#result}",
+							"IsDeleted": false,
+							"MasterRecordId": null,
+							"AccountId": "0015P000004uivnQAA",
+							"LastName": "UpdatedSFLastnameSFId${Groovy to generate SFId#result}",
+							"FirstName": "UpdatedSFFirstnameSFId${Groovy to generate SFId#result}",
+							"Deceased__c": false,
+							"Salutation": "Mr",
+							"Name": "UpdatedSFNameSFId${Groovy to generate SFId#result}",
+							"RecordTypeId": "01210000000ondbAAA",
+							"OtherStreet": null,
+							"OtherCity": null,
+							"OtherState": null,
+							"OtherPostalCode": null,
+							"OtherCountry": null,
+							"OtherLatitude": null,
+							"OtherLongitude": null,
+							"OtherGeocodeAccuracy": null,
+							"OtherAddress": null,
+							"MailingStreet": null,
+							"MailingCity": null,
+							"MailingState": null,
+							"MailingPostalCode": null,
+							"MailingCountry": null,
+							"MailingLatitude": null,
+							"MailingLongitude": null,
+							"MailingGeocodeAccuracy": null,
+							"MailingAddress": null,
+							"Phone": "041234444",
+							"Fax": null,
+							"MobilePhone": "0211234444",
+							"HomePhone": null,
+							"OtherPhone": null,
+							"AssistantPhone": null,
+							"ReportsToId": null,
+							"Email": "co.existenceupdatedSFId${Groovy to generate SFId#result}@gmail.com",
+							"Title": null,
+							"Department": null,
+							"AssistantName": null,
+							"LeadSource": null,
+							"Birthdate": "1985-09-09",
+							"Description": null,
+							"OwnerId": "0055P000000haCPQAY",
+							"HasOptedOutOfEmail": false,
+							"HasOptedOutOfFax": false,
+							"DoNotCall": false,
+							"CreatedDate": "2020-08-27T00:12:30.000+0000",
+							"CreatedById": "0055P000000haCPQAY",
+							"LastModifiedDate": "2020-08-27T00:43:31.000+0000",
+							"LastModifiedById": "0055P000000haCPQAY",
+							"SystemModstamp": "2020-08-27T03:24:32.000+0000",
+							"LastActivityDate": "2020-08-27",
+							"LastCURequestDate": null,
+							"LastCUUpdateDate": null,
+							"LastViewedDate": "2020-07-28T05:10:35.000+0000",
+							"LastReferencedDate": "2020-07-28T05:10:35.000+0000",
+							"EmailBouncedReason": null,
+							"EmailBouncedDate": null,
+							"IsEmailBounced": false,
+							"PhotoUrl": "/services/images/photo/0035P000004NgzpQAC",
+							"Jigsaw": null,
+							"JigsawContactId": null,
+							"IndividualId": null,
+							"CG_User_Account__c": null,
+							"CG_Legal__c": null,
+							"CG_AutoCreated__c": true,
+							"CG_CYRAS_ID__c": null,
+							"CG_Salutation__c": "Professor",
+							"CG_Confidential__c": false,
+							"Salutation_Copy__c": "Mr",
+							"CG_Hidden_Gender_Type__c": "141017",
+							"CG_Hidden_Salutation__c": "304394",
+							"CG_CYRAS_Confidentiality_Text__c": null,
+							"CG_Preferred_Name__c": "UpdatedSFPreferredNameSFId${Groovy to generate SFId#result}",
+							"CG_Caregiver_Dashboard_Reference__c": null,
+							"vlocity_ps__AccountType__c": null,
+							"vlocity_ps__Account__c": null,
+							"vlocity_ps__Age__c": 35,
+							"vlocity_ps__AnnualIncome__c": null,
+							"vlocity_ps__ContactName__c": null,
+							"vlocity_ps__CurrentApplicationId__c": null,
+							"vlocity_ps__CustomerSentiment__c": null,
+							"vlocity_ps__DaysSinceLastContact__c": 0,
+							"vlocity_ps__DriversLicenseNumber__c": null,
+							"vlocity_ps__EmploymentStatus__c": null,
+							"vlocity_ps__Gender__c": "Male",
+							"vlocity_ps__Image__c": null,
+							"vlocity_ps__IsActive__c": false,
+							"vlocity_ps__IsEmployee__c": false,
+							"vlocity_ps__IsPartner__c": false,
+							"vlocity_ps__IsPersonAccount__c": false,
+							"vlocity_ps__LastContactbyRecordOwner__c": null,
+							"vlocity_ps__Location__c": null,
+							"vlocity_ps__MiddleName__c": null,
+							"vlocity_ps__NetWorth__c": null,
+							"vlocity_ps__Occupation__c": null,
+							"vlocity_ps__PartyId__c": "a2m5P000003eVIUQA2",
+							"vlocity_ps__PrimaryEmployerId__c": null,
+							"vlocity_ps__SocialSecurityNumber__c": null,
+							"vlocity_ps__StateOfIssuance__c": null,
+							"vlocity_ps__Status__c": null,
+							"vlocity_ps__TaxId__c": null,
+							"vlocity_ps__Type__c": null,
+							"vlocity_ps__USCitizen__c": false,
+							"vlocity_ps__UserEmployeeNumber__c": null,
+							"vlocity_ps__UserId__c": null,
+							"vlocity_ps__WebSite__c": null,
+							"CG_Current_Address__c": "56 THE TERRACE, Wellington Central, WELLINGTON, New Zealand, 6011",
+							"CG_Active_Portal_User__c": true,
+							"CMS_Created_At__c": null,
+							"CMS_Created_By__c": null,
+							"CMS_External_ID__c": null,
+							"CMS_ID__c": null,
+							"CMS_Organisation__c": null,
+							"CMS_Updated_At__c": null,
+							"CMS_Updated_By__c": null,
+							"CG_Communication_Channel__c": "Phone",
+							"CMS_Contact_ID__c": null,
+							"CG_Person_Name_Count__c": 0,
+							"CG_Best_Contact_Time__c": "Best contact time field updatedSFId${Groovy to generate SFId#result}",
+							"CG_IsAdult__c": false,
+							"CYRAS_LINK_ID__c": null,
+							"SYNCH_GUID__c": "${Properties#entityMapID}",
+							"CG_CYRAS_Owner__c": null,
+							"CG_CYRAS_Creator__c": null
+						},
+						"httpHeaders": {
+							"Last-Modified": "Thu, 2 Jul 2020 03:24:32 GMT"
+						},
+						"httpStatusCode": 200,
+						"referenceId": "person"
+					},
+					{
+						"body": {
+							"totalSize": 2,
+							"done": true,
+							"records": [
+								{
+									"attributes": {
+										"type": "CG_Ethnicity__c",
+										"url": "/services/data/v48.0/sobjects/CG_Ethnicity__c/Ethnicity_SFId${Groovy to generate SFId#result}"
+									},
+									"Id": "Ethnicity_SFId${Groovy to generate SFId#result}",
+									"IsDeleted": false,
+									"Name": "E-005027",
+									"CreatedDate": "2020-08-27T00:13:12.000+0000",
+									"CreatedById": "0055P000000haCPQAY",
+									"LastModifiedDate": "2020-08-27T00:13:12.000+0000",
+									"LastModifiedById": "0055P000000haCPQAY",
+									"SystemModstamp": "2020-08-27T00:13:12.000+0000",
+									"LastActivityDate": null,
+									"LastViewedDate": "2020-07-03T02:17:54.000+0000",
+									"LastReferencedDate": "2020-07-03T02:17:54.000+0000",
+									"CG_Contact__c": "0035P000004NgzpQAC",
+									"CG_Ethnicity__c": "Maori",
+									"CG_Hidden_Ethnicity__c": "300",
+									"CG_Hidden_Island__c": null,
+									"CG_Hidden_Iwi__c": "808",
+									"CG_Island__c": null,
+									"CG_Iwi__c": "Don't Know",
+									"CG_Other_Ethnicity__c": null,
+									"CG_Caregiver_Dashboard_Reference__c": null,
+									"SYNCH_GUID__c": "${Properties#Ethnicity_Id}"
+								}
+							]
+						},
+						"httpHeaders": {},
+						"httpStatusCode": 200,
+						"referenceId": "ethnicities"
+					},
+					{
+						"body": {
+							"totalSize": 2,
+							"done": true,
+							"records": [
+								{
+									"attributes": {
+										"type": "Person_Name__c",
+										"url": "/services/data/v48.0/sobjects/Person_Name__c/a095P000000Kxq4QAC"
+									},
+									"Id": "a095P000000Kxq4QAC",
+									"IsDeleted": false,
+									"Name": "PN-029289",
+									"RecordTypeId": "01210000000ooqhAAA",
+									"CreatedDate": "2020-08-27T00:12:30.000+0000",
+									"CreatedById": "0055P000000haCPQAY",
+									"LastModifiedDate": "2020-08-27T00:12:30.000+0000",
+									"LastModifiedById": "0055P000000haCPQAY",
+									"SystemModstamp": "2020-08-27T00:12:30.000+0000",
+									"LastActivityDate": null,
+									"LastViewedDate": "2020-07-03T02:06:37.000+0000",
+									"LastReferencedDate": "2020-07-03T02:06:37.000+0000",
+									"CG_Contact__c": "0035P000004NgzpQACUpdatedSFId${Groovy to generate SFId#result}",
+									"CG_Auto_Created__c": true,
+									"CG_Bypass_End_Date_VR__c": false,
+									"CG_Comments__c": null,
+									"CG_End_Date__c": null,
+									"CG_First_Name__c": "UpdatedCG_FirstNameSFId${Groovy to generate SFId#result}",
+									"CG_Most_Recent__c": "true",
+									"CG_Last_Name__c": "UpdatedCG_LastNameSFId${Groovy to generate SFId#result}",
+									"CG_Name_Type__c": "Legal",
+									"CG_Salutation__c": "Sergeant",
+									"CG_Start_Date__c": "2020-08-27",
+									"CG_Hidden_Name_Type__c": "140915",
+									"CG_Hidden_Salutation__c": "304394",
+									"CG_Legal__c": "Legal",
+									"SYNCH_GUID__c": "${Properties#Person_Id}"
+								},
+								{
+									"attributes": {
+										"type": "Person_Name__c",
+										"url": "/services/data/v48.0/sobjects/Person_Name__c/a095P000000Kxq9QAC"
+									},
+									"Id": "a095P000000Kxq9QAC",
+									"IsDeleted": false,
+									"Name": "PN-029290",
+									"RecordTypeId": "01210000000ooqhAAA",
+									"CreatedDate": "2020-08-27T00:42:27.000+0000",
+									"CreatedById": "0055P000000haCPQAY",
+									"LastModifiedDate": "2020-08-27T00:42:27.000+0000",
+									"LastModifiedById": "0055P000000haCPQAY",
+									"SystemModstamp": "2020-08-27T00:42:27.000+0000",
+									"LastActivityDate": null,
+									"LastViewedDate": "2020-07-03T02:07:26.000+0000",
+									"LastReferencedDate": "2020-07-03T02:07:26.000+0000",
+									"CG_Contact__c": "0035P000004NgzpQACUpdatedSFId${Groovy to generate SFId#result}",
+									"CG_Auto_Created__c": true,
+									"CG_Bypass_End_Date_VR__c": false,
+									"CG_Comments__c": null,
+									"CG_End_Date__c": "2020-08-27",
+									"CG_First_Name__c": "UpdatedFirstName",
+									"CG_Most_Recent__c": false,
+									"CG_Last_Name__c": "SF_LastNameUpdatedSFId${Groovy to generate SFId#result}",
+									"CG_Name_Type__c": "SF_NameUpdatedSFId${Groovy to generate SFId#result}",
+									"CG_Salutation__c": "Professor",
+									"CG_Start_Date__c": "2020-08-27",
+									"CG_Hidden_Name_Type__c": "140915",
+									"CG_Hidden_Salutation__c": "304394",
+									"CG_Legal__c": null,
+									"SYNCH_GUID__c": "${Properties#Person2_Id}"
+								}
+							]
+						},
+						"httpHeaders": {},
+						"httpStatusCode": 200,
+						"referenceId": "names"
+					},
+					{
+						"body": {
+							"totalSize": 3,
+							"done": true,
+							"records": [
+								{
+									"attributes": {
+										"type": "CG_Related_Address__c",
+										"url": "/services/data/v48.0/sobjects/CG_Related_Address__c/a055P000000HTakQAG"
+									},
+									"Id": "a055P000000HTakQAG",
+									"CG_Current_Address__c": true,
+									"CG_Type__c": null,
+									"CG_Start_Date__c": "2020-08-27",
+                                    "CG_End_Date__c": null,
+									"CG_Address__c": "a035P000000vVTaQAM",
+									"CG_Hidden_Address_Type__c": "RURAL",
+									"SYNCH_GUID__c": "${Properties#Address_Id}",
+									"CG_Address__r": {
+										"attributes": {
+											"type": "CG_Address__c",
+											"url": "/services/data/v48.0/sobjects/CG_Address__c/a035P000000vVTaQAM"
+										},
+										"CG_Corelogic_Address_ID__c": "A1003097332",
+										 "CG_Street_Address__c": "7 LINCOLN TAI TAPU ROAD UPD",
+										"CG_Additional_Address__c": null,
+										"CG_Suburb__c": "Tai Tapu",
+                                        "CG_City__c": "TAITAPU",
+                                        "CG_Postcode__c": "7672",
+                                        "CG_Hidden_Country__c": null,                                                                       
+										"Hidden_Region__c": "10",
+										"CG_Corelogic_Verified__c": true,
+										"Hidden_Country__c": null
+									}
+								}							
+								
+							]
+						},
+						"httpHeaders": {},
+						"httpStatusCode": 200,
+						"referenceId": "relatedAddresses"
+					}
+				]
+			}
+		},
+		{
+			"objectId": "${Properties#entityMapID}",
+			"path": "/services/data/v48.0/composite",
+			"responseCode": 200,
+			"contentType": "application/json",
+			"payload": {
+				"compositeResponse": [
+					{
+						"body": {
+							"id": "SFId${Groovy to generate SFId#result}",
+							"success": true,
+							"errors": []
+						},
+						"httpHeaders": {
+							"Location": "/services/data/v48.0/sobjects/Contact/SFId${Groovy to generate SFId#result}"
+						},
+						"httpStatusCode": 201,
+						"referenceId": "person"
+					},
+					{
+						"body": {
+							"id": "<SFOBJECTID for ehtinicity>",
+							"success": true,
+							"errors": []
+						},
+						"httpHeaders": {
+							"Location": "/services/data/v48.0/sobjects/CG_Ethnicity__c/<SFOBJECTID for Ethnicity>"
+						},
+						"httpStatusCode": 201,
+						"referenceId": "ethnicity"
+					},
+					{
+						"body": {
+							"id": "<SFOBJECTID for person name>",
+							"success": true,
+							"errors": []
+						},
+						"httpHeaders": {
+							"Location": "/services/data/v48.0/sobjects/Person_Name__c/<SFOBJECTID for person name>"
+						},
+						"httpStatusCode": 201,
+						"referenceId": "personName"
+					},
+					{
+						"body": {
+							"id": "<SFOBJECTID for address>",
+							"success": true,
+							"errors": []
+						},
+						"httpHeaders": {
+							"Location": "/services/data/v48.0/sobjects/CG_Address__c/<SFOBJECTID for address>"
+						},
+						"httpStatusCode": 201,
+						"referenceId": "address"
+					},
+					{
+						"body": {
+							"id": "<SFOBJECTID for relate address>",
+							"success": true,
+							"errors": []
+						},
+						"httpHeaders": {
+							"Location": "/services/data/v48.0/sobjects/CG_Related_Address__c/<SFOBJECTID for related address>"
+						},
+						"httpStatusCode": 201,
+						"referenceId": "relatedAddresses"
+					}
+				]
+			}
+		}
+	]
+}]]></con:request><con:originalUri>http://internal-alb-syndev-test-harness-399698269.ap-southeast-2.elb.amazonaws.com/test-harness/prepare</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="09f6edb6-79df-4d9b-a0b5-324d0f817439" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200, 201</codes></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="delay" name="Delay2" id="e16bd10c-5c97-4311-bb41-c75ac2e06468"><con:settings/><con:config><delay>200</delay></con:config></con:testStep><con:testStep type="restrequest" name="GetSyncRequestForUpdate" id="bfc4b59c-9079-4667-a773-a4237c673843"><con:settings/><con:config service="GetSyncRequest" resourcePath="/test-harness/sync-data/request/" methodName="SyncRequest" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="GetSyncRequestForUpdate" id="b8778e6a-dbb8-48c3-829a-d1dac24a03c7" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="Accept" value="application/json"/>&#13;
+  &lt;con:entry key="Content-Type" value="application/json"/>&#13;
+&lt;/xml-fragment></con:setting></con:settings><con:endpoint>${#Project#stEndpoint}</con:endpoint><con:request/><con:originalUri>http://internal-alb-syndev-test-harness-399698269.ap-southeast-2.elb.amazonaws.com/test-harness/system-entity/</con:originalUri><con:assertion type="JsonPath Existence Match" id="dd65e57f-0b19-48c6-b70b-4d1707eeb98f" name="Check for existence of [_id]"><con:configuration><path>$[0]['_id']</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Existence Match" id="58d2352e-a32f-476d-bc32-9f31ee6f7ca1" name="Check for existence of [_id]"><con:configuration><path>$[0]['_id']</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="66437426-2093-42e2-a92f-3c9791f6de2c" name="Match content of [status]"><con:configuration><path>$[0]['info']['status']</path><content>"Completed"</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="0a351314-d3ee-48d4-84a7-775b1234a451" name="Match content of [status]"><con:configuration><path>$[0]['info']['status']</path><content>"Completed"</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="b5416174-ecc8-4fe7-af80-0b8b2a93eb2f" name="Match content of [statusChangedBy]"><con:configuration><path>$[0]['info']['statusChangedBy']</path><content>"pipeline-salesforce-to-cyras-person"</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="b3a7a56d-aea8-4272-81c8-c761bf0ad6b6" name="Match content of [statusChangedBy]"><con:configuration><path>$[0]['info']['statusChangedBy']</path><content>"pipeline-salesforce-to-cyras-person"</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="6deb269c-5269-494d-ae7a-9a83224a9b63" name="Match content of [entityMapId]"><con:configuration><path>$[0]['info']['entityMapId']</path><content>${Salesforce Event Update#RawRequest#$['events'][0]['payload']['ObjectExternalGUID__c']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="26f1e7a1-8bde-43eb-aa52-4eaad72bcae8" name="Match content of [entityMapId]"><con:configuration><path>$[0]['info']['entityMapId']</path><content>${Salesforce Event Update#RawRequest#$['events'][0]['payload']['ObjectExternalGUID__c']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="6848c6b1-8275-444b-8693-9b2b4618abb4" name="Match content of [givenNames]"><con:configuration><path>$[0]['data']['target'][0]['value']['legalName']['givenNames']</path><content>${Salesforce Event Update#RawRequest#$['responses'][0]['payload']['compositeResponse'][2]['body']['records'][0]['CG_First_Name__c']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="0c31be60-067a-4e7c-a52a-4440d342dcfe" name="Match content of [surname]"><con:configuration><path>$[0]['data']['target'][0]['value']['legalName']['surname']</path><content>${Salesforce Event Update#RawRequest#$['responses'][0]['payload']['compositeResponse'][2]['body']['records'][0]['CG_Last_Name__c']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="ea8b00c8-321e-4f9b-9aea-8a19e5986e81" name="Match content of [titleDescription]"><con:configuration><path>$[0]['data']['target'][0]['value']['legalName']['titleDescription']</path><content>${Salesforce Event Update#RawRequest#$['responses'][0]['payload']['compositeResponse'][2]['body']['records'][0]['CG_Salutation__c']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="0cde141d-9a54-4b5a-a0b2-b001bd268e77" name="Match content of [preferredName]"><con:configuration><path>$[0]['data']['target'][0]['value']['legalName']['preferredName']</path><content>${Salesforce Event Update#RawRequest#$['responses'][0]['payload']['compositeResponse'][0]['body']['CG_Preferred_Name__c']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="b9b97ef4-747d-478b-a201-cbe3ca87e4df" name="Match content of [givenNames]"><con:configuration><path>$[0]['data']['target'][0]['value']['otherNames'][0]['givenNames']</path><content>${Salesforce Event Update#RawRequest#$['responses'][0]['payload']['compositeResponse'][2]['body']['records'][1]['CG_First_Name__c']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="bcedf671-4683-4b5a-8166-de02dfa5dda9" name="Match content of [surname]"><con:configuration><path>$[0]['data']['target'][0]['value']['otherNames'][0]['surname']</path><content>${Salesforce Event Update#RawRequest#$['responses'][0]['payload']['compositeResponse'][2]['body']['records'][1]['CG_Last_Name__c']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="5570910f-cc90-4481-adc7-10efeada3699" name="Match content of [titleDescription]"><con:configuration><path>$[0]['data']['target'][0]['value']['otherNames'][0]['titleDescription']</path><content>${Salesforce Event Update#RawRequest#$['responses'][0]['payload']['compositeResponse'][2]['body']['records'][1]['CG_Salutation__c']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="ad3f274b-8864-46f2-abe1-70665c1be459" name="Match content of [dob]"><con:configuration><path>$[0]['data']['target'][0]['value']['dob']</path><content>${Salesforce Event Update#RawRequest#$['responses'][0]['payload']['compositeResponse'][0]['body']['Birthdate']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="e81c8a1b-887c-4983-ac2b-b59ff2c6630a" name="Match content of [genderDescription]"><con:configuration><path>$[0]['data']['target'][0]['value']['genderDescription']</path><content>${Salesforce Event Update#RawRequest#$['responses'][0]['payload']['compositeResponse'][0]['body']['vlocity_ps__Gender__c']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="3e7a5308-549f-4b1d-a7a8-4b2295145117" name="Match content of [homeEmail]"><con:configuration><path>$[0]['data']['target'][0]['value']['homeEmail']</path><content>${Salesforce Event Update#RawRequest#$['responses'][0]['payload']['compositeResponse'][0]['body']['Email']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="cd313cff-6149-4539-a866-b0df1572c05d" name="Match content of [homePhone]"><con:configuration><path>$[0]['data']['target'][0]['value']['homePhone']</path><content>${Salesforce Event Update#RawRequest#$['responses'][0]['payload']['compositeResponse'][0]['body']['Phone']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="5fddfeb0-7276-49e0-beb6-6752d3c0f206" name="Match content of [mobilePhone]"><con:configuration><path>$[0]['data']['target'][0]['value']['mobilePhone']</path><content>${Salesforce Event Update#RawRequest#$['responses'][0]['payload']['compositeResponse'][0]['body']['MobilePhone']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="0aff1faa-9452-4068-bc36-c9c14f3a15a9" name="Match content of [ethnicityCode]"><con:configuration><path>$[0]['data']['target'][0]['value']['ethnicities'][0]['ethnicityCode']</path><content>${Salesforce Event Update#RawRequest#$['responses'][0]['payload']['compositeResponse'][1]['body']['records'][0]['CG_Hidden_Ethnicity__c']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="2ea0106a-003d-4d41-8b59-18b21513b4c7" name="Match content of [affiliationCode]"><con:configuration><path>$[0]['data']['target'][0]['value']['ethnicities'][0]['affiliationCode']</path><content>${Salesforce Event Update#RawRequest#$['responses'][0]['payload']['compositeResponse'][1]['body']['records'][0]['CG_Hidden_Iwi__c']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="96e8c15c-e5a6-45e4-b5f2-6920bfa19034" name="Match content of [isPrimary]"><con:configuration><path>$[0]['data']['target'][0]['value']['addresses'][0]['isPrimary']</path><content>${Salesforce Event Update#RawRequest#$['responses'][0]['payload']['compositeResponse'][3]['body']['records'][0]['CG_Current_Address__c']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="9fe71752-7fec-4da4-8837-e6a798af1fe7" name="Match content of [addressType]"><con:configuration><path>$[0]['data']['target'][0]['value']['addresses'][0]['addressType']</path><content>${Salesforce Event Update#RawRequest#$['responses'][0]['payload']['compositeResponse'][3]['body']['records'][0]['CG_Hidden_Address_Type__c']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="dcd6398b-ae7a-4396-af27-bcd9b8da6b4a" name="Match content of [addressLine1]"><con:configuration><path>$[0]['data']['target'][0]['value']['addresses'][0]['addressLine1']</path><content>${Salesforce Event Update#RawRequest#$['responses'][0]['payload']['compositeResponse'][3]['body']['records'][0]['CG_Address__r']['CG_Street_Address__c']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="120beb0c-621f-45bf-a71b-212c03170a2e" name="Match content of [addressLine2]"><con:configuration><path>$[0]['data']['target'][0]['value']['addresses'][0]['addressLine2']</path><content>${Salesforce Event Update#RawRequest#$['responses'][0]['payload']['compositeResponse'][3]['body']['records'][0]['CG_Address__r']['CG_Suburb__c']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="b146cfd5-9351-431b-8bf7-cee53fb2478d" name="Match content of [city]"><con:configuration><path>$[0]['data']['target'][0]['value']['addresses'][0]['city']</path><content>${Salesforce Event Update#RawRequest#$['responses'][0]['payload']['compositeResponse'][3]['body']['records'][0]['CG_Address__r']['CG_City__c']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="9b4ede45-4d1c-47a3-9dbf-b14203fac571" name="Match content of [postCode]"><con:configuration><path>$[0]['data']['target'][0]['value']['addresses'][0]['postCode']</path><content>${Salesforce Event Update#RawRequest#$['responses'][0]['payload']['compositeResponse'][3]['body']['records'][0]['CG_Address__r']['CG_Postcode__c']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="a34e0859-1b5f-456f-a118-f1c022b4e7ce" name="Match content of [region]"><con:configuration><path>$[0]['data']['target'][0]['value']['addresses'][0]['region']</path><content>${Salesforce Event Update#RawRequest#$['responses'][0]['payload']['compositeResponse'][3]['body']['records'][0]['CG_Address__r']['Hidden_Region__c']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="4f60160b-3546-43a4-a7d8-55f58efc1acf" name="Match content of [countryType]"><con:configuration><path>$[0]['data']['target'][0]['value']['addresses'][0]['countryType']</path><content>"NZ"</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="cfcde691-5c99-4132-8a41-df1ef7c2f7b1" name="Match content of [deceased]"><con:configuration><path>$[0]['data']['target'][0]['value']['deceased']</path><content>${Salesforce Event Update#RawRequest#$['responses'][0]['payload']['compositeResponse'][0]['body']['Deceased__c']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><con:entry key="since" value="${Salesforce Event Update#Response#$['events'][0]['info']['statusChangedAt']}"/></con:parameters><con:parameterOrder><con:entry>since</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="goto" name="Conditional Goto-Check Update Status" id="09861c57-88cf-4575-90b5-f18a7f08829b"><con:settings/><con:config xsi:type="con:GotoStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:condition><con:name>CheckStatus</con:name><con:type>XPATH</con:type><con:expression>//Response[1]/e[2]/info[1]/status[1]!="Completed"</con:expression><con:targetStep>Delay2</con:targetStep></con:condition><con:condition><con:name>StatusExists</con:name><con:type>XPATH</con:type><con:expression>count(//Response[1]/e[2]/info[1]/status[1]) = 0</con:expression><con:targetStep>Delay2</con:targetStep></con:condition></con:config></con:testStep><con:properties/><con:reportParameters/><con:breakPoints><con:testStepId>e551f9e1-8d15-476b-bb8d-d2bd0e8bdfc5</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>61c22223-68d0-44f9-91f4-7fd551923ef7</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>611183b9-eb19-49b4-8985-4d2c56fb597a</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>11b8fb4b-707f-4783-9bd7-5bf823ed18fb</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>d3ae848b-7d03-49f3-92e3-eb8db769854d</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>0401ba52-7a89-48fe-86a7-cb7d1a054875</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>1357452b-3270-4012-9ef1-064cb48523b5</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>b9f3bbb3-abdc-49c1-aece-3ead3ad841ef</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>e4b06591-ce4b-4fa5-8044-f5d91faeaca9</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>a1f39df0-f047-4265-a324-4808e08c14dc</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>5b3a74b6-8223-40b1-9a69-b398e6e059cb</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>5ce6eb9c-065b-4e06-9510-1b61c68ca7ec</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>d509d3ea-edb7-41e9-8780-96d1f1f92441</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>6e5ed39e-3141-4637-b06d-55d6953cce07</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>57b62e15-4c45-4f6f-a075-c4f46004b70a</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>ebf1ac8b-37f6-4448-807a-0f51ffb08247</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>33c5316a-01be-4059-978c-fc0b1e00b4e1</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>01c6e814-ca0f-4b91-a454-46f1aed3654d</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>97ae1b2c-1835-4234-8001-dbef772bf2dd</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>ccd2b903-44ea-44a9-984c-95f2c6fce98f</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>3ec69e23-0896-4004-9ad8-e0d34ec8661b</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>0c58ec0a-2072-49f2-a894-6f3c2c03fc50</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>bfc4b59c-9079-4667-a773-a4237c673843</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>3411152d-279e-4e33-8c93-b9c357741e00</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>09861c57-88cf-4575-90b5-f18a7f08829b</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>db5bcd34-dd95-45ec-99bb-7b7d76a18398</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>e16bd10c-5c97-4311-bb41-c75ac2e06468</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints></con:testCase>

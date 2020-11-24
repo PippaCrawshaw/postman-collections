@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="Prepare" path="/test-harness/prepare" id="d0ea707e-8f92-4d69-b331-a2c768ea32df" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="d0ea707e-8f92-4d69-b331-a2c768ea32dffileName">Prepare</con:setting></con:settings><con:parameters/><con:method name="Prepare" id="96f89c91-b107-46f8-ba25-329330a90bb4" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>201</con:status><con:params/><con:element xmlns:prep="http://internal-alb-syndev-test-harness-399698269.ap-southeast-2.elb.amazonaws.com/test-harness/prepare">prep:Response</con:element></con:representation><con:representation type="FAULT"><con:mediaType>text/html; charset=utf-8</con:mediaType><con:status>400</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="FAULT"><con:mediaType>text/html</con:mediaType><con:status>504 503</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:request name="Request 1" id="e20810ad-1b90-4995-b930-10c3545e63d0" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="Accept" value="application/json"/>&#13;
+  &lt;con:entry key="Content-Type" value="application/json"/>&#13;
+&lt;/xml-fragment></con:setting></con:settings><con:endpoint>${#Project#stEndpoint}</con:endpoint><con:request>{
+    "forSystem": "CYRAS",
+    "responses": [
+        {
+			"objectId": "SFOIDTestPippa2108Fri1547",									
+            "path": "/v1/synch/person",
+            "responseCode": 200,
+            "contentType": "application/json",
+            "payload": {
+                "header": {
+                    "sequence": "1",
+                    "timestamp": "2020-07-09T04:26:09.156Z"
+                },
+                "synchMetaData": {
+                    "ownerId": 97,
+                    "ownerType": "PERSON",
+                    "ownerVersion": 1,
+                    "foreignId": "SFOIDTestPippa2108Fri1547",
+                    "foreignVersion": "",
+                    "externalGuid": ""
+                },
+                "references": [
+                    {
+                        "objectId": "98",
+                        "externalGuid": "",
+                        "objectType": "ETHNICITY"
+                    },
+                    {
+                        "objectId": "99",
+                        "externalGuid": "",
+                        "objectType": "PERSON_NAME"
+                    }
+                ]
+            }
+        }
+    ]
+}</con:request><con:originalUri>http://internal-alb-syndev-test-harness-1980119693.ap-southeast-2.elb.amazonaws.com/test-harness/prepare</con:originalUri><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource>

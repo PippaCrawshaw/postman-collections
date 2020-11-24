@@ -1,0 +1,1910 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="a3ee55b1-c34e-43e9-9dc9-96966dc209c2" discardOkResults="true" failOnError="false" failTestCaseOnErrors="false" keepSession="false" name="CreatePerson2" searchProperties="true" timeout="40000" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" zephyrTestName="" zephyrTestId="" maxResults="3" xmlns:con="http://eviware.com/soapui/config">
+      <con:settings><con:setting id="HttpSettings@socket_timeout">40000</con:setting><con:setting id="a3ee55b1-c34e-43e9-9dc9-96966dc209c2fileName">CreatePerson2</con:setting></con:settings>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="datagen" name="RandomforeignID" id="2764957a-a6a2-4d60-b3ad-64c668ddf08a">
+        <con:settings/>
+        <con:config xsi:type="con:DataGeneratorStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:property type="Number">
+            <con:configuration><start>100000</start><end>900000</end><step/><pattern/><random>true</random><persist>true</persist><current>280758.00000000000000000000000000000000000000000000000000000</current></con:configuration>
+            <con:name>foreignIDRandom</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="datagen" name="cyrasId" id="f228c52c-69bd-4925-bbda-7caa0de3227d">
+        <con:settings/>
+        <con:config xsi:type="con:DataGeneratorStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:property type="Number">
+            <con:configuration><start>100000</start><end>9000000</end><step/><pattern/><random>true</random><persist>true</persist><current>4072253.00000000000000000000000000000000000000000000000000000</current></con:configuration>
+            <con:name>cyrasId</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+          <con:property type="Number">
+            <con:configuration><start>100000</start><end>9000000</end><step/><pattern/><random>true</random><persist>true</persist><current>2443950.00000000000000000000000000000000000000000000000</current></con:configuration>
+            <con:name>cyaddressId</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+          <con:property type="Number">
+            <con:configuration><start>100000</start><end>90000000</end><step/><pattern/><random>true</random><persist>true</persist><current>11713903.0000000000000000000000000000000000000000000000000000</current></con:configuration>
+            <con:name>cylegalNameId</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+          <con:property type="Number">
+            <con:configuration><start>100000</start><end>9000000</end><step/><pattern/><random>true</random><persist>true</persist><current>7015836.00000000000000000000000000000000000000000000000000000</current></con:configuration>
+            <con:name>cynameId</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+          <con:property type="Number">
+            <con:configuration><start>100000</start><end>9000000</end><step/><pattern/><random>true</random><persist>true</persist><current>3525686.00000000000000000000000000000000000000000000000000000</current></con:configuration>
+            <con:name>cyethnicityId</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+          <con:property type="Number">
+            <con:configuration><start>100000</start><end>9000000</end><step/><pattern/><random>true</random><persist>true</persist><current>3968501.0000000000000000000000000000000000000000000000000000</current></con:configuration>
+            <con:name>cyalertId</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+          <con:property type="Number">
+            <con:configuration><start>100000</start><end>9000000</end><step/><pattern/><random>true</random><persist>true</persist><current>1045504.0000000000000000000000000000000000000000000000000000</current></con:configuration>
+            <con:name>cycommunicationId</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+          <con:property type="Number">
+            <con:configuration><start>100000</start><end>9000000</end><step/><pattern/><random>true</random><persist>true</persist><current>8943406.0000000000000000000000000000000000000000000000000000</current></con:configuration>
+            <con:name>cycommunication2Id</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="datagen" name="sfId" id="aa86b87a-36ed-4e21-96e4-b4e7afe57436">
+        <con:settings/>
+        <con:config xsi:type="con:DataGeneratorStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:property type="Number">
+            <con:configuration><start>100000</start><end>9000000</end><step/><pattern/><random>true</random><persist>true</persist><current>4489126.0000000000000000000000000000000000000000000000000000</current></con:configuration>
+            <con:name>sfId</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+          <con:property type="Number">
+            <con:configuration><start>100000</start><end>9000000</end><step/><pattern/><random>true</random><persist>true</persist><current>7879638.0000000000000000000000000000000000000000000000000000</current></con:configuration>
+            <con:name>sfaddressId</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+          <con:property type="Number">
+            <con:configuration><start>100000</start><end>90000000</end><step/><pattern/><random>true</random><persist>true</persist><current>57731680.000000000000000000000000000000000000000000000000000</current></con:configuration>
+            <con:name>sflegalNameId</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+          <con:property type="Number">
+            <con:configuration><start>100000</start><end>9000000</end><step/><pattern/><random>true</random><persist>true</persist><current>3819522.00000000000000000000000000000000000000000000000000000</current></con:configuration>
+            <con:name>sfnameId</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+          <con:property type="Number">
+            <con:configuration><start>100000</start><end>9000000</end><step/><pattern/><random>true</random><persist>true</persist><current>4353073.00000000000000000000000000000000000000000000000000000</current></con:configuration>
+            <con:name>sfethnicityId</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+          <con:property type="Number">
+            <con:configuration><start>100000</start><end>9000000</end><step/><pattern/><random>true</random><persist>true</persist><current>8102810.00000000000000000000000000000000000000000000000000000</current></con:configuration>
+            <con:name>sfalertId</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+          <con:property type="Number">
+            <con:configuration><start>100000</start><end>9000000</end><step/><pattern/><random>true</random><persist>true</persist><current>2367898.00000000000000000000000000000000000000000000000000000</current></con:configuration>
+            <con:name>sfcommunicationId</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+          <con:property type="Number">
+            <con:configuration><start>100000</start><end>9000000</end><step/><pattern/><random>true</random><persist>true</persist><current>4037991.000000000000000000000000000000000000000000000000000</current></con:configuration>
+            <con:name>sfcommunication2Id</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="datagen" name="DataGenRandom_Alpha" id="3efecdfe-9948-43a1-8a43-e537922fe676">
+        <con:settings/>
+        <con:config xsi:type="con:DataGeneratorStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:property type="Script">
+            <con:configuration>
+              <script>import org.apache.commons.lang.RandomStringUtils
+
+String charset = (('A'..'Z') + ('0'..'9')).join()
+Integer length = 9
+String randomString = RandomStringUtils.random(length, charset.toCharArray())</script>
+            </con:configuration>
+            <con:name>randomString</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="datagen" name="systemDate" id="07456b54-7211-4113-898f-7ceaba0edcf9">
+        <con:settings/>
+        <con:config xsi:type="con:DataGeneratorStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:property type="Script">
+            <con:configuration>
+              <script>import java.time.*
+
+ZonedDateTime.now(ZoneId.of("UTC")).format("yyyy-MM-dd'T'HH:mm:ss.SSSX")
+
+String systemDate =new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'").format(new Date())</script>
+            </con:configuration>
+            <con:name>systemDate</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="REST Request-SalesForce Response Create" id="52e29299-6591-459e-ad50-e7d42275d698">
+        <con:settings/>
+        <con:config service="Prepare-CreatePerson-SFTOC-CYRASResponse" resourcePath="/test-harness/prepare" methodName="Prepare" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="REST Request-SalesForce Response Create" id="e20810ad-1b90-4995-b930-10c3545e63d0" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="Accept" value="application/json"/>&#13;
+  &lt;con:entry key="Content-Type" value="application/json"/>&#13;
+&lt;/xml-fragment></con:setting>
+            </con:settings>
+            <con:endpoint>${#Project#stEndpoint}</con:endpoint>
+            <con:request><![CDATA[{
+	"forSystem": "Salesforce",
+	"responses": [
+		{
+			"objectID": "2a3c3390-41a2-4d4a-9cf3-a11feb3641e8",
+			"path": "/services/data/v48.0/composite",
+			"responseCode": 200,
+			"contentType": "application/json",
+			"payload": {
+				"compositeResponse": [
+					{
+						"body": {
+							"attributes": {
+								"type": "Contact"
+							},
+							"Id": "123AAA",
+							"LastName": "Existence",
+							"FirstName": "Co"
+						},
+						"httpHeaders": {
+							"Last-Modified": "Thu, 2 Jul 2020 03:24:32 GMT"
+						},
+						"httpStatusCode": 200,
+						"referenceId": "person"
+					}
+				]
+			}
+		},
+		{
+			"objectId": "${sfId#sfId}",
+			"path": "/services/data/v48.0/composite",
+			"responseCode": 200,
+			"contentType": "application/json",
+			"then": {
+				"objectID": "$.compositeRequest[?(@.referenceId == 'Person')]..SYNCH_GUID__c",
+				"path": "/services/data/v48.0/composite",
+				"responseCode": 200,
+				"contentType": "application/json",
+				"payload": {
+					"compositeResponse": [
+						{
+							"body": {
+								"attributes": {
+									"type": "Contact",
+									"url": "/services/data/v48.0/sobjects/Contact/${sfId#sfId}"
+								},
+								"Id": "${sfId#sfId}",
+								"IsDeleted": false,
+								"MasterRecordId": null,
+								"AccountId": "0015P000004uivnQAA",
+								"LastName": "Existence",
+								"FirstName": "Co",
+								"Salutation": "Mr",
+								"Name": "Co Existence",
+								"RecordTypeId": "01210000000ondbAAA",
+								"OtherStreet": null,
+								"OtherCity": null,
+								"OtherState": null,
+								"OtherPostalCode": null,
+								"OtherCountry": null,
+								"OtherLatitude": null,
+								"OtherLongitude": null,
+								"OtherGeocodeAccuracy": null,
+								"OtherAddress": null,
+								"MailingStreet": null,
+								"MailingCity": null,
+								"MailingState": null,
+								"MailingPostalCode": null,
+								"MailingCountry": null,
+								"MailingLatitude": null,
+								"MailingLongitude": null,
+								"MailingGeocodeAccuracy": null,
+								"MailingAddress": null,
+								"Phone": "041234567",
+								"Fax": null,
+								"MobilePhone": "0211234567",
+								"HomePhone": null,
+								"OtherPhone": null,
+								"AssistantPhone": null,
+								"ReportsToId": null,
+								"Email": "co.existence@gmail.com",
+								"Title": null,
+								"Department": null,
+								"AssistantName": null,
+								"LeadSource": null,
+								"Birthdate": "1985-07-01",
+								"Description": null,
+								"OwnerId": "0055P000000haCPQAY",
+								"HasOptedOutOfEmail": false,
+								"HasOptedOutOfFax": false,
+								"DoNotCall": false,
+								"CreatedDate": "2020-07-02T00:12:30.000+0000",
+								"CreatedById": "0055P000000haCPQAY",
+								"LastModifiedDate": "2020-07-02T00:43:31.000+0000",
+								"LastModifiedById": "0055P000000haCPQAY",
+								"SystemModstamp": "2020-07-02T03:24:32.000+0000",
+								"LastActivityDate": "2020-07-02",
+								"LastCURequestDate": null,
+								"LastCUUpdateDate": null,
+								"LastViewedDate": "2020-07-28T05:10:35.000+0000",
+								"LastReferencedDate": "2020-07-28T05:10:35.000+0000",
+								"EmailBouncedReason": null,
+								"EmailBouncedDate": null,
+								"IsEmailBounced": false,
+								"PhotoUrl": "/services/images/photo/0035P000004NgzpQAC",
+								"Jigsaw": null,
+								"JigsawContactId": null,
+								"IndividualId": null,
+								"CG_User_Account__c": null,
+								"CG_Legal__c": null,
+								"CG_AutoCreated__c": true,
+								"CG_CYRAS_ID__c": null,
+								"CG_Salutation__c": "Mr",
+								"CG_Confidential__c": false,
+								"Salutation_Copy__c": "Mr",
+								"CG_Hidden_Gender_Type__c": "141017",
+								"CG_Hidden_Salutation__c": "304394",
+								"CG_CYRAS_Confidentiality_Text__c": null,
+								"CG_Preferred_Name__c": "Co",
+								"CG_Caregiver_Dashboard_Reference__c": null,
+								"vlocity_ps__AccountType__c": null,
+								"vlocity_ps__Account__c": null,
+								"vlocity_ps__Age__c": 35,
+								"vlocity_ps__AnnualIncome__c": null,
+								"vlocity_ps__ContactName__c": null,
+								"vlocity_ps__CurrentApplicationId__c": null,
+								"vlocity_ps__CustomerSentiment__c": null,
+								"vlocity_ps__DaysSinceLastContact__c": 0,
+								"vlocity_ps__DriversLicenseNumber__c": null,
+								"vlocity_ps__EmploymentStatus__c": null,
+								"vlocity_ps__Gender__c": "Male",
+								"vlocity_ps__Image__c": null,
+								"vlocity_ps__IsActive__c": false,
+								"vlocity_ps__IsEmployee__c": false,
+								"vlocity_ps__IsPartner__c": false,
+								"vlocity_ps__IsPersonAccount__c": false,
+								"vlocity_ps__LastContactbyRecordOwner__c": null,
+								"vlocity_ps__Location__c": null,
+								"vlocity_ps__MiddleName__c": null,
+								"vlocity_ps__NetWorth__c": null,
+								"vlocity_ps__Occupation__c": null,
+								"vlocity_ps__PartyId__c": "a2m5P000003eVIUQA2",
+								"vlocity_ps__PrimaryEmployerId__c": null,
+								"vlocity_ps__SocialSecurityNumber__c": null,
+								"vlocity_ps__StateOfIssuance__c": null,
+								"vlocity_ps__Status__c": null,
+								"vlocity_ps__TaxId__c": null,
+								"vlocity_ps__Type__c": null,
+								"vlocity_ps__USCitizen__c": false,
+								"vlocity_ps__UserEmployeeNumber__c": null,
+								"vlocity_ps__UserId__c": null,
+								"vlocity_ps__WebSite__c": null,
+								"CG_Current_Address__c": "56 THE TERRACE, Wellington Central, WELLINGTON, New Zealand, 6011",
+								"CG_Active_Portal_User__c": true,
+								"CMS_Created_At__c": null,
+								"CMS_Created_By__c": null,
+								"CMS_External_ID__c": null,
+								"CMS_ID__c": null,
+								"CMS_Organisation__c": null,
+								"CMS_Updated_At__c": null,
+								"CMS_Updated_By__c": null,
+								"CG_Communication_Channel__c": "Phone",
+								"CMS_Contact_ID__c": null,
+								"CG_Person_Name_Count__c": 0,
+								"CG_Best_Contact_Time__c": "Best contact time field",
+								"CG_IsAdult__c": false,
+								"CYRAS_LINK_ID__c": null,
+								"SYNCH_GUID__c": "$.compositeRequest[?(@.referenceId == 'Person')]..SYNCH_GUID__c",
+								"Contact_Date_Time_Stamp__c": "2020-09-22T00:12:17.000+0000",
+								"CG_CYRAS_Owner__c": "Co Existence (123AAA)",
+								"CG_CYRAS_Creator__c": "Co Existence (123AAA)"
+							},
+							"httpHeaders": {
+								"Last-Modified": "Thu, 2 Jul 2020 03:24:32 GMT"
+							},
+							"httpStatusCode": 200,
+							"referenceId": "person"
+						},
+						{
+							"body": {
+								"totalSize": 2,
+								"done": true,
+								"records": [
+									{
+										"attributes": {
+											"type": "Person_Name__c",
+											"url": "/services/data/v48.0/sobjects/Person_Name__c/${cyrasId#cylegalNameId}"
+										},
+										"Id": "${cyrasId#cylegalNameId}",
+										"IsDeleted": false,
+										"Name": "PN-029289",
+										"RecordTypeId": "01210000000ooqhAAA",
+										"CreatedDate": "2020-07-02T00:12:30.000+0000",
+										"CreatedById": "0055P000000haCPQAY",
+										"LastModifiedDate": "2020-07-02T00:12:30.000+0000",
+										"LastModifiedById": "0055P000000haCPQAY",
+										"SystemModstamp": "2020-07-02T00:12:30.000+0000",
+										"LastActivityDate": null,
+										"LastViewedDate": "2020-07-03T02:06:37.000+0000",
+										"LastReferencedDate": "2020-07-03T02:06:37.000+0000",
+										"CG_Contact__c": "0035P000004NgzpQAC",
+										"CG_Auto_Created__c": true,
+										"CG_Bypass_End_Date_VR__c": false,
+										"CG_Comments__c": null,
+										"CG_End_Date__c": null,
+										"CG_First_Name__c": "Co",
+										"CG_Most_Recent__c": true,
+										"CG_Last_Name__c": "Existence",
+										"CG_Name_Type__c": "Legal",
+										"CG_Salutation__c": "Mr",
+										"CG_Start_Date__c": "2020-07-02",
+										"CG_Hidden_Name_Type__c": "140915",
+										"CG_Hidden_Salutation__c": "304394",
+										"CG_Legal__c": "Legal",
+										"SYNCH_GUID__c": "$.compositeRequest[?(@.referenceId == 'PersonName1')]..SYNCH_GUID__c"
+									},
+									{
+										"attributes": {
+											"type": "Person_Name__c",
+											"url": "/services/data/v48.0/sobjects/Person_Name__c/${sfId#sfnameId}"
+										},
+										"Id": "${sfId#sfnameId}",
+										"IsDeleted": false,
+										"Name": "PN-029290",
+										"RecordTypeId": "01210000000ooqhAAA",
+										"CreatedDate": "2020-07-02T00:42:27.000+0000",
+										"CreatedById": "0055P000000haCPQAY",
+										"LastModifiedDate": "2020-07-02T00:42:27.000+0000",
+										"LastModifiedById": "0055P000000haCPQAY",
+										"SystemModstamp": "2020-07-02T00:42:27.000+0000",
+										"LastActivityDate": null,
+										"LastViewedDate": "2020-07-03T02:07:26.000+0000",
+										"LastReferencedDate": "2020-07-03T02:07:26.000+0000",
+										"CG_Contact__c": "0035P000004NgzpQAC",
+										"CG_Auto_Created__c": true,
+										"CG_Bypass_End_Date_VR__c": false,
+										"CG_Comments__c": null,
+										"CG_End_Date__c": "2020-07-02",
+										"CG_First_Name__c": "Colin",
+										"CG_Most_Recent__c": false,
+										"CG_Last_Name__c": "Existence",
+										"CG_Name_Type__c": "Legal",
+										"CG_Salutation__c": "Mr",
+										"CG_Start_Date__c": "2020-07-02",
+										"CG_Hidden_Name_Type__c": "140915",
+										"CG_Hidden_Salutation__c": "304394",
+										"CG_Legal__c": null,
+										"SYNCH_GUID__c": "$.compositeRequest[?(@.referenceId == 'PersonName2')]..SYNCH_GUID__c"
+									}
+								]
+							},
+							"httpHeaders": {},
+							"httpStatusCode": 200,
+							"referenceId": "names"
+						},
+						{
+							"body": {
+								"totalSize": 3,
+								"done": true,
+								"records": [
+									{
+										"attributes": {
+											"type": "CG_Related_Address__c",
+											"url": "/services/data/v48.0/sobjects/CG_Related_Address__c/${sfId#sfaddressId}"
+										},
+										"Id": "${sfId#sfaddressId}",
+										"CG_Current_Address__c": false,
+										"CG_Type__c": null,
+										"CG_Start_Date__c": "2020-07-02",
+										"CG_End_Date__c": null,
+										"CG_Address__c": "a035P000000vVTaQAM",
+										"SYNCH_GUID__c": "$.compositeRequest[?(@.referenceId == 'RelatedAddress1')]..SYNCH_GUID__c",
+										"CG_Address__r": {
+											"attributes": {
+												"type": "CG_Address__c",
+												"url": "/services/data/v48.0/sobjects/CG_Address__c/a035P000000vVTaQAM"
+											},
+											"CG_Corelogic_Address_ID__c": "A1003097332",
+											"CG_Street_Address__c": "7 LINCOLN TAI TAPU ROAD",
+											"CG_Additional_Address__c": null,
+											"CG_Suburb__c": "Tai Tapu",
+											"CG_City__c": "TAITAPU",
+											"CG_Postcode__c": "7672",
+											"Region__c": "CANTERBURY",
+											"Country__c": "New Zealand"
+										}
+									}
+								]
+							},
+							"httpHeaders": {},
+							"httpStatusCode": 200,
+							"referenceId": "relatedAddresses"
+						},						
+						{
+							"body": {
+								"totalSize": 1,
+								"done": true,
+								"records": [
+									{
+										"attributes": {
+											"type": "CYRAS_Communication__c",
+											"url": "/services/data/v48.0/sobjects/CYRAS_Communication__c/${sfId#sfcommunicationId}"
+										},
+										"id": "${sfId#sfcommunicationId}",
+										"CreatedDate": "2020-07-28T05:11:27.000+0000",
+										"SYNCH_GUID__c": "$.compositeRequest[?(@.referenceId == 'Communication1')]..SYNCH_GUID__c"
+									}
+								]
+							},
+							"httpHeaders": {},
+							"httpStatusCode": 200,
+							"referenceId": "communication"
+						},
+						{
+							"body": {
+								"totalSize": 1,
+								"done": true,
+								"records": [
+									{
+										"attributes": {
+											"type": "CG_Ethnicity__c",
+											"url": "/services/data/v48.0/sobjects/Affiliations__r/${sfId#sfethnicityId}"
+										},
+										"id": "${sfId#sfethnicityId}",
+										"CreatedDate": "2020-07-28T05:11:27.000+0000",
+										"SYNCH_GUID__c": "$.compositeRequest[?(@.referenceId == 'Ethnicity1')]..SYNCH_GUID__c"
+									}
+								]
+							},
+							"httpHeaders": {},
+							"httpStatusCode": 200,
+							"referenceId": "ethnicities"
+						}
+					]
+				}
+			},
+			"payload": {
+				"compositeResponse": [
+					{
+						"body": {
+							"attributes": {
+								"type": "Contact",
+								"url": "/services/data/v48.0/sobjects/Contact/${sfId#sfId}"
+							},
+							"Id": "${sfId#sfId}",
+							"IsDeleted": false,
+							"MasterRecordId": null,
+							"AccountId": "0015P000004uivnQAA",
+							"LastName": "Existence",
+							"FirstName": "Co",
+							"Salutation": "Mr",
+							"Name": "Co Existence",
+							"RecordTypeId": "01210000000ondbAAA",
+							"OtherStreet": null,
+							"OtherCity": null,
+							"OtherState": null,
+							"OtherPostalCode": null,
+							"OtherCountry": null,
+							"OtherLatitude": null,
+							"OtherLongitude": null,
+							"OtherGeocodeAccuracy": null,
+							"OtherAddress": null,
+							"MailingStreet": null,
+							"MailingCity": null,
+							"MailingState": null,
+							"MailingPostalCode": null,
+							"MailingCountry": null,
+							"MailingLatitude": null,
+							"MailingLongitude": null,
+							"MailingGeocodeAccuracy": null,
+							"MailingAddress": null,
+							"Phone": "041234567",
+							"Fax": null,
+							"MobilePhone": "0211234567",
+							"HomePhone": null,
+							"OtherPhone": null,
+							"AssistantPhone": null,
+							"ReportsToId": null,
+							"Email": "co.existence@gmail.com",
+							"Title": null,
+							"Department": null,
+							"AssistantName": null,
+							"LeadSource": null,
+							"Birthdate": "1985-07-01",
+							"Description": null,
+							"OwnerId": "0055P000000haCPQAY",
+							"HasOptedOutOfEmail": false,
+							"HasOptedOutOfFax": false,
+							"DoNotCall": false,
+							"CreatedDate": "2020-07-02T00:12:30.000+0000",
+							"CreatedById": "0055P000000haCPQAY",
+							"LastModifiedDate": "2020-07-02T00:43:31.000+0000",
+							"LastModifiedById": "0055P000000haCPQAY",
+							"SystemModstamp": "2020-07-02T03:24:32.000+0000",
+							"LastActivityDate": "2020-07-02",
+							"LastCURequestDate": null,
+							"LastCUUpdateDate": null,
+							"LastViewedDate": "2020-07-28T05:10:35.000+0000",
+							"LastReferencedDate": "2020-07-28T05:10:35.000+0000",
+							"EmailBouncedReason": null,
+							"EmailBouncedDate": null,
+							"IsEmailBounced": false,
+							"PhotoUrl": "/services/images/photo/0035P000004NgzpQAC",
+							"Jigsaw": null,
+							"JigsawContactId": null,
+							"IndividualId": null,
+							"CG_User_Account__c": null,
+							"CG_Legal__c": null,
+							"CG_AutoCreated__c": true,
+							"CG_CYRAS_ID__c": null,
+							"CG_Salutation__c": "Mr",
+							"CG_Confidential__c": false,
+							"Salutation_Copy__c": "Mr",
+							"CG_Hidden_Gender_Type__c": "141017",
+							"CG_Hidden_Salutation__c": "304394",
+							"CG_CYRAS_Confidentiality_Text__c": null,
+							"CG_Preferred_Name__c": "Co",
+							"CG_Caregiver_Dashboard_Reference__c": null,
+							"vlocity_ps__AccountType__c": null,
+							"vlocity_ps__Account__c": null,
+							"vlocity_ps__Age__c": 35,
+							"vlocity_ps__AnnualIncome__c": null,
+							"vlocity_ps__ContactName__c": null,
+							"vlocity_ps__CurrentApplicationId__c": null,
+							"vlocity_ps__CustomerSentiment__c": null,
+							"vlocity_ps__DaysSinceLastContact__c": 0,
+							"vlocity_ps__DriversLicenseNumber__c": null,
+							"vlocity_ps__EmploymentStatus__c": null,
+							"vlocity_ps__Gender__c": "Male",
+							"vlocity_ps__Image__c": null,
+							"vlocity_ps__IsActive__c": false,
+							"vlocity_ps__IsEmployee__c": false,
+							"vlocity_ps__IsPartner__c": false,
+							"vlocity_ps__IsPersonAccount__c": false,
+							"vlocity_ps__LastContactbyRecordOwner__c": null,
+							"vlocity_ps__Location__c": null,
+							"vlocity_ps__MiddleName__c": null,
+							"vlocity_ps__NetWorth__c": null,
+							"vlocity_ps__Occupation__c": null,
+							"vlocity_ps__PartyId__c": "a2m5P000003eVIUQA2",
+							"vlocity_ps__PrimaryEmployerId__c": null,
+							"vlocity_ps__SocialSecurityNumber__c": null,
+							"vlocity_ps__StateOfIssuance__c": null,
+							"vlocity_ps__Status__c": null,
+							"vlocity_ps__TaxId__c": null,
+							"vlocity_ps__Type__c": null,
+							"vlocity_ps__USCitizen__c": false,
+							"vlocity_ps__UserEmployeeNumber__c": null,
+							"vlocity_ps__UserId__c": null,
+							"vlocity_ps__WebSite__c": null,
+							"CG_Current_Address__c": "56 THE TERRACE, Wellington Central, WELLINGTON, New Zealand, 6011",
+							"CG_Active_Portal_User__c": true,
+							"CMS_Created_At__c": null,
+							"CMS_Created_By__c": null,
+							"CMS_External_ID__c": null,
+							"CMS_ID__c": null,
+							"CMS_Organisation__c": null,
+							"CMS_Updated_At__c": null,
+							"CMS_Updated_By__c": null,
+							"CG_Communication_Channel__c": "Phone",
+							"CMS_Contact_ID__c": null,
+							"CG_Person_Name_Count__c": 0,
+							"CG_Best_Contact_Time__c": "Best contact time field",
+							"CG_IsAdult__c": false,
+							"CYRAS_LINK_ID__c": null,
+							"SYNCH_GUID__c": null,
+							"CG_CYRAS_Owner__c": "Co Existence (123AAA)",
+							"CG_CYRAS_Creator__c": "Co Existence (123AAA)"
+						},
+						"httpHeaders": {
+							"Last-Modified": "Thu, 2 Jul 2020 03:24:32 GMT"
+						},
+						"httpStatusCode": 200,
+						"referenceId": "person"
+					},
+					{
+						"body": {
+							"totalSize": 2,
+							"done": true,
+							"records": [
+								{
+									"attributes": {
+										"type": "Person_Name__c",
+										"url": "/services/data/v48.0/sobjects/Person_Name__c/a095P000000Kxq4QAC"
+									},
+									"Id": "a095P000000Kxq4QAC",
+									"IsDeleted": false,
+									"Name": "PN-029289",
+									"RecordTypeId": "01210000000ooqhAAA",
+									"CreatedDate": "2020-07-02T00:12:30.000+0000",
+									"CreatedById": "0055P000000haCPQAY",
+									"LastModifiedDate": "2020-07-02T00:12:30.000+0000",
+									"LastModifiedById": "0055P000000haCPQAY",
+									"SystemModstamp": "2020-07-02T00:12:30.000+0000",
+									"LastActivityDate": null,
+									"LastViewedDate": "2020-07-03T02:06:37.000+0000",
+									"LastReferencedDate": "2020-07-03T02:06:37.000+0000",
+									"CG_Contact__c": "0035P000004NgzpQAC",
+									"CG_Auto_Created__c": true,
+									"CG_Bypass_End_Date_VR__c": false,
+									"CG_Comments__c": null,
+									"CG_End_Date__c": null,
+									"CG_First_Name__c": "Co",
+									"CG_Most_Recent__c": true,
+									"CG_Last_Name__c": "Existence",
+									"CG_Name_Type__c": "Legal",
+									"CG_Salutation__c": "Mr",
+									"CG_Start_Date__c": "2020-07-02",
+									"CG_Hidden_Name_Type__c": "140915",
+									"CG_Hidden_Salutation__c": "304394",
+									"CG_Legal__c": "Legal",
+									"SYNCH_GUID__c": null
+								},
+								{
+									"attributes": {
+										"type": "Person_Name__c",
+										"url": "/services/data/v48.0/sobjects/Person_Name__c/a095P000000Kxq9QAC"
+									},
+									"Id": "a095P000000Kxq9QAC",
+									"IsDeleted": false,
+									"Name": "PN-029290",
+									"RecordTypeId": "01210000000ooqhAAA",
+									"CreatedDate": "2020-07-02T00:42:27.000+0000",
+									"CreatedById": "0055P000000haCPQAY",
+									"LastModifiedDate": "2020-07-02T00:42:27.000+0000",
+									"LastModifiedById": "0055P000000haCPQAY",
+									"SystemModstamp": "2020-07-02T00:42:27.000+0000",
+									"LastActivityDate": null,
+									"LastViewedDate": "2020-07-03T02:07:26.000+0000",
+									"LastReferencedDate": "2020-07-03T02:07:26.000+0000",
+									"CG_Contact__c": "0035P000004NgzpQAC",
+									"CG_Auto_Created__c": true,
+									"CG_Bypass_End_Date_VR__c": false,
+									"CG_Comments__c": null,
+									"CG_End_Date__c": "2020-07-02",
+									"CG_First_Name__c": "Colin",
+									"CG_Most_Recent__c": false,
+									"CG_Last_Name__c": "Existence",
+									"CG_Name_Type__c": "Legal",
+									"CG_Salutation__c": "Mr",
+									"CG_Start_Date__c": "2020-07-02",
+									"CG_Hidden_Name_Type__c": "140915",
+									"CG_Hidden_Salutation__c": "304394",
+									"CG_Legal__c": null,
+									"SYNCH_GUID__c": null
+								}
+							]
+						},
+						"httpHeaders": {},
+						"httpStatusCode": 200,
+						"referenceId": "names"
+					},
+					{
+						"body": {
+							"totalSize": 3,
+							"done": true,
+							"records": [
+								{
+									"attributes": {
+										"type": "CG_Related_Address__c",
+										"url": "/services/data/v48.0/sobjects/CG_Related_Address__c/a055P000000HTakQAG"
+									},
+									"Id": "a055P000000HTakQAG",
+									"CG_Current_Address__c": false,
+									"CG_Type__c": null,
+									"CG_Start_Date__c": "2020-07-02",
+									"CG_End_Date__c": null,
+									"CG_Address__c": "a035P000000vVTaQAM",
+									"CG_Address__r": {
+										"attributes": {
+											"type": "CG_Address__c",
+											"url": "/services/data/v48.0/sobjects/CG_Address__c/a035P000000vVTaQAM"
+										},
+										"CG_Corelogic_Address_ID__c": "A1003097332",
+										"CG_Street_Address__c": "7 LINCOLN TAI TAPU ROAD",
+										"CG_Additional_Address__c": null,
+										"CG_Suburb__c": "Tai Tapu",
+										"CG_City__c": "TAITAPU",
+										"CG_Postcode__c": "7672",
+										"Region__c": "CANTERBURY",
+										"Country__c": "New Zealand"
+									}
+								},
+								{
+									"attributes": {
+										"type": "CG_Related_Address__c",
+										"url": "/services/data/v48.0/sobjects/CG_Related_Address__c/a055P000000HTalQAG"
+									},
+									"Id": "a055P000000HTalQAG",
+									"CG_Current_Address__c": true,
+									"CG_Type__c": "Home",
+									"CG_Start_Date__c": "2020-07-02",
+									"CG_End_Date__c": null,
+									"CG_Address__c": "a035P0000010zvcQAA",
+									"CG_Address__r": {
+										"attributes": {
+											"type": "CG_Address__c",
+											"url": "/services/data/v48.0/sobjects/CG_Address__c/a035P0000010zvcQAA"
+										},
+										"CG_Corelogic_Address_ID__c": "A1002097012",
+										"CG_Street_Address__c": "56 THE TERRACE",
+										"CG_Additional_Address__c": null,
+										"CG_Suburb__c": "Wellington Central",
+										"CG_City__c": "WELLINGTON",
+										"CG_Postcode__c": "6011",
+										"Region__c": "CANTERBURY",
+										"Country__c": "New Zealand"
+									}
+								},
+								{
+									"attributes": {
+										"type": "CG_Related_Address__c",
+										"url": "/services/data/v48.0/sobjects/CG_Related_Address__c/a055P000000HTamQAG"
+									},
+									"Id": "a055P000000HTamQAG",
+									"CG_Current_Address__c": false,
+									"CG_Type__c": null,
+									"CG_Start_Date__c": "2013-07-01",
+									"CG_End_Date__c": "2020-07-01",
+									"CG_Address__c": "a035P0000010zvdQAA",
+									"CG_Address__r": {
+										"attributes": {
+											"type": "CG_Address__c",
+											"url": "/services/data/v48.0/sobjects/CG_Address__c/a035P0000010zvdQAA"
+										},
+										"CG_Corelogic_Address_ID__c": "A1001942983",
+										"CG_Street_Address__c": "175 THE TERRACE",
+										"CG_Additional_Address__c": null,
+										"CG_Suburb__c": "Wellington Central",
+										"CG_City__c": "WELLINGTON",
+										"CG_Postcode__c": "6011",
+										"Region__c": "CANTERBURY",
+										"Country__c": "New Zealand"
+									}
+								}
+							]
+						},
+						"httpHeaders": {},
+						"httpStatusCode": 200,
+						"referenceId": "relatedAddresses"
+					}
+				]
+			}
+		},
+		{
+			"objectId": "${sfId#sfId}",
+			"path": "/services/data/v48.0/composite",
+			"responseCode": 200,
+			"contentType": "application/json",
+			"payload": {
+				"compositeResponse": [
+					{
+						"body": {
+							"id": "${sfId#sfId}",
+							"success": true,
+							"errors": []
+						},
+						"httpHeaders": {
+							"Location": "/services/data/v48.0/sobjects/Contact/${sfId#sfId}"
+						},
+						"httpStatusCode": 201,
+						"referenceId": "person"
+					},
+					{
+						"body": {
+							"id": "",
+							"success": true,
+							"errors": []
+						},
+						"httpHeaders": {
+							"Location": "/services/data/v48.0/sobjects/CG_Ethnicity__c/<SFOBJECTID for Ethnicity>"
+						},
+						"httpStatusCode": 201,
+						"referenceId": "ethnicity"
+					},
+					{
+						"body": {
+							"id": "<SFOBJECTID for person name>",
+							"success": true,
+							"errors": []
+						},
+						"httpHeaders": {
+							"Location": "/services/data/v48.0/sobjects/Person_Name__c/<SFOBJECTID for person name>"
+						},
+						"httpStatusCode": 201,
+						"referenceId": "personName"
+					},
+					{
+						"body": {
+							"id": "<SFOBJECTID for address>",
+							"success": true,
+							"errors": []
+						},
+						"httpHeaders": {
+							"Location": "/services/data/v48.0/sobjects/CG_Address__c/<SFOBJECTID for address>"
+						},
+						"httpStatusCode": 201,
+						"referenceId": "address"
+					},
+					{
+						"body": {
+							"id": "",
+							"success": true,
+							"errors": []
+						},
+						"httpHeaders": {
+							"Location": "/services/data/v48.0/sobjects/CG_Related_Address__c/<SFOBJECTID for related address>"
+						},
+						"httpStatusCode": 201,
+						"referenceId": "relatedAddresses"
+					}
+				]
+			}
+		},
+		{
+			"objectId": "SELECT CG_Referenced_Field__c,CG_External_ID__c,CG_Display_Name__c,CG_End_Date_Time__c FROM Reference_Data__c ORDER BY CG_Referenced_Field__c,CG_External_ID__c,CG_End_Date_Time__c",
+			"path": "/services/data/v48.0/query/",
+			"responseCode": 200,
+			"contentType": "application/json",
+			"payload": {
+				"totalSize": 832,
+				"done": true,
+				"records": [
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000wz3ZUAQ"
+						},
+						"CG_Referenced_Field__c": "Sub Type",
+						"CG_External_ID__c": "ASSOCIAT",
+						"CG_Display_Name__c": "Associations pose risks",
+						"CG_End_Date_Time__c": null
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000xNQ6UAM"
+						},
+						"CG_Referenced_Field__c": "Sub Type - Alert",
+						"CG_External_ID__c": "ASSOCIAT",
+						"CG_Display_Name__c": "Associations pose risks",
+						"CG_End_Date_Time__c": null
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000wytzUAA"
+						},
+						"CG_Referenced_Field__c": "Country",
+						"CG_External_ID__c": "NZ",
+						"CG_Display_Name__c": "New Zealand",
+						"CG_End_Date_Time__c": "2099-12-29T23:00:00.000+0000"
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000wytzUAA"
+						},
+						"CG_Referenced_Field__c": "Region",
+						"CG_External_ID__c": "10",
+						"CG_Display_Name__c": "CANTERBURY",
+						"CG_End_Date_Time__c": "2099-12-29T23:00:00.000+0000"
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000wz1WUAQ"
+						},
+						"CG_Referenced_Field__c": "Ethnicity",
+						"CG_External_ID__c": "211",
+						"CG_Display_Name__c": "Maori",
+						"CG_End_Date_Time__c": null
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000wyrBUAQ"
+						},
+						"CG_Referenced_Field__c": "Gender",
+						"CG_External_ID__c": "1",
+						"CG_Display_Name__c": "Male",
+						"CG_End_Date_Time__c": null
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000wyvPUAQ"
+						},
+						"CG_Referenced_Field__c": "Gender",
+						"CG_External_ID__c": "2",
+						"CG_Display_Name__c": "Female",
+						"CG_End_Date_Time__c": null
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000wyvZUAQ"
+						},
+						"CG_Referenced_Field__c": "Gender",
+						"CG_External_ID__c": "3",
+						"CG_Display_Name__c": "Gender Diverse",
+						"CG_End_Date_Time__c": null
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000xNQDUA2"
+						},
+						"CG_Referenced_Field__c": "Gender - Assessment",
+						"CG_External_ID__c": "1",
+						"CG_Display_Name__c": "Male",
+						"CG_End_Date_Time__c": null
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000xNQEUA2"
+						},
+						"CG_Referenced_Field__c": "Gender - Assessment",
+						"CG_External_ID__c": "2",
+						"CG_Display_Name__c": "Female",
+						"CG_End_Date_Time__c": null
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000xNQFUA2"
+						},
+						"CG_Referenced_Field__c": "Gender - Assessment",
+						"CG_External_ID__c": "3",
+						"CG_Display_Name__c": "Gender Diverse",
+						"CG_End_Date_Time__c": null
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000xNPnUAM"
+						},
+						"CG_Referenced_Field__c": "Gender - Case",
+						"CG_External_ID__c": "1",
+						"CG_Display_Name__c": "Male",
+						"CG_End_Date_Time__c": null
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000xNPoUAM"
+						},
+						"CG_Referenced_Field__c": "Gender - Case",
+						"CG_External_ID__c": "2",
+						"CG_Display_Name__c": "Female",
+						"CG_End_Date_Time__c": null
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000xNPpUAM"
+						},
+						"CG_Referenced_Field__c": "Gender - Case",
+						"CG_External_ID__c": "3",
+						"CG_Display_Name__c": "Gender Diverse",
+						"CG_End_Date_Time__c": null
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000wz31UAA"
+						},
+						"CG_Referenced_Field__c": "Iwi",
+						"CG_External_ID__c": "4444",
+						"CG_Display_Name__c": "Don't Know",
+						"CG_End_Date_Time__c": null
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000wyz3UAA"
+						},
+						"CG_Referenced_Field__c": "Name Type",
+						"CG_External_ID__c": "INCORRECT",
+						"CG_Display_Name__c": "Incorrect",
+						"CG_End_Date_Time__c": null
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000wyz1UAA"
+						},
+						"CG_Referenced_Field__c": "Name Type",
+						"CG_External_ID__c": "LEGAL",
+						"CG_Display_Name__c": "LEGAL",
+						"CG_End_Date_Time__c": null
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000wyz2UAA"
+						},
+						"CG_Referenced_Field__c": "Name Type",
+						"CG_External_ID__c": "OTHER",
+						"CG_Display_Name__c": "OTHER",
+						"CG_End_Date_Time__c": null
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000wyr8UAA"
+						},
+						"CG_Referenced_Field__c": "Address Type",
+						"CG_External_ID__c": "HOME",
+						"CG_Display_Name__c": "Home",
+						"CG_End_Date_Time__c": null
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000wz2rUAA"
+						},
+						"CG_Referenced_Field__c": "Address Type",
+						"CG_External_ID__c": "OTH",
+						"CG_Display_Name__c": "Other",
+						"CG_End_Date_Time__c": null
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000wyrCUAQ"
+						},
+						"CG_Referenced_Field__c": "Address Type",
+						"CG_External_ID__c": "PHY",
+						"CG_Display_Name__c": "Physical",
+						"CG_End_Date_Time__c": null
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000wyr9UAA"
+						},
+						"CG_Referenced_Field__c": "Address Type",
+						"CG_External_ID__c": "POST",
+						"CG_Display_Name__c": "Postal",
+						"CG_End_Date_Time__c": null
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000wyvGUAQ"
+						},
+						"CG_Referenced_Field__c": "Salutation",
+						"CG_External_ID__c": "1",
+						"CG_Display_Name__c": "Dame",
+						"CG_End_Date_Time__c": null
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000wyxvUAA"
+						},
+						"CG_Referenced_Field__c": "Salutation",
+						"CG_External_ID__c": "11",
+						"CG_Display_Name__c": "Professor",
+						"CG_End_Date_Time__c": null
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000wyy7UAA"
+						},
+						"CG_Referenced_Field__c": "Salutation",
+						"CG_External_ID__c": "12",
+						"CG_Display_Name__c": "Reverend",
+						"CG_End_Date_Time__c": null
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000wyyGUAQ"
+						},
+						"CG_Referenced_Field__c": "Salutation",
+						"CG_External_ID__c": "13",
+						"CG_Display_Name__c": "RT Honourable",
+						"CG_End_Date_Time__c": null
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000wyyKUAQ"
+						},
+						"CG_Referenced_Field__c": "Salutation",
+						"CG_External_ID__c": "14",
+						"CG_Display_Name__c": "Sir",
+						"CG_End_Date_Time__c": null
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000wyyeUAA"
+						},
+						"CG_Referenced_Field__c": "Salutation",
+						"CG_External_ID__c": "15",
+						"CG_Display_Name__c": "Constable",
+						"CG_End_Date_Time__c": null
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000wyymUAA"
+						},
+						"CG_Referenced_Field__c": "Salutation",
+						"CG_External_ID__c": "16",
+						"CG_Display_Name__c": "Sergeant",
+						"CG_End_Date_Time__c": null
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000wyyoUAA"
+						},
+						"CG_Referenced_Field__c": "Salutation",
+						"CG_External_ID__c": "17",
+						"CG_Display_Name__c": "Senior Sergeant",
+						"CG_End_Date_Time__c": null
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000wyvYUAQ"
+						},
+						"CG_Referenced_Field__c": "Salutation",
+						"CG_External_ID__c": "2",
+						"CG_Display_Name__c": "Doctor",
+						"CG_End_Date_Time__c": null
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000wyvbUAA"
+						},
+						"CG_Referenced_Field__c": "Salutation",
+						"CG_External_ID__c": "3",
+						"CG_Display_Name__c": "Father",
+						"CG_End_Date_Time__c": null
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000wyvmUAA"
+						},
+						"CG_Referenced_Field__c": "Salutation",
+						"CG_External_ID__c": "4",
+						"CG_Display_Name__c": "Honourable",
+						"CG_End_Date_Time__c": null
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000wyvoUAA"
+						},
+						"CG_Referenced_Field__c": "Salutation",
+						"CG_External_ID__c": "5",
+						"CG_Display_Name__c": "Lady",
+						"CG_End_Date_Time__c": null
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000wywuUAA"
+						},
+						"CG_Referenced_Field__c": "Salutation",
+						"CG_External_ID__c": "6",
+						"CG_Display_Name__c": "Miss",
+						"CG_End_Date_Time__c": null
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000wyx0UAA"
+						},
+						"CG_Referenced_Field__c": "Salutation",
+						"CG_External_ID__c": "7",
+						"CG_Display_Name__c": "Mr",
+						"CG_End_Date_Time__c": null
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000wyxDUAQ"
+						},
+						"CG_Referenced_Field__c": "Salutation",
+						"CG_External_ID__c": "8",
+						"CG_Display_Name__c": "Mrs",
+						"CG_End_Date_Time__c": null
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000wyxOUAQ"
+						},
+						"CG_Referenced_Field__c": "Salutation",
+						"CG_External_ID__c": "9",
+						"CG_Display_Name__c": "Ms",
+						"CG_End_Date_Time__c": null
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000xNPqUAM"
+						},
+						"CG_Referenced_Field__c": "Salutation - Contact",
+						"CG_External_ID__c": "1",
+						"CG_Display_Name__c": "Dame",
+						"CG_End_Date_Time__c": null
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000xNPzUAM"
+						},
+						"CG_Referenced_Field__c": "Salutation - Contact",
+						"CG_External_ID__c": "11",
+						"CG_Display_Name__c": "Professor",
+						"CG_End_Date_Time__c": null
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000xNQ0UAM"
+						},
+						"CG_Referenced_Field__c": "Salutation - Contact",
+						"CG_External_ID__c": "12",
+						"CG_Display_Name__c": "Reverend",
+						"CG_End_Date_Time__c": null
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000xNQ1UAM"
+						},
+						"CG_Referenced_Field__c": "Salutation - Contact",
+						"CG_External_ID__c": "13",
+						"CG_Display_Name__c": "RT Honourable",
+						"CG_End_Date_Time__c": null
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000xNQ2UAM"
+						},
+						"CG_Referenced_Field__c": "Salutation - Contact",
+						"CG_External_ID__c": "14",
+						"CG_Display_Name__c": "Sir",
+						"CG_End_Date_Time__c": null
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000xNQ3UAM"
+						},
+						"CG_Referenced_Field__c": "Salutation - Contact",
+						"CG_External_ID__c": "15",
+						"CG_Display_Name__c": "Constable",
+						"CG_End_Date_Time__c": null
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000xNQ4UAM"
+						},
+						"CG_Referenced_Field__c": "Salutation - Contact",
+						"CG_External_ID__c": "16",
+						"CG_Display_Name__c": "Sergeant",
+						"CG_End_Date_Time__c": null
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000xNQ5UAM"
+						},
+						"CG_Referenced_Field__c": "Salutation - Contact",
+						"CG_External_ID__c": "17",
+						"CG_Display_Name__c": "Senior Sergeant",
+						"CG_End_Date_Time__c": null
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000xNPrUAM"
+						},
+						"CG_Referenced_Field__c": "Salutation - Contact",
+						"CG_External_ID__c": "2",
+						"CG_Display_Name__c": "Doctor",
+						"CG_End_Date_Time__c": null
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000xNPsUAM"
+						},
+						"CG_Referenced_Field__c": "Salutation - Contact",
+						"CG_External_ID__c": "3",
+						"CG_Display_Name__c": "Father",
+						"CG_End_Date_Time__c": null
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000xNPtUAM"
+						},
+						"CG_Referenced_Field__c": "Salutation - Contact",
+						"CG_External_ID__c": "4",
+						"CG_Display_Name__c": "Honourable",
+						"CG_End_Date_Time__c": null
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000xNPuUAM"
+						},
+						"CG_Referenced_Field__c": "Salutation - Contact",
+						"CG_External_ID__c": "5",
+						"CG_Display_Name__c": "Lady",
+						"CG_End_Date_Time__c": null
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000xNPvUAM"
+						},
+						"CG_Referenced_Field__c": "Salutation - Contact",
+						"CG_External_ID__c": "6",
+						"CG_Display_Name__c": "Miss",
+						"CG_End_Date_Time__c": null
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000xNPwUAM"
+						},
+						"CG_Referenced_Field__c": "Salutation - Contact",
+						"CG_External_ID__c": "7",
+						"CG_Display_Name__c": "Mr",
+						"CG_End_Date_Time__c": null
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000xNPxUAM"
+						},
+						"CG_Referenced_Field__c": "Salutation - Contact",
+						"CG_External_ID__c": "8",
+						"CG_Display_Name__c": "Mrs",
+						"CG_End_Date_Time__c": null
+					},
+					{
+						"attributes": {
+							"type": "Reference_Data__c",
+							"url": "/services/data/v49.0/sobjects/Reference_Data__c/a0B5P000000xNPyUAM"
+						},
+						"CG_Referenced_Field__c": "Salutation - Contact",
+						"CG_External_ID__c": "9",
+						"CG_Display_Name__c": "Ms",
+						"CG_End_Date_Time__c": null
+					}
+				]
+			}
+		}
+	]
+}]]></con:request>
+            <con:originalUri>http://internal-alb-syndev-test-harness-399698269.ap-southeast-2.elb.amazonaws.com/test-harness/prepare</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="235c6fd0-9c46-4a1b-8b5c-219f91aeaeeb" name="Valid HTTP Status Codes">
+              <con:settings/>
+              <con:configuration>
+                <codes>201</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath RegEx Match" id="ddad5316-2ae6-4667-8478-9e0d34fec916" name="Match content of [forSystem] using RegEx" disabled="true">
+              <con:configuration>
+                <path>$['responses'][0]['info']['forSystem']</path>
+                <content>true</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+                <regEx>CYRAS</regEx>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath RegEx Match" id="f4210e24-424b-40c4-9688-573a18aeb5e3" name="Match content of [ownerType] using RegEx" disabled="true">
+              <con:configuration>
+                <path>$['responses'][0]['payload']['synchMetaData']['ownerType']</path>
+                <content>true</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+                <regEx>PERSON</regEx>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="REST Request-CYRAS Event Create" id="8d3c5f69-fa34-4bbe-b019-b562ad1c129d">
+        <con:settings/>
+        <con:config service="SalesforceEventCreateContact" resourcePath="/test-harness/prepare" methodName="" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="REST Request-CYRAS Event Create" id="e8ca1257-f90c-4aae-83fe-e1eaca238ff2" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="Accept" value="application/json"/>&#13;
+  &lt;con:entry key="Content-Type" value="application/json"/>&#13;
+&lt;/xml-fragment></con:setting>
+            </con:settings>
+            <con:endpoint>${#Project#stEndpoint}</con:endpoint>
+            <con:request>{
+	"forSystem": "CYRAS",
+	"events": [
+		{
+			"eventId": "Mergetest${DataGenRandom_Alpha#randomString}",
+			"eventDateTime": "2020-07-27T02:54:43.035Z",
+			"objectType": "PERSON",
+			"objectID": ${cyrasId#cyrasId}
+		}
+	],
+	"responses": [
+		{
+			"objectID": "${cyrasId#cyrasId}",
+			"path": "/v1/synch/person/${cyrasId#cyrasId}",
+			"responseCode": 200,
+			"contentType": "application/json",
+			"payload": {
+				"header": {
+					"sequence": "1"
+				},
+				"synchMetaData": {
+					"foreignID": "123456",
+					"foreignVersion": "234",
+					"ownerType": "PERSON",
+                    "ownerId": ${cyrasId#cyrasId}
+				},
+				"person": {
+					"objectID": ${cyrasId#cyrasId},
+					"legalName": {
+						"objectID": ${cyrasId#cylegalNameId},
+						"givenNames": "${sfId#sfId}",
+						"surname": "person.legalName.surname1",
+						"preferredName": "person.legalName.preferredName1",
+						"titleType": "11",
+						"titleDescription": "Professor",
+						"startDate": "2020-01-31",
+						"endDate": "2020-12-31"
+					},
+					"dob": "1980-05-25",
+					"homeEmail": "person.homeEmail@homeEmail.com",
+					"workEmail": "person.workEmail@workEmail.com",
+					"mobilePhone": "021 123 4567",
+					"genderDescription": "Male",
+                    "lastModifiedBy": "92",
+					"addresses": [
+						{
+							"objectID": ${cyrasId#cyaddressId},
+							"isPrimary": "Y",
+							"addressType": "HOME",
+							"addressLine1": "24A John Downs Drive",
+							"addressLine2": "Browns Bay",
+							"city": "Auckland",
+							"region": "GREATER AUCKLAND",
+							"countryType": "NZ"
+						}
+					],
+					"phoneNumbers": [
+						{
+							"objectID": ${cyrasId#cycommunicationId},
+							"description": "Work phone",
+							"phoneNumber": "(07) 54266799",
+							"modifiedDateTime": "2013-03-19T10:03:25.000Z"
+						}
+					],
+					"ethnicities": [
+						{
+							"objectID": ${cyrasId#cyethnicityId},
+							"ethnicityCode": "211",
+							"affiliationCode": "4444",
+							"isPrimary": true
+						}
+					],					
+					"otherNames": [
+						{
+							"objectID": ${cyrasId#cynameId},
+							"givenNames": "person.otherNames.givenNames2",
+							"surname": "person.otherNames.surname2",
+							"preferredName": "person.otherNames.preferredName2",
+							"startDate": "2020-01-26T12:01:02.000Z",
+							"endDate": "2020-08-15T12:01:02.000Z",
+							"titleType": "17",
+							"titleDescription": "Senior Sergeant"
+						}
+					]
+				}
+			}
+		},
+        {
+			"objectID": "${sfId#sfId}",
+			"path": "/v1/synch/metadata/${cyrasId#cyrasId}",
+			"responseCode": 200,
+			"contentType": "application/json",
+			"payload": {
+				"header": {
+					"sequence": "1"
+				},
+				"synchMetaData": {
+					"foreignID": "123456",
+					"foreignVersion": "234",
+					"ownerType": "PERSON",
+                    "ownerId": ${cyrasId#cyrasId}
+				},
+				"person": {
+					"objectID": ${cyrasId#cyrasId},
+					"legalName": {
+						"objectID": ${cyrasId#cylegalNameId},
+						"givenNames": "${sfId#sfId}",
+						"surname": "person.legalName.surname1",
+						"preferredName": "person.legalName.preferredName1",
+						"titleType": "11",
+						"titleDescription": "Professor",
+						"startDate": "2020-01-31",
+						"endDate": "2020-12-31"
+					},
+					"dob": "1980-05-25",
+					"homeEmail": "person.homeEmail@homeEmail.com",
+					"workEmail": "person.workEmail@workEmail.com",
+					"homePhone": "(07) 54266788",
+					"mobilePhone": "021 123 4567",
+					"genderDescription": "Male",
+                    "lastModifiedBy": "92",
+					"addresses": [
+						{
+							"objectID": ${cyrasId#cyaddressId},
+							"isPrimary": "Y",
+							"addressType": "HOME",
+							"addressLine1": "24A John Downs Drive",
+							"addressLine2": "Browns Bay",
+							"city": "Auckland",
+							"region": "Auckland",
+							"countryType": "NZ"
+						}
+					],
+					"phoneNumbers": [],
+					"ethnicities": [],					
+					"otherNames": [
+						{
+							"objectID": ${cyrasId#cynameId},
+							"givenNames": "person.otherNames.givenNames1",
+							"surname": "person.otherNames.surname1",
+							"preferredName": "person.otherNames.preferredName1",
+							"startDate": "2020-09-07T12:01:02.000Z",
+							"endDate": "2020-09-09T12:01:02.000Z",
+							"titleType": "07",
+							"titleDescription": "Mr"
+						}
+					]
+				}
+			}
+		}
+	]
+}</con:request>
+            <con:originalUri>http://internal-alb-syndev-test-harness-399698269.ap-southeast-2.elb.amazonaws.com/test-harness/prepare</con:originalUri>
+            <con:assertion type="JsonPath RegEx Match" id="8033cd43-6026-4979-bbc2-122562c41fae" name="Match content of [forSystem] using RegEx" disabled="true">
+              <con:configuration>
+                <path>$['events'][0]['info']['forSystem']</path>
+                <content>true</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+                <regEx>Salesforce</regEx>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Valid HTTP Status Codes" id="67c4e5ab-2e74-4541-9532-06583994eb4c" name="Valid HTTP Status Codes">
+              <con:settings/>
+              <con:configuration>
+                <codes>201</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      
+      <con:testStep type="delay" name="Delay" id="86ad6d08-ba96-477b-b522-908491a0fb65"><con:settings/><con:config><delay>200</delay></con:config></con:testStep>
+      <con:testStep type="restrequest" name="GetSyncRequest" id="2510f9be-501f-4bd4-a1d8-b7bdbc3a68e9">
+        <con:settings/>
+        <con:config service="GetSyncRequest" resourcePath="/test-harness/sync-data/request/" methodName="SyncRequest" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="GetSyncRequest" id="b8778e6a-dbb8-48c3-829a-d1dac24a03c7" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="Accept" value="application/json"/>&#13;
+  &lt;con:entry key="Content-Type" value="application/json"/>&#13;
+&lt;/xml-fragment></con:setting>
+            </con:settings>
+            <con:endpoint>${#Project#stEndpoint}</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://internal-alb-syndev-test-harness-399698269.ap-southeast-2.elb.amazonaws.com/test-harness/system-entity/</con:originalUri>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <con:assertion type="JsonPath Existence Match" id="ce34b3b3-e5ab-45ce-84b4-a16eeafb4b30" name="Check for existence of [_id]"><con:configuration><path>$[0]['_id']</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="ab5aa5d1-77e7-4c6f-88a1-cb0e615ffc70" name="Match content of [status]"><con:configuration><path>$[0]['info']['status']</path><content>"Completed"</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="5331110c-2d2f-4414-8429-44f90fb92c7d" name="Match content of [statusChangedBy]"><con:configuration><path>$[0]['info']['statusChangedBy']</path><content>"pipeline-cyras-to-salesforce-person"</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Existence Match" id="086c11ee-c3b2-4697-aa1f-8db2090c646d" name="Check for existence of [entityMapId]"><con:configuration><path>$[0]['info']['entityMapId']</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Existence Match" id="4b99028a-7f25-451c-9ef7-cf88cd61c7e8" name="Check for existence of [sequenceNo]"><con:configuration><path>$[0]['info']['sequenceNo']</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Existence Match" id="bd1fcf6d-7a33-4d24-a604-251ec6383fa4" name="Check for existence of [trigger]"><con:configuration><path>$[0]['trigger']</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Existence Match" id="f8425103-3ea9-418b-ac55-3c4d114d302e" name="Check for existence of [events]"><con:configuration><path>$[0]['trigger']['events']</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Existence Match" id="8cb0dfb6-34fb-4f5d-9203-ddcba0374f34" name="Check for existence of [data]"><con:configuration><path>$[0]['data']</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Existence Match" id="4e889d3e-72a2-4278-b576-a6efc2def23d" name="Check for existence of [source]"><con:configuration><path>$[0]['data']['source']</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Existence Match" id="907e4e89-91e0-46df-ba3c-99505a70a984" name="Check for existence of [target]"><con:configuration><path>$[0]['data']['target']</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="8b846495-77c4-47ce-ad09-2a0f210c71cc" name="Match content of [LastName]"><con:configuration><path>$[0]['data']['target'][0]['value'][0]['body']['LastName']</path><content>${REST Request-CYRAS Event Create#RawRequest#$['responses'][0]['payload']['person']['legalName']['surname']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="dce282db-8a8a-4d19-9fbc-6ec05ff4431a" name="Match content of [Salutation]"><con:configuration><path>$[0]['data']['target'][0]['value'][0]['body']['Salutation']</path><content>${REST Request-CYRAS Event Create#RawRequest#$['responses'][0]['payload']['person']['legalName']['titleDescription']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="3d62c779-41a6-4a1d-8549-3daf97409965" name="Match content of [CG_Preferred_Name__c]"><con:configuration><path>$[0]['data']['target'][0]['value'][0]['body']['CG_Preferred_Name__c']</path><content>${REST Request-CYRAS Event Create#RawRequest#$['responses'][0]['payload']['person']['legalName']['preferredName']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="1c893124-a4ac-4eff-98dd-a1ab20678c2e" name="Match content of [vlocity_ps__Gender__c]"><con:configuration><path>$[0]['data']['target'][0]['value'][0]['body']['vlocity_ps__Gender__c']</path><content>${REST Request-CYRAS Event Create#RawRequest#$['responses'][0]['payload']['person']['genderDescription']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="5ba485f2-838d-464e-bbcf-910ea18d9b67" name="Match content of [MobilePhone]"><con:configuration><path>$[0]['data']['target'][0]['value'][0]['body']['MobilePhone']</path><content>${REST Request-CYRAS Event Create#RawRequest#$['responses'][0]['payload']['person']['mobilePhone']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="47f31fe1-7870-4263-9731-2ed3971d42e4" name="Match content of [Email]"><con:configuration><path>$[0]['data']['target'][0]['value'][0]['body']['Email']</path><content>${REST Request-CYRAS Event Create#RawRequest#$['responses'][0]['payload']['person']['homeEmail']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="8f05dfb3-110b-429c-82cf-bac36e24c4d7" name="Match content of [Title__c]"><con:configuration><path>$[0]['data']['target'][0]['value'][1]['body']['Title__c']</path><content>${REST Request-CYRAS Event Create#RawRequest#$['responses'][0]['payload']['person']['carerAlerts'][0]['description']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="cc22c0af-5d5f-43b5-bf0b-3f580d375f68" name="Match content of [Description__c]"><con:configuration><path>$[0]['data']['target'][0]['value'][1]['body']['Description__c']</path><content>${REST Request-CYRAS Event Create#RawRequest#$['responses'][0]['payload']['person']['carerAlerts'][0]['longDescription']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="7aaa04df-ff21-4a30-9470-be0c59af61a0" name="Match content of [CG_Last_Name__c]"><con:configuration><path>$[0]['data']['target'][0]['value'][1]['body']['CG_Last_Name__c']</path><content>${REST Request-CYRAS Event Create#RawRequest#$['responses'][0]['payload']['person']['legalName']['surname']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="ad4db28c-5663-43af-9890-cbda37873f13" name="Match content of [CG_Name_Type__c]"><con:configuration><path>$[0]['data']['target'][0]['value'][1]['body']['CG_Name_Type__c']</path><content>"Legal"</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="a046d441-26ce-44e5-898e-ecb66aff197b" name="Match content of [CG_Salutation__c]"><con:configuration><path>$[0]['data']['target'][0]['value'][2]['body']['CG_Salutation__c']</path><content>${REST Request-CYRAS Event Create#RawRequest#$['responses'][0]['payload']['person']['otherNames'][0]['titleDescription']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="b7e0a02b-e8a1-48e4-949a-d86a6845b900" name="Match content of [CG_Name_Type__c]"><con:configuration><path>$[0]['data']['target'][0]['value'][2]['body']['CG_Name_Type__c']</path><content>"Other"</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="97f470af-2150-439e-8f6f-2d49be855c83" name="Match content of [CG_First_Name__c]"><con:configuration><path>$[0]['data']['target'][0]['value'][2]['body']['CG_First_Name__c']</path><content>${REST Request-CYRAS Event Create#RawRequest#$['responses'][0]['payload']['person']['otherNames'][0]['givenNames']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="032e698d-4b36-4cc9-bbfa-7eefeb80861c" name="Match content of [CG_Last_Name__c]"><con:configuration><path>$[0]['data']['target'][0]['value'][2]['body']['CG_Last_Name__c']</path><content>${REST Request-CYRAS Event Create#RawRequest#$['responses'][0]['payload']['person']['otherNames'][0]['surname']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters><con:entry key="since" value="${REST Request-CYRAS Event Create#Response#$['events'][0]['info']['statusChangedAt']}"/></con:parameters>
+            <con:parameterOrder><con:entry>since</con:entry></con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="goto" name="Conditional Goto-Check Create Status" id="28ab5cd3-2a7e-4e10-9763-1fe23ca95423"><con:settings/><con:config xsi:type="con:GotoStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:condition><con:name>CheckStatus</con:name><con:type>XPATH</con:type><con:expression>//Response[1]/e[1]/info[1]/status[1]!="Completed"</con:expression><con:targetStep>Delay</con:targetStep></con:condition><con:condition><con:name>StatusExists</con:name><con:type>XPATH</con:type><con:expression>count(//Response[1]/e[1]/info[1]/status[1]) = 0</con:expression><con:targetStep>Delay</con:targetStep></con:condition></con:config></con:testStep>
+      <con:testStep type="transfer" name="Property Transfer" id="611374b1-0935-44e3-9c21-1a4794050de6">
+        <con:settings/>
+        <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="true" entitize="false" transferChildNodes="false">
+            <con:name>personGuid</con:name>
+            <con:sourceType>Response</con:sourceType>
+            <con:sourceStep>GetSyncRequest</con:sourceStep>
+            <con:sourcePath>$[0]['entityMappingOnCompletion']['PERSON'][0]['_id']</con:sourcePath>
+            <con:targetType>personGuid</con:targetType>
+            <con:targetStep>Properties</con:targetStep>
+            <con:targetPath/>
+            <con:type>JSONPATH</con:type>
+            <con:targetTransferType>JSONPATH</con:targetTransferType>
+            <con:upgraded>true</con:upgraded>
+          </con:transfers>
+          <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+            <con:name>PERSON_NAME-guid-1</con:name>
+            <con:sourceType>Response</con:sourceType>
+            <con:sourceStep>GetSyncRequest</con:sourceStep>
+            <con:sourcePath>$[0]['entityMappingOnCompletion']['PERSON_NAME'][1]['_id']</con:sourcePath>
+            <con:targetType>PERSON_NAME-guid-1</con:targetType>
+            <con:targetStep>Properties</con:targetStep>
+            <con:type>JSONPATH</con:type>
+            <con:targetTransferType>JSONPATH</con:targetTransferType>
+            <con:upgraded>true</con:upgraded>
+          </con:transfers>
+          <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" disabled="false" entitize="false" ignoreEmpty="false" transferChildNodes="false" transferToAll="false" useXQuery="false">
+            <con:name>PERSON_NAME-guid-0</con:name>
+            <con:sourceType>Response</con:sourceType>
+            <con:sourceStep>GetSyncRequest</con:sourceStep>
+            <con:sourcePath>$[0]['entityMappingOnCompletion']['PERSON_NAME'][0]['_id']</con:sourcePath>
+            <con:targetType>PERSON_NAME-guid-0</con:targetType>
+            <con:targetStep>Properties</con:targetStep>
+            <con:targetPath xsi:nil="true"/>
+            <con:type>JSONPATH</con:type>
+            <con:targetTransferType>JSONPATH</con:targetTransferType>
+            <con:upgraded>true</con:upgraded>
+          </con:transfers>
+          <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+            <con:name>ADDRESS-guid-0</con:name>
+            <con:sourceType>Response</con:sourceType>
+            <con:sourceStep>GetSyncRequest</con:sourceStep>
+            <con:sourcePath>$[0]['entityMappingOnCompletion']['ADDRESS'][0]['_id']</con:sourcePath>
+            <con:targetType>ADDRESS-guid-0</con:targetType>
+            <con:targetStep>Properties</con:targetStep>
+            <con:type>JSONPATH</con:type>
+            <con:targetTransferType>JSONPATH</con:targetTransferType>
+            <con:upgraded>true</con:upgraded>
+          </con:transfers>
+          <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+            <con:name>CRITICAL_INFORMATION-guid-0</con:name>
+            <con:sourceType>Response</con:sourceType>
+            <con:sourceStep>GetSyncRequest</con:sourceStep>
+            <con:sourcePath>$[0]['entityMappingOnCompletion']['CRITICAL_INFORMATION'][0]['_id']</con:sourcePath>
+            <con:targetType>CRITICAL_INFORMATION-guid-0</con:targetType>
+            <con:targetStep>Properties</con:targetStep>
+            <con:type>JSONPATH</con:type>
+            <con:targetTransferType>JSONPATH</con:targetTransferType>
+            <con:upgraded>true</con:upgraded>
+          </con:transfers>
+          <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+            <con:name>COMMUNICATION-guid-0</con:name>
+            <con:sourceType>Response</con:sourceType>
+            <con:sourceStep>GetSyncRequest</con:sourceStep>
+            <con:sourcePath>$[0]['entityMappingOnCompletion']['COMMUNICATION'][0]['_id']</con:sourcePath>
+            <con:targetType>COMMUNICATION-guid-0</con:targetType>
+            <con:targetStep>Properties</con:targetStep>
+            <con:type>JSONPATH</con:type>
+            <con:targetTransferType>JSONPATH</con:targetTransferType>
+            <con:upgraded>true</con:upgraded>
+          </con:transfers>
+          <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+            <con:name>ETHNICITY-guid-0</con:name>
+            <con:sourceType>Response</con:sourceType>
+            <con:sourceStep>GetSyncRequest</con:sourceStep>
+            <con:sourcePath>$[0]['entityMappingOnCompletion']['ETHNICITY'][0]['_id']</con:sourcePath>
+            <con:targetType>ETHNICITY-guid-0</con:targetType>
+            <con:targetStep>Properties</con:targetStep>
+            <con:type>JSONPATH</con:type>
+            <con:targetTransferType>JSONPATH</con:targetTransferType>
+            <con:upgraded>true</con:upgraded>
+          </con:transfers>
+        </con:config>
+      </con:testStep>
+      
+      
+      
+      
+      <con:testStep type="properties" name="Properties" id="48462bce-c437-4a99-9b9f-9d46f039621a">
+        <con:settings/>
+        <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:properties>
+            <con:property>
+              <con:name>personGuid</con:name>
+              <con:value>b78d8c9f-289d-47b7-93bc-478c88b82229</con:value>
+            </con:property>
+            <con:property>
+              <con:name>PERSON_NAME-guid-1</con:name>
+              <con:value>d815ca89-3de3-46dd-98de-c1d2dee33e9b</con:value>
+            </con:property>
+            <con:property>
+              <con:name>PERSON_NAME-guid-0</con:name>
+              <con:value>27ca260a-6370-406c-9033-2c824bd2a57f</con:value>
+            </con:property>
+            <con:property>
+              <con:name>ADDRESS-guid-0</con:name>
+              <con:value>c004e65d-dbc7-4961-8752-fbb357093170</con:value>
+            </con:property>
+            <con:property>
+              <con:name>CRITICAL_INFORMATION-guid-0</con:name>
+              <con:value xsi:nil="true"/>
+            </con:property>
+            <con:property>
+              <con:name>COMMUNICATION-guid-0</con:name>
+              <con:value>286f4c19-cd8b-4f1f-96b9-6cd6903aa953</con:value>
+            </con:property>
+            <con:property>
+              <con:name>ETHNICITY-guid-0</con:name>
+              <con:value>cb4d12fe-6d76-491e-8477-8d484bda0796</con:value>
+            </con:property>
+          </con:properties>
+        </con:config>
+      </con:testStep><con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>e551f9e1-8d15-476b-bb8d-d2bd0e8bdfc5</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>61c22223-68d0-44f9-91f4-7fd551923ef7</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>611183b9-eb19-49b4-8985-4d2c56fb597a</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>11b8fb4b-707f-4783-9bd7-5bf823ed18fb</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>d3ae848b-7d03-49f3-92e3-eb8db769854d</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>0401ba52-7a89-48fe-86a7-cb7d1a054875</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>1357452b-3270-4012-9ef1-064cb48523b5</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>b9f3bbb3-abdc-49c1-aece-3ead3ad841ef</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>e4b06591-ce4b-4fa5-8044-f5d91faeaca9</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>1cfe2873-dcd3-40c4-9a66-16fbaf608aa2</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>8681c769-910f-45c3-93b4-1fa07b2dda1c</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>403010ed-2c7b-4ff8-9b42-9b550b67e18d</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>fd12cf1c-b861-4727-98ff-ee5864a83665</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    <con:breakPoints><con:testStepId>06c45605-a7a8-4ed2-bf5c-90029c897114</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>ba6a0adf-11e9-4647-8dba-017ca1267012</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>acd3d750-699e-46ba-a0f6-df0c7c662c8e</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>76324efa-5053-42ce-8bed-6b6203e4830b</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>6815a0b1-5e57-4cc5-85c2-1d7b8fd0a2af</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>0ea9dfcf-166f-47a7-9969-76d0ae565c5d</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>0c8fc02d-b78b-44b9-b251-fb0cd5ee2f6b</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>919f44df-e9f1-4d55-89f0-adf82367dbf2</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>bc326218-5900-4aea-bbb3-b52efbd14300</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>6ae4717c-0d83-40fc-a2e5-9ca4f51bb49e</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>d9ab770f-2def-41d1-8fb0-f4c7b8bbd711</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>2e14ab9e-f300-413c-b5ff-38068084225c</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>7f80c83b-74e3-41c5-8804-e9b51fc253d8</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>85817e98-841b-4613-a49c-be0c5ed54fae</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>86ad6d08-ba96-477b-b522-908491a0fb65</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints></con:testCase>

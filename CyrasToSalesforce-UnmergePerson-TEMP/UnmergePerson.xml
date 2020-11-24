@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="5e1ad8ee-10cb-40f2-b90a-6aec260521c5" discardOkResults="true" failOnError="false" failTestCaseOnErrors="false" keepSession="false" name="UnmergePerson" searchProperties="true" timeout="40000" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" zephyrTestName="" zephyrTestId="" maxResults="3" xmlns:con="http://eviware.com/soapui/config">
+      <con:settings><con:setting id="5e1ad8ee-10cb-40f2-b90a-6aec260521c5fileName">UnmergePerson</con:setting></con:settings>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="datagen" name="RandomforeignID" id="18732512-6e04-4a4c-95e4-bb0170138b2f">
+        <con:settings/>
+        <con:config xsi:type="con:DataGeneratorStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:property type="Number">
+            <con:configuration><start>100000</start><end>900000</end><step/><pattern/><random>true</random><persist>true</persist><current>759653.000000000000000000000000000000000000000000000000000</current></con:configuration>
+            <con:name>foreignIDRandom</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="datagen" name="cyrasId" id="a17f5f9f-6644-4c66-97ac-4126c227408f">
+        <con:settings/>
+        <con:config xsi:type="con:DataGeneratorStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:property type="Number">
+            <con:configuration><start>100000</start><end>9000000</end><step/><pattern/><random>true</random><persist>true</persist><current>603882.00000000000000000000000000000000000000000000000000</current></con:configuration>
+            <con:name>cyrasId</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+          <con:property type="Number">
+            <con:configuration><start>100000</start><end>9000000</end><step/><pattern/><random>true</random><persist>true</persist><current>667304.00000000000000000000000000000000000000000000000000000</current></con:configuration>
+            <con:name>cyaddressId</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+          <con:property type="Number">
+            <con:configuration><start>100000</start><end>90000000</end><step/><pattern/><random>true</random><persist>true</persist><current>75130468.00000000000000000000000000000000000000000000000000000</current></con:configuration>
+            <con:name>cylegalNameId</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+          <con:property type="Number">
+            <con:configuration><start>100000</start><end>9000000</end><step/><pattern/><random>true</random><persist>true</persist><current>5917552.000000000000000000000000000000000000000000000000</current></con:configuration>
+            <con:name>cynameId</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+          <con:property type="Number">
+            <con:configuration><start>100000</start><end>9000000</end><step/><pattern/><random>true</random><persist>true</persist><current>4480842.0000000000000000000000000000000000000000000000000000</current></con:configuration>
+            <con:name>cyethnicityId</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+          <con:property type="Number">
+            <con:configuration><start>100000</start><end>9000000</end><step/><pattern/><random>true</random><persist>true</persist><current>1519531.00000000000000000000000000000000000000000000000000000</current></con:configuration>
+            <con:name>cyalertId</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+          <con:property type="Number">
+            <con:configuration><start>100000</start><end>9000000</end><step/><pattern/><random>true</random><persist>true</persist><current>8120315.00000000000000000000000000000000000000000000000000000</current></con:configuration>
+            <con:name>cycommunicationId</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+          <con:property type="Number">
+            <con:configuration><start>100000</start><end>9000000</end><step/><pattern/><random>true</random><persist>true</persist><current>1383318.00000000000000000000000000000000000000000000000000000</current></con:configuration>
+            <con:name>cycommunication2Id</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="datagen" name="sfId" id="a518fa91-5c76-4290-8212-acaacfed91e8">
+        <con:settings/>
+        <con:config xsi:type="con:DataGeneratorStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:property type="Number">
+            <con:configuration><start>100000</start><end>9000000</end><step/><pattern/><random>true</random><persist>true</persist><current>2524601.00000000000000000000000000000000000000000000000000000</current></con:configuration>
+            <con:name>sfId</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+          <con:property type="Number">
+            <con:configuration><start>100000</start><end>9000000</end><step/><pattern/><random>true</random><persist>true</persist><current>5525323.000000000000000000000000000000000000000000000000000</current></con:configuration>
+            <con:name>sfaddressId</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+          <con:property type="Number">
+            <con:configuration><start>100000</start><end>90000000</end><step/><pattern/><random>true</random><persist>true</persist><current>9460794.00000000000000000000000000000000000000000000000000000</current></con:configuration>
+            <con:name>sflegalNameId</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+          <con:property type="Number">
+            <con:configuration><start>100000</start><end>9000000</end><step/><pattern/><random>true</random><persist>true</persist><current>4904402.00000000000000000000000000000000000000000000000000000</current></con:configuration>
+            <con:name>sfnameId</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+          <con:property type="Number">
+            <con:configuration><start>100000</start><end>9000000</end><step/><pattern/><random>true</random><persist>true</persist><current>3781513.0000000000000000000000000000000000000000000000000000</current></con:configuration>
+            <con:name>sfethnicityId</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+          <con:property type="Number">
+            <con:configuration><start>100000</start><end>9000000</end><step/><pattern/><random>true</random><persist>true</persist><current>7201385.00000000000000000000000000000000000000000000000000000</current></con:configuration>
+            <con:name>sfalertId</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+          <con:property type="Number">
+            <con:configuration><start>100000</start><end>9000000</end><step/><pattern/><random>true</random><persist>true</persist><current>939031.00000000000000000000000000000000000000000000000000000</current></con:configuration>
+            <con:name>sfcommunicationId</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+          <con:property type="Number">
+            <con:configuration><start>100000</start><end>9000000</end><step/><pattern/><random>true</random><persist>true</persist><current>4282530.0000000000000000000000000000000000000000000000000000</current></con:configuration>
+            <con:name>sfcommunication2Id</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="datagen" name="DataGenRandom_Alpha" id="06b5c974-610d-4f78-a42c-1eaf0c5cc3a3">
+        <con:settings/>
+        <con:config xsi:type="con:DataGeneratorStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:property type="Script">
+            <con:configuration>
+              <script>import org.apache.commons.lang.RandomStringUtils
+
+String charset = (('A'..'Z') + ('0'..'9')).join()
+Integer length = 9
+String randomString = RandomStringUtils.random(length, charset.toCharArray())</script>
+            </con:configuration>
+            <con:name>randomString</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="datagen" name="systemDate" id="f97995b2-b6d7-4201-9c7c-cce73f6e799d">
+        <con:settings/>
+        <con:config xsi:type="con:DataGeneratorStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:property type="Script">
+            <con:configuration>
+              <script>import java.time.*
+
+ZonedDateTime.now(ZoneId.of("UTC")).format("yyyy-MM-dd'T'HH:mm:ss.SSSX")
+
+String systemDate =new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'").format(new Date())</script>
+            </con:configuration>
+            <con:name>systemDate</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="REST Request-SalesForce Response Create" id="5e727535-04f1-431a-9a8f-657ace7dcdcd">
+        <con:settings/>
+        <con:config service="Prepare-CreatePerson-SFTOC-CYRASResponse" resourcePath="/test-harness/prepare" methodName="Prepare" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="REST Request-SalesForce Response Create" id="e20810ad-1b90-4995-b930-10c3545e63d0" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="Accept" value="application/json"/>&#13;
+  &lt;con:entry key="Content-Type" value="application/json"/>&#13;
+&lt;/xml-fragment></con:setting>
+            </con:settings>
+            <con:endpoint>${#Project#stEndpoint}</con:endpoint>
+            <con:request>{
+	"forSystem": "Salesforce",
+	"responses": [
+		{
+			"objectId": "${#[CyrasToSalesforce-UnmergePerson-TEMP#MergePerson#Properties]#personGuid}",
+			"path": "/services/apexrest/unmerge/v1",
+			"responseCode": 200,
+			"contentType": "application/json",
+			"payload": {
+				"mergedContact": {
+					"SYNCH_GUID__c": "${#[CyrasToSalesforce-UnmergePerson-TEMP#MergePerson#Properties]#personGuid}",
+					"Id": "${#[CyrasToSalesforce-UnmergePerson-TEMP#MergePerson#sfId]#sfId}",
+					"SFVersion__c": "1"
+				},
+				"primaryContact": {
+					"SYNCH_GUID__c": "${#[CyrasToSalesforce-UnmergePerson-TEMP#CreatePerson1#Properties]#personGuid}",
+					"Id": "${#[CyrasToSalesforce-UnmergePerson-TEMP#CreatePerson1#sfId]#sfId}",
+					"SFVersion__c": "1"
+				},
+				"secondaryContact": {
+					"SYNCH_GUID__c": "${#[CyrasToSalesforce-UnmergePerson-TEMP#CreatePerson2#Properties]#personGuid}",
+					"Id": "${#[CyrasToSalesforce-UnmergePerson-TEMP#CreatePerson2#sfId]#sfId}",
+					"SFVersion__c": "1"
+				}
+			}
+		}
+	]
+}</con:request>
+            <con:originalUri>http://internal-alb-syndev-test-harness-399698269.ap-southeast-2.elb.amazonaws.com/test-harness/prepare</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="235c6fd0-9c46-4a1b-8b5c-219f91aeaeeb" name="Valid HTTP Status Codes">
+              <con:settings/>
+              <con:configuration>
+                <codes>201</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath RegEx Match" id="ddad5316-2ae6-4667-8478-9e0d34fec916" name="Match content of [forSystem] using RegEx" disabled="true">
+              <con:configuration>
+                <path>$['responses'][0]['info']['forSystem']</path>
+                <content>true</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+                <regEx>CYRAS</regEx>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath RegEx Match" id="f4210e24-424b-40c4-9688-573a18aeb5e3" name="Match content of [ownerType] using RegEx" disabled="true">
+              <con:configuration>
+                <path>$['responses'][0]['payload']['synchMetaData']['ownerType']</path>
+                <content>true</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+                <regEx>PERSON</regEx>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="REST Request-CYRAS Event Create" id="34249be6-88d4-47ab-a950-36f4d1ee32bb">
+        <con:settings/>
+        <con:config service="SalesforceEventCreateContact" resourcePath="/test-harness/prepare" methodName="" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="REST Request-CYRAS Event Create" id="e8ca1257-f90c-4aae-83fe-e1eaca238ff2" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="Accept" value="application/json"/>&#13;
+  &lt;con:entry key="Content-Type" value="application/json"/>&#13;
+&lt;/xml-fragment></con:setting>
+            </con:settings>
+            <con:endpoint>${#Project#stEndpoint}</con:endpoint>
+            <con:request>{
+    "forSystem": "CYRAS",
+    "events": [
+        {
+            "eventId": "TestPuneet2020080309:11",
+            "eventDateTime": "2020-07-27T02:54:43.035Z",
+            "objectType": "UN-MERGE",
+            "objectID": ${#[CyrasToSalesforce-UnmergePerson-TEMP#MergePerson#cyrasId]#cyrasId}
+        }
+    ],
+    "responses": [
+        {
+            "objectID": "${#[CyrasToSalesforce-UnmergePerson-TEMP#MergePerson#cyrasId]#cyrasId}",
+            "path": "/v1/synch/person/un-merge/${#[CyrasToSalesforce-UnmergePerson-TEMP#MergePerson#cyrasId]#cyrasId}",
+            "responseCode": 200,
+            "contentType": "application/json",
+            "payload": {
+                "header": {
+                    "sequence": "1"
+                },
+                "synchMetaData": {
+                    "ownerId": ${#[CyrasToSalesforce-UnmergePerson-TEMP#MergePerson#cyrasId]#cyrasId},
+                    "ownerType": "UN-MERGE",
+                    "ownerVersion": 1
+                },
+                "primaryPerson": {
+                    "ownerId": ${#[CyrasToSalesforce-UnmergePerson-TEMP#CreatePerson1#cyrasId]#cyrasId},
+                    "ownerType": "PERSON",
+                    "ownerVersion": 4
+                },
+                "secondaryPerson": {
+                    "ownerId": ${#[CyrasToSalesforce-UnmergePerson-TEMP#CreatePerson2#cyrasId]#cyrasId},
+                    "ownerType": "PERSON",
+                    "ownerVersion": 7
+                },
+				 "affectedCarerRecords": 
+				 [
+					{ "ownerId": 20281,
+					"ownerVersion": 2,
+					"ownerType": "Carer",
+					"unmergedPersonID": ${#[CyrasToSalesforce-UnmergePerson-TEMP#CreatePerson1#cyrasId]#cyrasId}
+					}
+				 ],
+				"affectedPlacementRecords": 
+				[
+					{ 	
+					"ownerId": 7865973,
+					"ownerVersion": 2,
+					"ownerType": "Placement",      
+					"unmergedPersonID": ${#[CyrasToSalesforce-UnmergePerson-TEMP#CreatePerson2#cyrasId]#cyrasId}
+					}  
+				]
+            }
+        },
+        {
+            "objectID": "${#[CyrasToSalesforce-UnmergePerson-TEMP#MergePerson#sfId]#sfId}",
+            "path": "/v1/synch/metadata/${#[CyrasToSalesforce-UnmergePerson-TEMP#MergePerson#cyrasId]#cyrasId}",
+            "responseCode": 200,
+            "contentType": "application/json",
+            "payload": {}
+        },
+        {
+            "objectID": "${#[CyrasToSalesforce-UnmergePerson-TEMP#CreatePerson1#sfId]#sfId}",
+            "path": "/v1/synch/metadata/${#[CyrasToSalesforce-UnmergePerson-TEMP#CreatePerson1#cyrasId]#cyrasId}",
+            "responseCode": 200,
+            "contentType": "application/json",
+            "payload": {}
+        },
+        {
+            "objectID": "${#[CyrasToSalesforce-UnmergePerson-TEMP#CreatePerson2#sfId]#sfId}",
+            "path": "/v1/synch/metadata/${#[CyrasToSalesforce-UnmergePerson-TEMP#CreatePerson2#cyrasId]#cyrasId}",
+            "responseCode": 200,
+            "contentType": "application/json",
+            "payload": {}
+        }
+    ]
+}</con:request>
+            <con:originalUri>http://internal-alb-syndev-test-harness-399698269.ap-southeast-2.elb.amazonaws.com/test-harness/prepare</con:originalUri>
+            <con:assertion type="JsonPath RegEx Match" id="8033cd43-6026-4979-bbc2-122562c41fae" name="Match content of [forSystem] using RegEx" disabled="true">
+              <con:configuration>
+                <path>$['events'][0]['info']['forSystem']</path>
+                <content>true</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+                <regEx>Salesforce</regEx>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Valid HTTP Status Codes" id="67c4e5ab-2e74-4541-9532-06583994eb4c" name="Valid HTTP Status Codes">
+              <con:settings/>
+              <con:configuration>
+                <codes>201</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      
+      <con:testStep type="delay" name="Delay" id="fd8d796c-7485-4f19-ba65-b79831b7e9ec"><con:settings/><con:config><delay>200</delay></con:config></con:testStep>
+      <con:testStep type="restrequest" name="GetSyncRequest" id="811aa359-0ad6-4998-890c-38196bcab2c2">
+        <con:settings/>
+        <con:config service="GetSyncRequest" resourcePath="/test-harness/sync-data/request/" methodName="SyncRequest" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="GetSyncRequest" id="b8778e6a-dbb8-48c3-829a-d1dac24a03c7" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="Accept" value="application/json"/>&#13;
+  &lt;con:entry key="Content-Type" value="application/json"/>&#13;
+&lt;/xml-fragment></con:setting>
+            </con:settings>
+            <con:endpoint>${#Project#stEndpoint}</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://internal-alb-syndev-test-harness-399698269.ap-southeast-2.elb.amazonaws.com/test-harness/system-entity/</con:originalUri>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <con:assertion type="JsonPath Match" id="8d0ea1f4-b443-411f-abc5-2b5ec901bfee" name="Match content of [Id]"><con:configuration><path>$[0]['data']['target'][0]['value']['mergedContact']['Id']</path><content>${REST Request-SalesForce Response Create#Response#$['responses'][0]['payload']['mergedContact']['Id']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="e1795cd8-4054-453b-9856-528d17e902f7" name="Match content of [Id]"><con:configuration><path>$[0]['data']['target'][0]['value']['primaryContact']['Id']</path><content>${REST Request-SalesForce Response Create#Response#$['responses'][0]['payload']['primaryContact']['Id']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="aa1d2092-a70e-4296-9dd2-1bbbcf254062" name="Match content of [Id]"><con:configuration><path>$[0]['data']['target'][0]['value']['secondaryContact']['Id']</path><content>${REST Request-SalesForce Response Create#Response#$['responses'][0]['payload']['secondaryContact']['Id']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="3f95c982-b0fe-4978-ab89-06dd1169dfb1" name="Match content of [Id]"><con:configuration><path>$[0]['data']['target'][0]['value']['carerRecords'][0]['Id']</path><content>${GetSyncRequest#Response#$[0]['entityMappingOnCompletion']['CARER'][0]['systemEntities'][0]['systemAssignedId']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="6c209988-56f1-4fb6-aec3-fa5466bc408a" name="Match content of [Id]"><con:configuration><path>$[0]['data']['target'][0]['value']['placementRecords'][0]['Id']</path><content>${GetSyncRequest#Response#$[0]['entityMappingOnCompletion']['PLACEMENT'][0]['systemEntities'][1]['systemAssignedId']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="a4eed48d-1454-4210-9490-c8d3a7c0cdbc" name="Match content of [statusChangedBy]"><con:configuration><path>$[0]['info']['statusChangedBy']</path><content>"pipeline-cyras-to-salesforce-person-un-merge"</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="6af07b9b-6d60-4f77-b9cc-728d6076d416" name="Match content of [status]"><con:configuration><path>$[0]['info']['status']</path><content>"Completed"</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters><con:entry key="since" value="${REST Request-CYRAS Event Create#Response#$['events'][0]['info']['statusChangedAt']}"/></con:parameters>
+            <con:parameterOrder><con:entry>since</con:entry></con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="CreateAndWaitForRemoveFile" name="Capture Synchronization Request" id="1cf5ccf8-2592-40e4-ad01-f212fd1a65c1"><con:settings/><con:config><FileName>${GetSyncRequest#Response#$[0]['trigger']['events'][0]['objectID']}_${GetSyncRequest#Response#$[0]['info']['status']}</FileName><FileContent>${GetSyncRequest#Response}</FileContent><FolderPath>D:\Users\puneets\Documents\TestLogs</FolderPath><Timeout>0</Timeout><WaitForFileRemove>false</WaitForFileRemove><OverwriteExisting>false</OverwriteExisting><FileEncoding>Unicode</FileEncoding><Precision>seconds</Precision></con:config></con:testStep>
+      <con:testStep type="goto" name="Conditional Goto-Check Create Status" id="d3a7be3e-ef57-4fb5-860d-4d59dc088ca3"><con:settings/><con:config xsi:type="con:GotoStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:condition><con:name>CheckStatus</con:name><con:type>XPATH</con:type><con:expression>//Response[1]/e[1]/info[1]/status[1]!="Completed"</con:expression><con:targetStep>Delay</con:targetStep></con:condition><con:condition><con:name>StatusExists</con:name><con:type>XPATH</con:type><con:expression>count(//Response[1]/e[1]/info[1]/status[1]) = 0</con:expression><con:targetStep>Delay</con:targetStep></con:condition></con:config></con:testStep>
+      
+      
+      
+      
+      <con:testStep type="transfer" name="Property Transfer" id="95068996-1a6d-407f-8926-55fc73e55a5d">
+        <con:settings/>
+        <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="true" entitize="false" transferChildNodes="false">
+            <con:name>personGuid</con:name>
+            <con:sourceType>Response</con:sourceType>
+            <con:sourceStep>GetSyncRequest</con:sourceStep>
+            <con:sourcePath>$[0]['entityMappingOnCompletion']['PERSON'][0]['_id']</con:sourcePath>
+            <con:targetType>personGuid</con:targetType>
+            <con:targetStep>Properties</con:targetStep>
+            <con:targetPath/>
+            <con:type>JSONPATH</con:type>
+            <con:targetTransferType>JSONPATH</con:targetTransferType>
+            <con:upgraded>true</con:upgraded>
+          </con:transfers>
+          <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+            <con:name>PERSON_NAME-guid-1</con:name>
+            <con:sourceType>Response</con:sourceType>
+            <con:sourceStep>GetSyncRequest</con:sourceStep>
+            <con:sourcePath>$[0]['entityMappingOnCompletion']['PERSON_NAME'][1]['_id']</con:sourcePath>
+            <con:targetType>PERSON_NAME-guid-1</con:targetType>
+            <con:targetStep>Properties</con:targetStep>
+            <con:type>JSONPATH</con:type>
+            <con:targetTransferType>JSONPATH</con:targetTransferType>
+            <con:upgraded>true</con:upgraded>
+          </con:transfers>
+          <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" disabled="false" entitize="false" ignoreEmpty="false" transferChildNodes="false" transferToAll="false" useXQuery="false">
+            <con:name>PERSON_NAME-guid-0</con:name>
+            <con:sourceType>Response</con:sourceType>
+            <con:sourceStep>GetSyncRequest</con:sourceStep>
+            <con:sourcePath>$[0]['entityMappingOnCompletion']['PERSON_NAME'][0]['_id']</con:sourcePath>
+            <con:targetType>PERSON_NAME-guid-0</con:targetType>
+            <con:targetStep>Properties</con:targetStep>
+            <con:targetPath xsi:nil="true"/>
+            <con:type>JSONPATH</con:type>
+            <con:targetTransferType>JSONPATH</con:targetTransferType>
+            <con:upgraded>true</con:upgraded>
+          </con:transfers>
+          <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+            <con:name>ADDRESS-guid-0</con:name>
+            <con:sourceType>Response</con:sourceType>
+            <con:sourceStep>GetSyncRequest</con:sourceStep>
+            <con:sourcePath>$[0]['entityMappingOnCompletion']['ADDRESS'][0]['_id']</con:sourcePath>
+            <con:targetType>ADDRESS-guid-0</con:targetType>
+            <con:targetStep>Properties</con:targetStep>
+            <con:type>JSONPATH</con:type>
+            <con:targetTransferType>JSONPATH</con:targetTransferType>
+            <con:upgraded>true</con:upgraded>
+          </con:transfers>
+          <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+            <con:name>CRITICAL_INFORMATION-guid-0</con:name>
+            <con:sourceType>Response</con:sourceType>
+            <con:sourceStep>GetSyncRequest</con:sourceStep>
+            <con:sourcePath>$[0]['entityMappingOnCompletion']['CRITICAL_INFORMATION'][0]['_id']</con:sourcePath>
+            <con:targetType>CRITICAL_INFORMATION-guid-0</con:targetType>
+            <con:targetStep>Properties</con:targetStep>
+            <con:type>JSONPATH</con:type>
+            <con:targetTransferType>JSONPATH</con:targetTransferType>
+            <con:upgraded>true</con:upgraded>
+          </con:transfers>
+          <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+            <con:name>COMMUNICATION-guid-0</con:name>
+            <con:sourceType>Response</con:sourceType>
+            <con:sourceStep>GetSyncRequest</con:sourceStep>
+            <con:sourcePath>$[0]['entityMappingOnCompletion']['COMMUNICATION'][0]['_id']</con:sourcePath>
+            <con:targetType>COMMUNICATION-guid-0</con:targetType>
+            <con:targetStep>Properties</con:targetStep>
+            <con:type>JSONPATH</con:type>
+            <con:targetTransferType>JSONPATH</con:targetTransferType>
+            <con:upgraded>true</con:upgraded>
+          </con:transfers>
+          <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+            <con:name>ETHNICITY-guid-0</con:name>
+            <con:sourceType>Response</con:sourceType>
+            <con:sourceStep>GetSyncRequest</con:sourceStep>
+            <con:sourcePath>$[0]['entityMappingOnCompletion']['ETHNICITY'][0]['_id']</con:sourcePath>
+            <con:targetType>ETHNICITY-guid-0</con:targetType>
+            <con:targetStep>Properties</con:targetStep>
+            <con:type>JSONPATH</con:type>
+            <con:targetTransferType>JSONPATH</con:targetTransferType>
+            <con:upgraded>true</con:upgraded>
+          </con:transfers>
+        </con:config>
+      </con:testStep><con:testStep type="properties" name="Properties" id="1a65e0c4-f1eb-44fc-8997-497d441eb375">
+        <con:settings/>
+        <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:properties>
+            <con:property>
+              <con:name>personGuid</con:name>
+              <con:value>15473c25-3878-4996-819a-3b31e219566b</con:value>
+            </con:property>
+            <con:property>
+              <con:name>PERSON_NAME-guid-1</con:name>
+              <con:value xsi:nil="true"/>
+            </con:property>
+            <con:property>
+              <con:name>PERSON_NAME-guid-0</con:name>
+              <con:value xsi:nil="true"/>
+            </con:property>
+            <con:property>
+              <con:name>ADDRESS-guid-0</con:name>
+              <con:value xsi:nil="true"/>
+            </con:property>
+            <con:property>
+              <con:name>CRITICAL_INFORMATION-guid-0</con:name>
+              <con:value xsi:nil="true"/>
+            </con:property>
+            <con:property>
+              <con:name>COMMUNICATION-guid-0</con:name>
+              <con:value xsi:nil="true"/>
+            </con:property>
+            <con:property>
+              <con:name>ETHNICITY-guid-0</con:name>
+              <con:value xsi:nil="true"/>
+            </con:property>
+          </con:properties>
+        </con:config>
+      </con:testStep><con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>e551f9e1-8d15-476b-bb8d-d2bd0e8bdfc5</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>61c22223-68d0-44f9-91f4-7fd551923ef7</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>611183b9-eb19-49b4-8985-4d2c56fb597a</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>11b8fb4b-707f-4783-9bd7-5bf823ed18fb</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>d3ae848b-7d03-49f3-92e3-eb8db769854d</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>0401ba52-7a89-48fe-86a7-cb7d1a054875</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>1357452b-3270-4012-9ef1-064cb48523b5</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>b9f3bbb3-abdc-49c1-aece-3ead3ad841ef</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>e4b06591-ce4b-4fa5-8044-f5d91faeaca9</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>1cfe2873-dcd3-40c4-9a66-16fbaf608aa2</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>8681c769-910f-45c3-93b4-1fa07b2dda1c</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>403010ed-2c7b-4ff8-9b42-9b550b67e18d</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>fd12cf1c-b861-4727-98ff-ee5864a83665</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    <con:breakPoints><con:testStepId>06c45605-a7a8-4ed2-bf5c-90029c897114</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>ba6a0adf-11e9-4647-8dba-017ca1267012</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>acd3d750-699e-46ba-a0f6-df0c7c662c8e</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>76324efa-5053-42ce-8bed-6b6203e4830b</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>6815a0b1-5e57-4cc5-85c2-1d7b8fd0a2af</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>0ea9dfcf-166f-47a7-9969-76d0ae565c5d</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>0c8fc02d-b78b-44b9-b251-fb0cd5ee2f6b</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>919f44df-e9f1-4d55-89f0-adf82367dbf2</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>bc326218-5900-4aea-bbb3-b52efbd14300</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>6ae4717c-0d83-40fc-a2e5-9ca4f51bb49e</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>d9ab770f-2def-41d1-8fb0-f4c7b8bbd711</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>2e14ab9e-f300-413c-b5ff-38068084225c</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>7f80c83b-74e3-41c5-8804-e9b51fc253d8</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>85817e98-841b-4613-a49c-be0c5ed54fae</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>770d1fd2-9928-46a1-8449-39901693a0f6</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>9dc3fc13-ea90-4c8d-9968-151302d1b701</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints></con:testCase>
